@@ -40,3 +40,24 @@ class EventoSocial(models.Model):
     NombreEncargado = models.CharField(max_length=100)
     TelefonoEncargado = models.BigIntegerField()
     CorreoEncargado = models.EmailField()
+    
+    def __str__(self):
+        return self.CodigoReporte
+    
+class FalloCamara(models.Model):
+    CodigoReporte = models.BigIntegerField()
+    NoCamara = models.BigIntegerField()
+    Informacion = models.CharField(max_length=20)
+    IP = models.CharField(max_length=30)
+    SITE = models.CharField(max_length=30)
+    Modulo = models.CharField(max_length=20)
+    Marca = models.CharField(max_length=20)
+    DescFalla = models.CharField(max_length=20)
+    Toreos = models.IntegerField()
+    MateriaUt = models.CharField(max_length=20)
+    Solucionado = models.BooleanField()
+    Observaciones = models.CharField(max_length=50)
+    
+    def __str__(self):
+        return self.CodigoReporte
+        
