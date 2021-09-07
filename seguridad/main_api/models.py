@@ -61,3 +61,22 @@ class FalloCamara(models.Model):
     def __str__(self):
         return self.CodigoReporte
         
+class HojaUrgencias(models.Model):
+
+    def __str__(self):
+        return self.HojaUrgencias
+
+class Vistas(models.Model):
+
+    def __str__(self):
+        return self.Vistas
+
+class RomperCandado(models.model):
+
+    def __str__(self):
+        return self.RomperCandado
+
+class alumnos(models.model):
+
+    def __str__(self):
+        return self.alumnos
