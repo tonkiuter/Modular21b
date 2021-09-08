@@ -67,16 +67,48 @@ class HojaUrgencias(models.Model):
         return self.HojaUrgencias
 
 class Vistas(models.Model):
+    Id = models.BigIntegerField()
+    CodigoReporte = models.BigIntegerField()
+    Lugar = models.CharField(max_length = 35)
+    Departamento = models.CharField(max_length = 35)
+    Equipo = models.CharField(max_length = 35)
+    NoEquipo = models.IntegerField()
+    Planta = models.IntegerField()
+    Agente =  models.CharField(max_length = 35)
+    CapacidadLB = models.IntegerField()
+    CapacidadKG = models.IntegerField()
+    Soporte = models.CharField(max_length = 35)
+    UltimaCarga = models.DateField('date published')
+    PH = models.IntegerField()
+    Activado = models.BooleanField()
+    Comentarios = models.CharField(max_length = 150)
+    Existe = models.BooleanField()
 
     def __str__(self):
         return self.Vistas
 
 class RomperCandado(models.model):
+    Id = models.BigIntegerField()
+    CodigoReporte = models.BigIntegerField()
+    NombreAlumno = models.CharField(max_length = 150)
+    CodigoAlumno = models.BigIntegerField()
+    Carrera = model.CharField(max_length = 50)
+    FotoIdF = model.
+    FotoIdB = model.
+    Descripcion = model.CharField(max_length = 255)
 
     def __str__(self):
         return self.RomperCandado
 
 class alumnos(models.model):
+    Codigo = models.BigIntegerField()
+    Nombre = models.CharField(max_length = 50)
+    ApellidoP = models.CharField(max_length = 50)
+    ApellidoM = models.CharField(max_length = 50)
+    Carrera = models.CharField(max_length = 20)
+    Telefono = models.BigIntegerField()
+    Nacimiento = models.DateField('date published')
+    Correo = models.CharField(max_length = 75)
 
     def __str__(self):
         return self.alumnos
