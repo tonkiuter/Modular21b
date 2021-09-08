@@ -93,8 +93,8 @@ class RomperCandado(models.model):
     NombreAlumno = models.CharField(max_length = 150)
     CodigoAlumno = models.BigIntegerField()
     Carrera = model.CharField(max_length = 50)
-    FotoIdF = model.
-    FotoIdB = model.
+    FotoIdF = model.CharField()
+    FotoIdB = model.CharField()
     Descripcion = model.CharField(max_length = 255)
 
     def __str__(self):
