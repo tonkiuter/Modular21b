@@ -92,10 +92,10 @@ class RomperCandado(models.model):
     CodigoReporte = models.BigIntegerField()
     NombreAlumno = models.CharField(max_length = 150)
     CodigoAlumno = models.BigIntegerField()
-    Carrera = model.CharField(max_length = 50)
-    FotoIdF = model.CharField()
-    FotoIdB = model.CharField()
-    Descripcion = model.CharField(max_length = 255)
+    Carrera = models.CharField(max_length = 50)
+    FotoIdF = models.CharField()
+    FotoIdB = models.CharField()
+    Descripcion = models.CharField(max_length = 255)
 
     def __str__(self):
         return self.RomperCandado
@@ -112,3 +112,53 @@ class alumnos(models.model):
 
     def __str__(self):
         return self.alumnos
+
+class PaseSalida(models.model):
+    CodigoReporte = models.BigIntegerField()
+    CodigoAlumno = models.BigIntegerField()
+    FotoIdF = models.CharField(max_length = 60)
+    FotoIdB = models.CharField(max_length = 60)
+    Sello = models.CharField(max_length = 60)
+    Descripcion = models.CharField(max_length= 100)
+    Fecha = models.DateField()
+
+class ActaAdministrativa(models.model):
+    CodigoReporte = models.BigIntegerField()
+    CodigoAlumno = models.BigIntegerField()
+    NoOficio = models.BigIntegerField()
+    Lugar = models.CharField(max_length = 255)
+    NombreAl = models.CharField(max_length = 150)
+    Causa = models.CharField(max_length = 300)
+
+class Users(models.model):
+    Id = models.BigIntegerField()
+    Nombre = models.CharField(max_length = 150)
+    Email = models.EmailField()
+    EmailVer = models.TimeField()
+    Password = models.CharField(max_length = 50)
+    Token = models.CharField(max_length = 100)
+
+class Incidencias(models.model):
+    CodigoReporte = models.BigIntegerField()
+    CodigoAlumno = models.BigIntegerField()
+    FechaHora = models.DateTimeField()
+    Ubicacion = models.CharField(max_length= 255)
+    ObjetosP = models.CharField(max_length= 255)
+    FotoIdF = models.CharField(max_length = 60)
+    FotoIdB = models.CharField(max_length = 60)
+    Estatura = models.DecimalField(decimal_places= 2)
+    Apariencia = models.CharField(max_length= 255)
+    Tez = models.CharField(max_length= 255)
+    Cabello = models.CharField(max_length= 255)
+    Ojos = models.CharField(max_length= 255)
+    Cara = models.CharField(max_length= 255)
+    Boca = models.CharField(max_length= 255)
+    TipoRopa = models.CharField(max_length= 255)
+    Gorra = models.CharField(max_length= 255)
+    EdadAprox = models.IntegerField()
+    Cicatrices = models.CharField(max_length= 255)
+    Tatuajes = models.CharField(max_length= 255)
+    Piercings = models.CharField(max_length= 255)
+    Otra = models.CharField(max_length= 255)
+    Huida = models.CharField(max_length= 255)
+    Observacion = models.CharField(max_length= 255)
