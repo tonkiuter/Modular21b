@@ -67,7 +67,6 @@ class HojaUrgencias(models.Model):
         return self.HojaUrgencias
 
 class Vistas(models.Model):
-    Id = models.BigIntegerField()
     CodigoReporte = models.BigIntegerField()
     Lugar = models.CharField(max_length = 35)
     Departamento = models.CharField(max_length = 35)
@@ -87,20 +86,19 @@ class Vistas(models.Model):
     def __str__(self):
         return self.Vistas
 
-class RomperCandado(models.model):
-    Id = models.BigIntegerField()
+class RomperCandado(models.Model):
     CodigoReporte = models.BigIntegerField()
     NombreAlumno = models.CharField(max_length = 150)
     CodigoAlumno = models.BigIntegerField()
     Carrera = models.CharField(max_length = 50)
-    FotoIdF = models.CharField()
-    FotoIdB = models.CharField()
+    FotoIdF = models.CharField(max_length = 255)
+    FotoIdB = models.CharField(max_length = 255)
     Descripcion = models.CharField(max_length = 255)
 
     def __str__(self):
         return self.RomperCandado
 
-class alumnos(models.model):
+class alumnos(models.Model):
     Codigo = models.BigIntegerField()
     Nombre = models.CharField(max_length = 50)
     ApellidoP = models.CharField(max_length = 50)
@@ -113,7 +111,7 @@ class alumnos(models.model):
     def __str__(self):
         return self.alumnos
 
-class PaseSalida(models.model):
+class PaseSalida(models.Model):
     CodigoReporte = models.BigIntegerField()
     CodigoAlumno = models.BigIntegerField()
     FotoIdF = models.CharField(max_length = 60)
@@ -122,7 +120,7 @@ class PaseSalida(models.model):
     Descripcion = models.CharField(max_length= 100)
     Fecha = models.DateField()
 
-class ActaAdministrativa(models.model):
+class ActaAdministrativa(models.Model):
     CodigoReporte = models.BigIntegerField()
     CodigoAlumno = models.BigIntegerField()
     NoOficio = models.BigIntegerField()
@@ -130,15 +128,14 @@ class ActaAdministrativa(models.model):
     NombreAl = models.CharField(max_length = 150)
     Causa = models.CharField(max_length = 300)
 
-class Users(models.model):
-    Id = models.BigIntegerField()
+class Users(models.Model):
     Nombre = models.CharField(max_length = 150)
     Email = models.EmailField()
     EmailVer = models.TimeField()
     Password = models.CharField(max_length = 50)
     Token = models.CharField(max_length = 100)
 
-class Incidencias(models.model):
+class Incidencias(models.Model):
     CodigoReporte = models.BigIntegerField()
     CodigoAlumno = models.BigIntegerField()
     FechaHora = models.DateTimeField()
@@ -146,7 +143,7 @@ class Incidencias(models.model):
     ObjetosP = models.CharField(max_length= 255)
     FotoIdF = models.CharField(max_length = 60)
     FotoIdB = models.CharField(max_length = 60)
-    Estatura = models.DecimalField(decimal_places= 2)
+    Estatura = models.DecimalField(decimal_places= 2, max_digits=5)
     Apariencia = models.CharField(max_length= 255)
     Tez = models.CharField(max_length= 255)
     Cabello = models.CharField(max_length= 255)
