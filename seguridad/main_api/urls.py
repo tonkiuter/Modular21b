@@ -1,7 +1,8 @@
 from django.urls import path
 
-from . import views
+from .views import SolicitudCamDetail,SolicitudCam
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', SolicitudCam.as_view(), name='listcreate'),
+    path('<int:pk>/', SolicitudCamDetail.as_view(), name='detailcreate'),
 ]
