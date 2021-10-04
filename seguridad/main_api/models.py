@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.db import models
 from django.db.models.fields import CharField
 
@@ -6,7 +7,7 @@ class SolicitudVideoCamaras(models.Model):
     codigoReporte = models.BigIntegerField()
     codigoAlumno = models.BigIntegerField()
     atendio = models.CharField(max_length=30)
-    dateSolicitud = models.DateField('date published')
+    dateSolicitud = models.DateTimeField(default=timezone.now)
     noCamara = models.BigIntegerField()
     horario = models.CharField(max_length=30)
     hecho = models.CharField(max_length=30)
