@@ -120,6 +120,8 @@ class PaseSalida(models.Model):
     Sello = models.CharField(max_length = 60)
     Descripcion = models.CharField(max_length= 100)
     Fecha = models.DateField()
+    def __str__(self):
+        return self.PaseSalida
 
 class ActaAdministrativa(models.Model):
     CodigoReporte = models.BigIntegerField()
@@ -128,6 +130,8 @@ class ActaAdministrativa(models.Model):
     Lugar = models.CharField(max_length = 255)
     NombreAl = models.CharField(max_length = 150)
     Causa = models.CharField(max_length = 300)
+    def __str__(self):
+        return self.ActaAdministrativa
 
 class Users(models.Model):
     Nombre = models.CharField(max_length = 150)
@@ -135,6 +139,8 @@ class Users(models.Model):
     EmailVer = models.TimeField()
     Password = models.CharField(max_length = 50)
     Token = models.CharField(max_length = 100)
+    def __str__(self):
+        return self.Users
 
 class Incidencias(models.Model):
     CodigoReporte = models.BigIntegerField()
@@ -160,3 +166,5 @@ class Incidencias(models.Model):
     Otra = models.CharField(max_length= 255)
     Huida = models.CharField(max_length= 255)
     Observacion = models.CharField(max_length= 255)
+    def __str__(self):
+        return self.Incidencias

@@ -1,8 +1,8 @@
-from .models import EventoSocial, FalloCamara, SolicitudVideoCamaras, Bicicleta
+from .models import EventoSocial, FalloCamara, SolicitudVideoCamaras, Bicicleta, PaseSalida, ActaAdministrativa, Users, Incidencias
 from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework import generics
-from .serializers import BicicletaSerializer, SolicitudCamSerializer, EventoSocialSerializer,FalloCamaraSerializer
+from .serializers import ActaAdministrativaSerializer, BicicletaSerializer, IncidenciasSerializer, PaseSalidaSerializer, SolicitudCamSerializer, EventoSocialSerializer,FalloCamaraSerializer, UsersSerializer
 # Create your views here.
 
 
@@ -41,6 +41,37 @@ class FalloCamaraDetail(generics.RetrieveDestroyAPIView):
     queryset = FalloCamara.objects.all()
     serializer_class = FalloCamaraSerializer
     
-    
+class PaseSalidaList(generics.ListCreateAPIView):
+    queryset = PaseSalida.objects.all()
+    serializer_class = PaseSalidaSerializer
+
+class PaseSalidaDetail(generics.RetrieveDestroyAPIView):
+    queryset = PaseSalida.objects.all()
+    serializer_class = PaseSalidaSerializer
+
+class ActaAdministrativaList(generics.ListCreateAPIView):
+    queryset = ActaAdministrativa.objects.all()
+    serializer_class = ActaAdministrativaSerializer
+
+class ActaAdministrativaDetail(generics.RetrieveDestroyAPIView):
+    queryset = ActaAdministrativa.objects.all()
+    serializer_class = ActaAdministrativaSerializer
+
+class UsersList(generics.ListCreateAPIView):
+    queryset = Users.objects.all()
+    serializer_class = UsersSerializer
+
+class UsersDetail(generics.RetrieveDestroyAPIView):
+    queryset = Users.objects.all()
+    serializer_class = UsersSerializer
+
+class IncidenciasList(generics.ListCreateAPIView):
+    queryset = Incidencias.objects.all()
+    serializer_class = IncidenciasSerializer
+
+class IncidenciasDetail(generics.RetrieveDestroyAPIView):
+    queryset = Incidencias.objects.all()
+    serializer_class = IncidenciasSerializer
+
 def index(request):
     return HttpResponse("Hello, world. You're at the main_api index.")
