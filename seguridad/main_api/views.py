@@ -1,10 +1,9 @@
-from .models import EventoSocial, FalloCamara, SolicitudVideoCamaras, Bicicleta, PaseSalida, ActaAdministrativa, Users, Incidencias
+from .models import EventoSocial, FalloCamara, SolicitudVideoCamaras, Bicicleta, PaseSalida, ActaAdministrativa, Users, Incidencias, Vistas, RomperCandado
 from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework import generics
-from .serializers import ActaAdministrativaSerializer, BicicletaSerializer, IncidenciasSerializer, PaseSalidaSerializer, SolicitudCamSerializer, EventoSocialSerializer,FalloCamaraSerializer, UsersSerializer
+from .serializers import ActaAdministrativaSerializer, BicicletaSerializer, IncidenciasSerializer, PaseSalidaSerializer, SolicitudCamSerializer, EventoSocialSerializer,FalloCamaraSerializer, UsersSerializer, VistasSerializer, RomperCandadoSerializer
 # Create your views here.
-
 
 class SolicitudCam(generics.ListCreateAPIView):
     queryset = SolicitudVideoCamaras.objects.all()
@@ -14,7 +13,6 @@ class SolicitudCamDetail(generics.RetrieveDestroyAPIView):
     queryset = SolicitudVideoCamaras.objects.all()
     serializer_class = SolicitudCamSerializer
     
-    
 class BicicletaList(generics.ListCreateAPIView):
     queryset = Bicicleta.objects.all()
     serializer_class = BicicletaSerializer
@@ -22,7 +20,6 @@ class BicicletaList(generics.ListCreateAPIView):
 class BicicletaDetail(generics.RetrieveDestroyAPIView):
     queryset = SolicitudVideoCamaras.objects.all()
     serializer_class = BicicletaSerializer
-    
 
 class EventoSocialList(generics.ListCreateAPIView):
     queryset = EventoSocial.objects.all()
@@ -31,7 +28,6 @@ class EventoSocialList(generics.ListCreateAPIView):
 class EventoSocialDetail(generics.RetrieveDestroyAPIView):
     queryset = EventoSocial.objects.all()
     serializer_class = EventoSocialSerializer
-    
     
 class FalloCamaraList(generics.ListCreateAPIView):
     queryset = FalloCamara.objects.all()
@@ -72,6 +68,22 @@ class IncidenciasList(generics.ListCreateAPIView):
 class IncidenciasDetail(generics.RetrieveDestroyAPIView):
     queryset = Incidencias.objects.all()
     serializer_class = IncidenciasSerializer
+
+class VistasList(generics.ListCreateAPIView):
+    queryset = Vistas.objects.all()
+    serializer_class = VistasSerializer
+
+class VistasDetail(generics.RetrieveDestroyAPIView):
+    queryset = Vistas.objects.all()
+    serializer_class = VistasSerializer
+
+class RomperCandado(generics.ListCreateAPIView):
+    queryset = RomperCandado.objects.all()
+    serializer_class = RomperCandadoSerializer
+
+class RomperCandadoDetail(generics.RetrieveDestroyAPIView):
+    queryset = RomperCandado.objects.all()
+    serializer_class = RomperCandadoSerializer
 
 def index(request):
     return HttpResponse("Hello, world. You're at the main_api index.")

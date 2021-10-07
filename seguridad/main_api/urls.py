@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import ActaAdministrativaDetail, ActaAdministrativaList, BicicletaDetail, BicicletaList, EventoSocialDetail, EventoSocialList, FalloCamaraDetail, FalloCamaraList, IncidenciasDetail, IncidenciasList, PaseSalidaDetail, PaseSalidaList, SolicitudCamDetail,SolicitudCam,UsersDetail, UsersList
+from .views import ActaAdministrativaDetail, ActaAdministrativaList, BicicletaDetail, BicicletaList, EventoSocialDetail, EventoSocialList, FalloCamaraDetail, FalloCamaraList, IncidenciasDetail, IncidenciasList, PaseSalidaDetail, PaseSalidaList, SolicitudCamDetail,SolicitudCam,UsersDetail, UsersList, VistasDetail, VistasList, RomperCandadoDetail, RomperCandadoList
 
 urlpatterns = [
     path('solCamara', SolicitudCam.as_view(), name='Camaralistcreate'),
@@ -19,4 +19,8 @@ urlpatterns = [
     path('Users/<int:pk>/', UsersDetail.as_view(), name='Usersdetailcreate'),
     path('Incidencias', IncidenciasList.as_view(), name='Incidenciaslistcreate'),
     path('Incidencias/<int:pk>/', IncidenciasDetail.as_view(), name='Incidenciasdetailcreate'),
+    path('Vistas', VistasList.as_view(), name='Vistaslistcreate'),
+    path('Vistas/<int:pk>/', VistasDetail.as_view(), name='Incidenciasdetailcreate'),
+    path('RomperCandado', RomperCandadoList.as_view(), name='RomperCandadolistcreate'),
+    path('RomperCandado/<int:pk>/', RomperCandado.as_view(), name='RomperCandadodetailcreate'),
 ]
