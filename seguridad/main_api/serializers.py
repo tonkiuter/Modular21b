@@ -1,7 +1,6 @@
 from django.db.models import fields
 from rest_framework import serializers 
-from .models import Bicicleta, SolicitudVideoCamaras,EventoSocial,FalloCamara,PaseSalida,ActaAdministrativa,Users,Incidencias
-
+from .models import Bicicleta, SolicitudVideoCamaras,EventoSocial,FalloCamara,PaseSalida,ActaAdministrativa,Users,Incidencias,Vistas, RomperCandado
 
 class SolicitudCamSerializer(serializers.ModelSerializer):
     class Meta:
@@ -41,4 +40,14 @@ class UsersSerializer(serializers.ModelSerializer):
 class IncidenciasSerializer(serializers.ModelSerializer):
     class Meta:
         model = Incidencias
+        fields = '__all__'
+
+class VistasSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Vistas
+        fields = '__all__'
+
+class RomperCandadoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RomperCandado
         fields = '__all__'

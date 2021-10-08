@@ -77,7 +77,7 @@ class VistasDetail(generics.RetrieveDestroyAPIView):
     queryset = Vistas.objects.all()
     serializer_class = VistasSerializer
 
-class RomperCandado(generics.ListCreateAPIView):
+class RomperCandadoList(generics.ListCreateAPIView):
     queryset = RomperCandado.objects.all()
     serializer_class = RomperCandadoSerializer
 

@@ -22,5 +22,5 @@ urlpatterns = [
     path('Vistas', VistasList.as_view(), name='Vistaslistcreate'),
     path('Vistas/<int:pk>/', VistasDetail.as_view(), name='Incidenciasdetailcreate'),
     path('RomperCandado', RomperCandadoList.as_view(), name='RomperCandadolistcreate'),
-    path('RomperCandado/<int:pk>/', RomperCandado.as_view(), name='RomperCandadodetailcreate'),
+    path('RomperCandado/<int:pk>/', RomperCandadoDetail.as_view(), name='RomperCandadodetailcreate'),
 ]
