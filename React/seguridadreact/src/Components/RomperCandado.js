@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-=======
-import axios from 'axios'
->>>>>>> 9849757fcb447ee1833f1b8d9e560017c8e34b5b
+import axios from 'axios';
 
 class RomperCandado extends Component{
     render(){
@@ -16,7 +13,29 @@ class RomperCandado extends Component{
                             Nombre de Alumno: <input class="form-control" type="text" required></input>
                         </div>
                         <div class="col-md">
-                            Carrera: 
+                            Carrera: <input class="form-control" type="text" required></input>
+                        </div>
+                        <div class="col-md">
+                            Codigo: <input class="form-control" type="text" required></input>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            Fecha:
+                        </div>
+                        <div class="col-md">
+                            <p>
+                                Yo: <input class="form-control" type="text" id="disabledTextInput"></input>
+                                <br></br>
+                                autorizo que el personal de seguridad interna de CUCEI, le de apetura
+                                <br></br>
+                                a mi candado que se encuentra en:
+                                <select class="custom-select" required>
+                                    <option selected>Seleccionar...</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </p>
                         </div>
                     </div>
                 </div>
