@@ -5,7 +5,7 @@ import RomperCandado from './Components/RomperCandado';
 function App() {
   return (
     <div className="App">
-      <RomperCandado></RomperCandado>
+      <RomperCandado></RomperCandado> 
     </div>
   );
 }
