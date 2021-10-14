@@ -38,6 +38,7 @@ class RomperCandado extends Component{
                             </p>
                         </div>
                     </div>
+                    <button className='btn btn-primary btn-lg btn-success' href="">Submit</button>
                 </div>
             </form>
         </div>
