@@ -3,8 +3,15 @@ import React from 'react';
 function RomperCandado(){
     return (
         <div>
-            <h1 class="display-3">Pase de Salida/Tarjeton Perdido</h1>,
+            <h1 class="display-3">Pase de Salida/Tarjeton Perdido</h1>
             <form class="needs-validation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md">
+                            Nombre de Alumno: <input class="form-control" type="text" required></input>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     )
