@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
+=======
+import axios from 'axios'
+>>>>>>> 9849757fcb447ee1833f1b8d9e560017c8e34b5b
 
 class RomperCandado extends Component{
     render(){
