@@ -5,7 +5,7 @@ class RomperCandado extends Component{
     render(){
         return (
             <div>
-            <h1 class="display-3">Pase de Salida/Tarjeton Perdido</h1>
+            <h1 class="display-3">Romper Candado</h1>
             <form class="needs-validation">
                 <div class="container">
                     <div class="row">
@@ -29,7 +29,7 @@ class RomperCandado extends Component{
                                 <br></br>
                                 autorizo que el personal de seguridad interna de CUCEI, le de apetura
                                 <br></br>
-                                a mi candado que se encuentra en:
+                                a mi candado que se encuentra en: 
                                 <select class="custom-select" required>
                                     <option selected>Seleccionar...</option>
                                     <option value=""></option>
