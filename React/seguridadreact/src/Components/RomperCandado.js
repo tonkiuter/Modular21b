@@ -11,6 +11,9 @@ function RomperCandado(){
                         <div class="col-md">
                             Nombre de Alumno: <input class="form-control" type="text" required></input>
                         </div>
+                        <div class="col-md">
+                            Carrera: 
+                        </div>
                     </div>
                 </div>
             </form>
