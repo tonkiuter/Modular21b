@@ -2,21 +2,56 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class RomperCandado extends Component{
+    constructor(props) {
+        super(props)
+
+        this.state={
+            id: '',
+            CodigoReporte: '5',
+            NombreAlumno:'',
+            CodigoAlumno:'',
+            Carrera:'',
+            FotoIdF: 'FSASF',
+            FotoIdB: 'SADFAS',
+            Descripcion: 'ALGHAASFGA',
+        }
+    }
+
+    changeHandler = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    submitHandler = e=> {
+        e.preventDefault()
+        console.log(this.state)
+        axios
+            .post('http://127.0.0.1:8000/RomperCandado', this.state)
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
     render(){
+        const { NombreAlumno, Carrera, CodigoAlumno} = this.state
         return (
             <div>
             <h1 className="display-3">Romper Candado</h1>
-            <form className="needs-validation">
-                <div className="container">
+            <form onSubmit={this.submitHandler} className="needs-validation">
+                <div  className="container">
                     <div className="row">
                         <div className="col-md">
-                            Nombre de Alumno: <input className="form-control" type="text" required></input>
+                            Nombre de Alumno: <input className="form-control" type="text" name="NombreAlumno" value={NombreAlumno} onChange={this.changeHandler}></input>
                         </div>
                         <div className="col-md">
-                            Carrera: <input className="form-control" type="text" required></input>
+                            Carrera: <input className="form-control" type="text" name="Carrera" value={Carrera} onChange={this.changeHandler}></input>
                         </div>
                         <div className="col-md">
-                            Codigo: <input className="form-control" type="text" required></input>
+                            Codigo: <input className="form-control" type="text" name="CodigoAlumno" value={CodigoAlumno} onChange={this.changeHandler}></input>
                         </div>
                     </div>
                     <div className="row">
@@ -38,7 +73,7 @@ class RomperCandado extends Component{
                             </p>
                         </div>
                     </div>
-                    <button className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                    <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
                 </div>
             </form>
         </div>
