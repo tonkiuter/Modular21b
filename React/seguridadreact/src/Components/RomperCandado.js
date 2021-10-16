@@ -7,7 +7,7 @@ class RomperCandado extends Component{
 
         this.state={
             id: '',
-            CodigoReporte: '5',
+            CodigoReporte: '6',
             NombreAlumno:'',
             CodigoAlumno:'',
             Carrera:'',
