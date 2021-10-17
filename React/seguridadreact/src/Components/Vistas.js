@@ -51,23 +51,23 @@ class Vistas extends Component{
                     <table className="table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col" colspan = "7">Universidad de Guadalajara</th>
+                                <th scope="col" colSpan = "7">Universidad de Guadalajara</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="col" colspan="7">Centro Universitario de Ciencias Exactas e Ingenierias</th>
+                                <th scope="col" colSpan="7">Centro Universitario de Ciencias Exactas e Ingenierias</th>
                             </tr>
                             <tr>
-                                <th scope="col" colspan="7">Seguridad CUCEI</th>
+                                <th scope="col" colSpan="7">Seguridad CUCEI</th>
                             </tr>
                             <tr>
-                                <th colspan="7">
+                                <th colSpan="7">
                                     <div className="input-group mb-3">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text" id="inputGroup-sizing-default">SUPERVISION Nombre del Modulo y/o Instalacion</span>
                                         </div>
-                                        <label for="validationCustom01"></label>
+                                        <label htmlFor="validationCustom01"></label>
                                         <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required></input>
                                         <div className="invalid-feedback">
                                             Falta Nombre
