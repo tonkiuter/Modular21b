@@ -7,7 +7,6 @@ class FalloCamara extends Component{
 
         this.state = {
             id: '',
-            CodigoReporte: '',
             NoCamara : '',
             Informacion : '',
             IP : '',

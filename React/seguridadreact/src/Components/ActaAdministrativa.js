@@ -7,7 +7,6 @@ class ActaAdministrativa extends Component{
 
         this.state={
             id: '',
-            CodigoReporte: '1',
             CodigoAlumno: '',
             NoOficio: '',
             Lugar: '',
@@ -26,7 +25,7 @@ class ActaAdministrativa extends Component{
         e.preventDefault()
         console.log(this.state)
         axios
-            .post('http://127.0.0.1:8000/ActaAdministrativa', this.state)
+            .post('http://127.0.0.1:8000/actaadministrativa', this.state)
             .then(response => {
                 console.log(response)
             })

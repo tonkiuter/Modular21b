@@ -7,7 +7,6 @@ class Bicicleta extends Component{
 
         this.state = {
             id: '',
-            CodigoReporte: '2',
             CodigoAlumno: '',
             FotoIdF : 'qqqq',
             FotoIdB : 'wwww',

@@ -4,7 +4,6 @@ from django.db.models.fields import CharField
 
 # Create your models here.
 class SolicitudVideoCamaras(models.Model):
-    codigoReporte = models.BigIntegerField()
     codigoAlumno = models.BigIntegerField()
     atendio = models.CharField(max_length=30)
     dateSolicitud = models.DateTimeField(default=timezone.now)
@@ -18,7 +17,6 @@ class SolicitudVideoCamaras(models.Model):
         return self.codigoReporte
     
 class Bicicleta(models.Model):
-    CodigoReporte = models.BigIntegerField()
     CodigoAlumno = models.BigIntegerField()
     FotoIdF = models.CharField(max_length=30)
     FotoIdB = models.CharField(max_length=30)
@@ -28,7 +26,6 @@ class Bicicleta(models.Model):
         return self.CodigoReporte
 
 class EventoSocial(models.Model):
-    CodigoReporte = models.BigIntegerField()
     NombreEvento = models.CharField(max_length=20)
     FechaHora = models.DateField('date published')
     Pronostico = models.CharField(max_length=100)
@@ -46,7 +43,6 @@ class EventoSocial(models.Model):
         return self.CodigoReporte
     
 class FalloCamara(models.Model):
-    CodigoReporte = models.BigIntegerField()
     NoCamara = models.BigIntegerField()
     Informacion = models.CharField(max_length=20)
     IP = models.CharField(max_length=30)
@@ -68,7 +64,6 @@ class HojaUrgencias(models.Model):
         return self.HojaUrgencias
 
 class Vistas(models.Model):
-    CodigoReporte = models.BigIntegerField()
     Lugar = models.CharField(max_length = 35)
     Departamento = models.CharField(max_length = 35)
     Equipo = models.CharField(max_length = 35)
@@ -88,7 +83,6 @@ class Vistas(models.Model):
         return self.Vistas
 
 class RomperCandado(models.Model):
-    CodigoReporte = models.BigIntegerField()
     NombreAlumno = models.CharField(max_length = 150)
     CodigoAlumno = models.BigIntegerField()
     Carrera = models.CharField(max_length = 50)
@@ -113,7 +107,6 @@ class alumnos(models.Model):
         return self.alumnos
 
 class PaseSalida(models.Model):
-    CodigoReporte = models.BigIntegerField()
     CodigoAlumno = models.BigIntegerField()
     FotoIdF = models.CharField(max_length = 60)
     FotoIdB = models.CharField(max_length = 60)
@@ -124,7 +117,6 @@ class PaseSalida(models.Model):
         return self.PaseSalida
 
 class ActaAdministrativa(models.Model):
-    CodigoReporte = models.BigIntegerField()
     CodigoAlumno = models.BigIntegerField()
     NoOficio = models.BigIntegerField()
     Lugar = models.CharField(max_length = 255)
@@ -143,7 +135,6 @@ class Users(models.Model):
         return self.Users
 
 class Incidencias(models.Model):
-    CodigoReporte = models.BigIntegerField()
     CodigoAlumno = models.BigIntegerField()
     FechaHora = models.DateTimeField()
     Ubicacion = models.CharField(max_length= 255)

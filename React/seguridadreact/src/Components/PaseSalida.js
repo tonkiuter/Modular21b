@@ -7,7 +7,6 @@ class PaseSalida extends Component{
 
         this.state={
             id: '',
-            CodigoReporte: '1',
             CodigoAlumno: '',
             FotoIdF: '',
             FotoIdB: '',

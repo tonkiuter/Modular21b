@@ -6,7 +6,6 @@ class Vistas extends Component{
         super(props)
 
         this.state={
-            CodigoReporte: '',
             Lugar: '',
             Departamento:'',
             Equipo:'',
@@ -34,7 +33,7 @@ class Vistas extends Component{
         e.preventDefault()
         console.log(this.state)
         axios
-            .post('http://127.0.0.1:8000/Vistas', this.state)
+            .post('http://127.0.0.1:8000/vistas', this.state)
             .then(response => {
                 console.log(response)
             })
@@ -82,7 +81,7 @@ class Vistas extends Component{
                                 <th colSpan = "2">Comentarios y/o Observaciones</th>
                             </tr>
                             <tr>
-                                <th colSpan = "7" class="table-dark">Seguridad y Proteccion Civil</th>
+                                <th colSpan = "7" className="table-dark">Seguridad y Proteccion Civil</th>
                             </tr>
                             <tr>
                                 <th>Regadera de Emergencia</th>
@@ -290,7 +289,7 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck37">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "2">
+                                <th colSpan = "2">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
@@ -320,7 +319,7 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck41">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "2">
+                                <th colSpan = "2">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
@@ -350,7 +349,7 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck45">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "2">
+                                <th colSpan = "2">
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck46"></input>
                                         <label className="custom-control-label" for="customCheck46">DERECHA</label>
@@ -387,7 +386,7 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck51">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "2">
+                                <th colSpan = "2">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
@@ -417,7 +416,7 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck55">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "2">
+                                <th colSpan = "2">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
@@ -447,7 +446,7 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck59">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "2">
+                                <th colSpan = "2">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
@@ -477,7 +476,7 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck63">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "2">
+                                <th colSpan = "2">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
@@ -507,7 +506,7 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck67">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "2">
+                                <th colSpan = "2">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
@@ -537,7 +536,7 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck71">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "2">
+                                <th colSpan = "2">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
@@ -567,34 +566,34 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck75">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "2">
+                                <th colSpan = "2">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
                             <tr>
                                 <th>Reglamento Interno Visible</th>
-                                <th colspan = "2" className="bg-success">
+                                <th colSpan = "2" className="bg-success">
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck76"></input>
                                         <label className="custom-control-label" for="customCheck76">SI</label>
                                     </div>
                                 </th>
-                                <th colspan = "2" className="bg-danger">
+                                <th colSpan = "2" className="bg-danger">
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck77"></input>
                                         <label className="custom-control-label" for="customCheck77">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "4">
+                                <th colSpan = "4">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
                             <tr>
-                                <th colspan = "7" className="table-dark">General</th>
+                                <th colSpan = "7" className="table-dark">General</th>
                             </tr>
                             <tr>
                                 <th>Agua Corriente</th>
-                                <th colspan = "2"></th>
+                                <th colSpan = "2"></th>
                                 <th className="bg-success">
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck78"></input>
@@ -607,7 +606,7 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck79">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "4">
+                                <th colSpan = "4">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
@@ -637,7 +636,7 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck83">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "2">
+                                <th colSpan = "2">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
@@ -667,13 +666,13 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck87">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "2">
+                                <th colSpan = "2">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
                             <tr>
                                 <th>Drenaje</th>
-                                <th colspan = "2"></th>
+                                <th colSpan = "2"></th>
                                 <th className="bg-success">
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck89"></input>
@@ -686,13 +685,13 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck90">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "4">
+                                <th colSpan = "4">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
                             <tr>
                                 <th>Iluminacion</th>
-                                <th colspan = "2"></th>
+                                <th colSpan = "2"></th>
                                 <th className="bg-success">
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck91"></input>
@@ -705,13 +704,13 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck92">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "4">
+                                <th colSpan = "4">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
                             <tr>
                                 <th>Sistema de Ventilacion/Extraccion Adecuado</th>
-                                <th colspan = "2"></th>
+                                <th colSpan = "2"></th>
                                 <th className="bg-success">
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck93"></input>
@@ -724,16 +723,16 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck94">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "4">
+                                <th colSpan = "4">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
                             <tr>
-                                <th colspan = "7" className="table-dark">Normas para Cumplir</th>
+                                <th colSpan = "7" className="table-dark">Normas para Cumplir</th>
                             </tr>
                             <tr>
                                 <th>NOM 018 STPS (Identificacion de Reactivos)</th>
-                                <th colspan = "2"></th>
+                                <th colSpan = "2"></th>
                                 <th className="bg-success">
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck95"></input>
@@ -746,13 +745,13 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck96">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "4">
+                                <th colSpan = "4">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
                             <tr>
                                 <th>NOM 026 STPS (Señaleticas)</th>
-                                <th colspan = "2"></th>
+                                <th colSpan = "2"></th>
                                 <th className="bg-success">
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck97"></input>
@@ -765,13 +764,13 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck98">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "4">
+                                <th colSpan = "4">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
                             <tr>
                                 <th>NOM 114 STPS (Comunicacion de Riesgos)</th>
-                                <th colspan = "2"></th>
+                                <th colSpan = "2"></th>
                                 <th className="bg-success">
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck99"></input>
@@ -784,13 +783,13 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck100">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "4">
+                                <th colSpan = "4">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
                             <tr>
                                 <th>NOM 052 SEMARNAT (Residuos Peligrosos)</th>
-                                <th colspan = "2"></th>
+                                <th colSpan = "2"></th>
                                 <th className="bg-success">
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck101"></input>
@@ -803,13 +802,13 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck102">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "4">
+                                <th colSpan = "4">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
                             <tr>
                                 <th>NOM-002-2010-STPS, NOM-154-2005-SCFI</th>
-                                <th colspan = "2"></th>
+                                <th colSpan = "2"></th>
                                 <th className="bg-success">
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck103"></input>
@@ -822,7 +821,7 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck104">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "4">
+                                <th colSpan = "4">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>

@@ -7,7 +7,6 @@ class RomperCandado extends Component{
 
         this.state={
             id: '',
-            CodigoReporte: '6',
             NombreAlumno:'',
             CodigoAlumno:'',
             Carrera:'',
@@ -27,7 +26,7 @@ class RomperCandado extends Component{
         e.preventDefault()
         console.log(this.state)
         axios
-            .post('http://127.0.0.1:8000/RomperCandado', this.state)
+            .post('http://127.0.0.1:8000/rompercandado', this.state)
             .then(response => {
                 console.log(response)
             })

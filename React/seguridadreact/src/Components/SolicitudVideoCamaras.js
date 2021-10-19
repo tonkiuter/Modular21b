@@ -30,7 +30,7 @@ class SolicitudVideoCamara extends Component{
         e.preventDefault()
         console.log(this.state)
         axios
-            .post('http://127.0.0.1:8000/solCamara', this.state)
+            .post('http://127.0.0.1:8000/solcamara', this.state)
             .then(response => {
                 console.log(response)
             })

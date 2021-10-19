@@ -7,7 +7,6 @@ class ReporteIncidentes extends Component{
 
         this.state={
             id: '',
-            CodigoReporte: '1',
             CodigoAlumno: '',
             FechaHora:'',
             Ubicacion: '',
@@ -43,7 +42,7 @@ class ReporteIncidentes extends Component{
         e.preventDefault()
         console.log(this.state)
         axios
-            .post('http://127.0.0.1:8000/Incidencias', this.state)
+            .post('http://127.0.0.1:8000/incidencias', this.state)
             .then(response => {
                 console.log(response)
             })
