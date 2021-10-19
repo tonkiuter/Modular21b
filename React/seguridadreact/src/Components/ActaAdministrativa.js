@@ -50,7 +50,7 @@ class ActaAdministrativa extends Component{
                             Nombre Alumno: <input className="form-control" type="text" name="NombreAl" value={NombreAl} onChange={this.changeHandler}></input>
                             </div>
                             <div className="col-md">
-                            NoOficio: <input className="form-control" type="text" name="NoOficio" value={NoOficio} onChange={this.changeHandler}></input>
+                            No. Oficio: <input className="form-control" type="text" name="NoOficio" value={NoOficio} onChange={this.changeHandler}></input>
                             </div>
                             <div className="col-md">
                             Lugar: <input className="form-control" type="text" name="Lugar" value={Lugar} onChange={this.changeHandler}></input>

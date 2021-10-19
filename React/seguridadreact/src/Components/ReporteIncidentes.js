@@ -58,7 +58,7 @@ class ReporteIncidentes extends Component{
         Tatuajes, Piercings, Otra, Huida, Observacion} = this.state
         return (
             <div>
-                <h1 className="display-3">Reporte Incidentes</h1>
+                <h1 className="display-3">Reporte de Incidentes</h1>
                 <form onSubmit={this.submitHandler} className="needs-validation">
                     <div  className="container">
                         <div className="row">

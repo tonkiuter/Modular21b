@@ -40,7 +40,7 @@ class RomperCandado extends Component{
         const { NombreAlumno, Carrera, CodigoAlumno} = this.state
         return (
             <div>
-                <h1 className="display-3">Romper Candado</h1>
+                <h1 className="display-3">Apertura de Candado</h1>
                 <form onSubmit={this.submitHandler} className="needs-validation">
                     <div  className="container">
                         <div className="row">

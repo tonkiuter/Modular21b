@@ -40,7 +40,7 @@ class PaseSalida extends Component{
         const { CodigoAlumno, FotoIdF, FotoIdB, Sello, Descripcion, Fecha} = this.state
         return (
             <div>
-                <h1 className="display-3">Pase Salida</h1>
+                <h1 className="display-3">Pase de Salida</h1>
                 <form onSubmit={this.submitHandler} className="needs-validation">
                     <div  className="container">
                         <div className="row">
