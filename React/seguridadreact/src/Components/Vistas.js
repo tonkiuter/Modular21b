@@ -77,12 +77,12 @@ class Vistas extends Component{
                             </tr>
                             <tr className="table-active">
                                 <th>Puntos de Revision</th>
-                                <th colspan = "2">Señaletica</th>
-                                <th colspan = "2">Cumple</th>
-                                <th colspan = "2">Comentarios y/o Observaciones</th>
+                                <th colSpan = "2">Señaletica</th>
+                                <th colSpan = "2">Cumple</th>
+                                <th colSpan = "2">Comentarios y/o Observaciones</th>
                             </tr>
                             <tr>
-                                <th colspan = "7" class="table-dark">Seguridad y Proteccion Civil</th>
+                                <th colSpan = "7" class="table-dark">Seguridad y Proteccion Civil</th>
                             </tr>
                             <tr>
                                 <th>Regadera de Emergencia</th>
@@ -110,7 +110,7 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck4">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "2">
+                                <th colSpan = "2">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
@@ -140,7 +140,7 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck8">NO</label>
                                     </div>
                                 </th>
-                                <th colspan="2">
+                                <th colSpan="2">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
@@ -170,42 +170,42 @@ class Vistas extends Component{
                                         <label className="custom-control-label" for="customCheck12">NO</label>
                                     </div>
                                 </th>
-                                <th colspan = "2">
+                                <th colSpan = "2">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
                                 </th>
                             </tr>
                             <tr>
-                                <th rowspan = "2">Extintores</th>
-                                <th rowspan = "2" className="bg-success">
+                                <th>Extintores</th>
+                                <th className="bg-success">
                                     <div className="custom-control custom-checkbox">
                                         <input type="checkbox" className="custom-control-input" id="customCheck13"></input>
                                         <label className="custom-control-label" for="customCheck13">SI</label>
                                     </div>
                                 </th>
-                                <th rowspan = "2" className="bg-danger">
-                                    <div className="custom-control custom-checkbox">
-                                        <input type="checkbox" className="custom-control-input" id="customCheck14"></input>
-                                        <label className="custom-control-label" for="customCheck14">NO</label>
-                                    </div>
-                                </th>
-                                <th rowspan = "2" className="bg-success">
-                                    <div className="custom-control custom-checkbox">
-                                        <input type="checkbox" className="custom-control-input" id="customCheck15"></input>
-                                        <label className="custom-control-label" for="customCheck15">SI</label>
-                                    </div>
-                                </th>
-                                <th rowspan = "2" className="bg-danger">
-                                    <div className="custom-control custom-checkbox">
-                                        <input type="checkbox" className="custom-control-input" id="customCheck16"></input>
-                                        <label className="custom-control-label" for="customCheck16">SI</label>
-                                    </div>
-                                </th>
-                                <th colspan = "2">
-                                    PQS 
+                                <th className="bg-danger">
+		                            <div className="custom-control custom-checkbox">
+			                            <input type="checkbox" className="custom-control-input" id="customCheck14"></input>
+			                            <label className="custom-control-label" for="customCheck14">NO</label>
+		                            </div>
+	                            </th>
+	                            <th className="bg-success">
+		                            <div className="custom-control custom-checkbox">
+			                            <input type="checkbox" className="custom-control-input" id="customCheck15"></input>
+			                            <label className="custom-control-label" for="customCheck15">SI</label>
+		                            </div>
+	                            </th>
+	                            <th className="bg-danger">
+		                            <div className="custom-control custom-checkbox">
+			                            <input type="checkbox" className="custom-control-input" id="customCheck16"></input>
+			                            <label className="custom-control-label" for="customCheck16">SI</label>
+		                            </div>
+	                            </th>
+                                <th>
+                                    PQS
                                     <div className="custom-control custom-checkbox custom-control-inline">
-                                        <input type="checkbox" className="custom-control-input" id="customCheck18"></input>
-                                        <label className="custom-control-label" for="customCheck18">1 KG</label>
-                                    </div>
+			                            <input type="checkbox" className="custom-control-input" id="customCheck18"></input>
+			                            <label className="custom-control-label" for="customCheck18">1 KG</label>
+		                            </div>
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck19"></input>
                                         <label className="custom-control-label" for="customCheck19">2 KG</label>
@@ -230,39 +230,39 @@ class Vistas extends Component{
                                         <input type="checkbox" className="custom-control-input" id="customCheck25"></input>
                                         <label className="custom-control-label" for="customCheck25">35 KG</label>
                                     </div>
-                                    <tr>
-                                        <th>
-                                            CO2
-                                            <div className="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" className="custom-control-input" id="customCheck27"></input>
-                                                <label className="custom-control-label" for="customCheck27">5 LBS</label>
-                                            </div>
-                                            <div className="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" className="custom-control-input" id="customCheck28"></input>
-                                                <label className="custom-control-label" for="customCheck28">10 LBS</label>
-                                            </div>
-                                            <div className="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" className="custom-control-input" id="customCheck29"></input>
-                                                <label className="custom-control-label" for="customCheck29">15 LBS</label>
-                                            </div>
-                                        </th>
-                                        <th>
-                                            HFC - 236
-                                            <div className="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" className="custom-control-input" id="customCheck31"></input>
-                                                <label className="custom-control-label" for="customCheck31">2.5 KG</label>
-                                            </div>
-                                            <div className="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" className="custom-control-input" id="customCheck32"></input>
-                                                <label className="custom-control-label" for="customCheck32">4 KG</label>
-                                            </div>
-                                            <div className="custom-control custom-checkbox custom-control-inline">
-                                                <input type="checkbox" className="custom-control-input" id="customCheck33"></input>
-                                                <label className="custom-control-label" for="customCheck33">4.5 KG</label>
-                                            </div>
-                                        </th>
-                                    </tr>
                                 </th>
+                                <tr>
+                                    <th>
+                                        CO2
+                                        <div className="custom-control custom-checkbox custom-control-inline">
+                                            <input type="checkbox" className="custom-control-input" id="customCheck27"></input>
+                                            <label className="custom-control-label" for="customCheck27">5 LBS</label>
+                                        </div>
+                                        <div className="custom-control custom-checkbox custom-control-inline">
+                                            <input type="checkbox" className="custom-control-input" id="customCheck28"></input>
+                                            <label className="custom-control-label" for="customCheck28">10 LBS</label>
+                                        </div>
+                                        <div className="custom-control custom-checkbox custom-control-inline">
+                                            <input type="checkbox" className="custom-control-input" id="customCheck29"></input>
+                                            <label className="custom-control-label" for="customCheck29">15 LBS</label>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        HFC - 236
+                                        <div className="custom-control custom-checkbox custom-control-inline">
+                                            <input type="checkbox" className="custom-control-input" id="customCheck31"></input>
+                                            <label className="custom-control-label" for="customCheck31">2.5 KG</label>
+                                        </div>
+                                        <div className="custom-control custom-checkbox custom-control-inline">
+                                            <input type="checkbox" className="custom-control-input" id="customCheck32"></input>
+                                            <label className="custom-control-label" for="customCheck32">4 KG</label>
+                                        </div>
+                                        <div className="custom-control custom-checkbox custom-control-inline">
+                                            <input type="checkbox" className="custom-control-input" id="customCheck33"></input>
+                                            <label className="custom-control-label" for="customCheck33">4.5 KG</label>
+                                        </div>
+                                    </th>
+                                </tr>
                             </tr>
                             <tr>
                                 <th>Tuberias Identificadas</th>
