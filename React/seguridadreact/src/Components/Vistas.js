@@ -86,9 +86,6 @@ class Vistas extends Component{
                                 <th colSpan = "2">Comentarios y/o Observaciones</th>
                             </tr>
                             <tr>
-                                <th colSpan = "7" className="table-dark">Seguridad y Proteccion Civil</th>
-                            </tr>
-                            <tr>
                                 <th>Regadera de Emergencia</th>
                                 <th className="bg-success">
                                     {['checkbox'].map((type) => (
@@ -356,14 +353,6 @@ class Vistas extends Component{
                                     ))}
                                 </th>
                                 <th colSpan = "2">
-                                    <div className="custom-control custom-checkbox custom-control-inline">
-                                        <input type="checkbox" className="custom-control-input" id="customCheck46"></input>
-                                        <label className="custom-control-label" for="customCheck46">DERECHA</label>
-                                    </div>
-                                    <div className="custom-control custom-checkbox custom-control-inline">
-                                        <input type="checkbox" className="custom-control-input" id="customCheck47"></input>
-                                        <label className="custom-control-label" for="customCheck47">IZQUIERDA</label>
-                                    </div>
                                     {['checkbox'].map((type) => (
                                         <div key={`inline-${type}`} className="mb-3">
                                              <Form.Check inline label="DERECHA" name="group32" type={type} id={`inline-${type}-1`}/>
@@ -612,18 +601,6 @@ class Vistas extends Component{
                             </tr>
                             <tr>
                                 <th>Reglamento Interno Visible</th>
-                                <th colSpan = "2" className="bg-success">
-                                    <div className="custom-control custom-checkbox custom-control-inline">
-                                        <input type="checkbox" className="custom-control-input" id="customCheck76"></input>
-                                        <label className="custom-control-label" for="customCheck76">SI</label>
-                                    </div>
-                                </th>
-                                <th colSpan = "2" className="bg-danger">
-                                    <div className="custom-control custom-checkbox custom-control-inline">
-                                        <input type="checkbox" className="custom-control-input" id="customCheck77"></input>
-                                        <label className="custom-control-label" for="customCheck77">NO</label>
-                                    </div>
-                                </th>
                                 <th colSpan="2"></th>
                                 <th className="bg-success">
                                     {['checkbox'].map((type) => (
