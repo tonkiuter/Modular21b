@@ -45,7 +45,7 @@ class Vistas extends Component{
     }
 
     render(){
-        const { } = this.state
+        const { Lugar, Departamento, Equipo, NoEquipo, Planta, Agente, CapaciddadKG, CapacidadLB, Soporte, UltimaCarga, PH, Activado, Comentarios, Existe} = this.state
         return (
             <div>
                 <Form onSubmit={this.submitHandler} className="needs-validation">

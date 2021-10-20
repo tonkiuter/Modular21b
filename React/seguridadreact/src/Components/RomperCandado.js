@@ -36,7 +36,7 @@ class RomperCandado extends Component{
     }
 
     render(){
-        const { NombreAlumno, Carrera, CodigoAlumno} = this.state
+        const { NombreAlumno, Carrera, CodigoAlumno, Descripcion} = this.state
         return (
             <div>
                 <h1 className="display-3">Apertura de Candado</h1>
