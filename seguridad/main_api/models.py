@@ -59,6 +59,7 @@ class FalloCamara(models.Model):
         return self.CodigoReporte
         
 class HojaUrgencias(models.Model):
+    
 
     def __str__(self):
         return self.HojaUrgencias
