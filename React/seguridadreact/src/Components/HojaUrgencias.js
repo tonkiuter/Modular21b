@@ -84,7 +84,7 @@ class HojaUrgencias extends Component{
     }
 
     render(){
-        const{}
+        const{ Fecha, Nombre, Edad, Adscripcion, Codigo, Cargo, NoTelefono, CUCEI, Prepa12, VOCA, POLI, CDU, Exterior, Ubicacion, TrasladoCUCEI, IMSS, ISSSTE, SMM, CRM, PRIVADO, SeNiega, NoAmerita, Padecimiento, Diabetes, DiabetesDiagnostico, DiabetesTratamiento, Hipertension, HipertensionDiagnostico, HipertensionTratamiento, Epilepsia, EpilepsiaDiagnostico, EpilepsiaTratamiento, Asma, AsmaDiagnostico, AsmaTratamiento, Cirugias, Alergias, Sangre, TensionArterial, FC, FR, Temperatura, Saturacion, Glucosa, EscalaGlasgow, Neurologico, CabezaCuello, Cardiopulmonar, Abdomen, Extremidades, Diagnostico, Condicion, PronostioS, Tratamiento, } = this.state
         return(
             <div>
                 <Form className="needs-validation"> 
@@ -94,7 +94,7 @@ class HojaUrgencias extends Component{
                                 <p className="text-right">Fecha:</p>
                             </div>
                         </div>
-                        
+
                     </div>
                 </Form>
             </div>
