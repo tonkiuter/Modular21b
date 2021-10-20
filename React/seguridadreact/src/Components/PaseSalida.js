@@ -47,10 +47,10 @@ class PaseSalida extends Component{
                             Codigo Alumno: <input className="form-control" type="text" name="CodigoAlumno" value={CodigoAlumno} onChange={this.changeHandler}></input>
                             </div>
                             <div className="col-md">
-                            Foto ID frente: <input className="form-control" type="text" name="FotoIdF" value={FotoIdF} onChange={this.changeHandler}></input>
+                            Foto ID frente: <input className="form-control" type="file" name="FotoIdF" value={FotoIdF} onChange={this.changeHandler}></input>
                             </div>
                             <div className="col-md">
-                            Foto Id detras: <input className="form-control" type="text" name="FotoIdB" value={FotoIdB} onChange={this.changeHandler}></input>
+                            Foto Id detras: <input className="form-control" type="file" name="FotoIdB" value={FotoIdB} onChange={this.changeHandler}></input>
                             </div>
                             <div className="col-md">
                             Sello: <input className="form-control" type="text" name="Sello" value={Sello} onChange={this.changeHandler}></input>
