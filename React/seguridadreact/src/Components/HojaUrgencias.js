@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Form } from "react-bootstrap";
 
 class HojaUrgencias extends Component{
     constructor(props){
@@ -85,7 +86,18 @@ class HojaUrgencias extends Component{
     render(){
         const{}
         return(
-
+            <div>
+                <Form className="needs-validation"> 
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md">
+                                <p className="text-right">Fecha:</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </Form>
+            </div>
         )
     }
 }
