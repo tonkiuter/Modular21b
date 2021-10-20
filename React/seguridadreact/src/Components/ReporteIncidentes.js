@@ -8,7 +8,7 @@ class ReporteIncidentes extends Component{
         this.state={
             id: '',
             CodigoAlumno: '',
-            FechaHora:'',
+            FechaHora: '',
             Ubicacion: '',
             ObjetosP: '',
             FotoIdF: '',

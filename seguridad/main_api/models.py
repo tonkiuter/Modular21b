@@ -109,11 +109,11 @@ class alumnos(models.Model):
 
 class PaseSalida(models.Model):
     CodigoAlumno = models.BigIntegerField()
-    FotoIdF = models.CharField(max_length = 60)
-    FotoIdB = models.CharField(max_length = 60)
+    FotoIdF = models.ImageField()
+    FotoIdB = models.ImageField()
     Sello = models.CharField(max_length = 60)
     Descripcion = models.CharField(max_length= 100)
-    Fecha = models.DateField()
+    Fecha = models.DateField(auto_now_add=True)
     def __str__(self):
         return self.PaseSalida
 
@@ -137,7 +137,7 @@ class Users(models.Model):
 
 class Incidencias(models.Model):
     CodigoAlumno = models.BigIntegerField()
-    FechaHora = models.DateTimeField()
+    FechaHora = models.DateTimeField(auto_now=True)
     Ubicacion = models.CharField(max_length= 255)
     ObjetosP = models.CharField(max_length= 255)
     FotoIdF = models.CharField(max_length = 60)
