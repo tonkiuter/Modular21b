@@ -86,12 +86,9 @@ class Vistas extends Component{
                                 <th colSpan = "2">Comentarios y/o Observaciones</th>
                             </tr>
                             <tr>
-<<<<<<< Updated upstream
                                 <th colSpan = "7" className="table-dark">Seguridad y Proteccion Civil</th>
                             </tr>
                             <tr>
-=======
->>>>>>> Stashed changes
                                 <th>Regadera de Emergencia</th>
                                 <th className="bg-success">
                                     {['checkbox'].map((type) => (
@@ -359,7 +356,6 @@ class Vistas extends Component{
                                     ))}
                                 </th>
                                 <th colSpan = "2">
-<<<<<<< Updated upstream
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck46"></input>
                                         <label className="custom-control-label" for="customCheck46">DERECHA</label>
@@ -368,14 +364,12 @@ class Vistas extends Component{
                                         <input type="checkbox" className="custom-control-input" id="customCheck47"></input>
                                         <label className="custom-control-label" for="customCheck47">IZQUIERDA</label>
                                     </div>
-=======
                                     {['checkbox'].map((type) => (
                                         <div key={`inline-${type}`} className="mb-3">
                                              <Form.Check inline label="DERECHA" name="group32" type={type} id={`inline-${type}-1`}/>
                                             <Form.Check inline label="IZQUIERDA" name="group32" type={type} id={`inline-${type}-1`}/>
                                         </div>
                                     ))}
->>>>>>> Stashed changes
                                 </th>
                             </tr>
                             <tr>
@@ -618,7 +612,6 @@ class Vistas extends Component{
                             </tr>
                             <tr>
                                 <th>Reglamento Interno Visible</th>
-<<<<<<< Updated upstream
                                 <th colSpan = "2" className="bg-success">
                                     <div className="custom-control custom-checkbox custom-control-inline">
                                         <input type="checkbox" className="custom-control-input" id="customCheck76"></input>
@@ -630,7 +623,7 @@ class Vistas extends Component{
                                         <input type="checkbox" className="custom-control-input" id="customCheck77"></input>
                                         <label className="custom-control-label" for="customCheck77">NO</label>
                                     </div>
-=======
+                                </th>
                                 <th colSpan="2"></th>
                                 <th className="bg-success">
                                     {['checkbox'].map((type) => (
@@ -645,7 +638,6 @@ class Vistas extends Component{
                                             <Form.Check inline label="NO" name="group62" type={type} id={`inline-${type}-1`}/>
                                         </div>
                                     ))}
->>>>>>> Stashed changes
                                 </th>
                                 <th colSpan = "4">
                                     <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></input>
