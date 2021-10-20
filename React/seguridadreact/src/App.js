@@ -8,6 +8,7 @@ import PaseSalida from './Components/PaseSalida';
 import ReporteIncidentes from './Components/ReporteIncidentes';
 import Bicicleta from './Components/Bicicleta';
 import EventoSocial from './Components/EventoSocial';
+import ReporteIncidentesView from './Components/ReporteIncidentesView'
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       <ActaAdministrativa></ActaAdministrativa>
       <PaseSalida></PaseSalida>
       <ReporteIncidentes></ReporteIncidentes>
-      
+      <ReporteIncidentesView></ReporteIncidentesView>
     </div>
   );
 }
