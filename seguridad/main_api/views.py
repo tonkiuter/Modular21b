@@ -1,8 +1,8 @@
-from .models import EventoSocial, FalloCamara, SolicitudVideoCamaras, Bicicleta, PaseSalida, ActaAdministrativa, Users, Incidencias, Vistas, RomperCandado
+from .models import EventoSocial, FalloCamara, SolicitudVideoCamaras, Bicicleta, PaseSalida, ActaAdministrativa, Users, Incidencias, Vistas, RomperCandado, HojaUrgencias
 from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework import generics
-from .serializers import ActaAdministrativaSerializer, BicicletaSerializer, IncidenciasSerializer, PaseSalidaSerializer, SolicitudCamSerializer, EventoSocialSerializer,FalloCamaraSerializer, UsersSerializer, VistasSerializer, RomperCandadoSerializer
+from .serializers import ActaAdministrativaSerializer, BicicletaSerializer, IncidenciasSerializer, PaseSalidaSerializer, SolicitudCamSerializer, EventoSocialSerializer,FalloCamaraSerializer, UsersSerializer, VistasSerializer, RomperCandadoSerializer, HojaUrgenciasSerializer
 # Create your views here.
 
 class SolicitudCam(generics.ListCreateAPIView):
@@ -84,6 +84,14 @@ class RomperCandadoList(generics.ListCreateAPIView):
 class RomperCandadoDetail(generics.RetrieveDestroyAPIView):
     queryset = RomperCandado.objects.all()
     serializer_class = RomperCandadoSerializer
+
+class HojaUrgenciasList(generics.ListCreateAPIView):
+    queryset = HojaUrgencias.objects.all()
+    serializer_class = HojaUrgenciasSerializer
+
+class HojaUrgenciasDetail(generics.ListCreateAPIView):
+    queryset = HojaUrgencias.objects.all()
+    serializer_class = HojaUrgenciasSerializer
 
 def index(request):
     return HttpResponse("Hello, world. You're at the main_api index.")
