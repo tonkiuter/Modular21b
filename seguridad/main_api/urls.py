@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import ActaAdministrativaDetail, ActaAdministrativaList, BicicletaDetail, BicicletaList, EventoSocialDetail, EventoSocialList, FalloCamaraDetail, FalloCamaraList, IncidenciasDetail, IncidenciasList, PaseSalidaDetail, PaseSalidaList, SolicitudCamDetail,SolicitudCam,UsersDetail, UsersList, VistasDetail, VistasList, RomperCandadoDetail, RomperCandadoList
+from .views import ActaAdministrativaDetail, ActaAdministrativaList, BicicletaDetail, BicicletaList, EventoSocialDetail, EventoSocialList, FalloCamaraDetail, FalloCamaraList, IncidenciasDetail, IncidenciasList, PaseSalidaDetail, PaseSalidaList, SolicitudCamDetail,SolicitudCam,UsersDetail, UsersList, VistasDetail, VistasList, RomperCandadoDetail, RomperCandadoList, HojaUrgenciasDetail, HojaUrgenciasList
 
 urlpatterns = [
     path('solcamara', SolicitudCam.as_view(), name='Camaralistcreate'),
@@ -20,7 +20,9 @@ urlpatterns = [
     path('incidencias', IncidenciasList.as_view(), name='Incidenciaslistcreate'),
     path('incidencias/<int:pk>/', IncidenciasDetail.as_view(), name='Incidenciasdetailcreate'),
     path('vistas', VistasList.as_view(), name='Vistaslistcreate'),
-    path('vistas/<int:pk>/', VistasDetail.as_view(), name='Incidenciasdetailcreate'),
+    path('vistas/<int:pk>/', VistasDetail.as_view(), name='Vistasdetailcreate'),
     path('rompercandado', RomperCandadoList.as_view(), name='RomperCandadolistcreate'),
     path('rompercandado/<int:pk>/', RomperCandadoDetail.as_view(), name='RomperCandadodetailcreate'),
+    path('hojaurgencias', HojaUrgenciasList.as_view(), name='HojaUrgenciaslistcreate'),
+    path('hojaurgencias/<int:pk>/', HojaUrgenciasDetail.as_view(), name='HojaUrgenciasdetailcreate')
 ]
