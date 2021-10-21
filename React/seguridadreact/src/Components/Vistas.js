@@ -219,7 +219,7 @@ class Vistas extends Component{
 	                            </th>
                                 <th colSpan="2">
                                     PQS
-                                    {['checkbox'].map((type) => (
+                                    {['radio'].map((type) => (
                                         <div key={`inline-${type}`} className="mb-3">
                                             <Form.Check inline label="1 KG" name="group17" type={type} id={`inline-${type}-1`}/>
                                             <Form.Check inline label="2 KG" name="group17" type={type} id={`inline-${type}-1`}/>
@@ -233,7 +233,7 @@ class Vistas extends Component{
                                     <tr>
                                         <th>
                                             CO2
-                                            {['checkbox'].map((type) => (
+                                            {['radio'].map((type) => (
                                                 <div key={`inline-${type}`} className="mb-3">
                                                     <Form.Check inline label="5 LBS" name="group18" type={type} id={`inline-${type}-1`}/>
                                                     <Form.Check inline label="10 LBS" name="group18" type={type} id={`inline-${type}-1`}/>
@@ -243,7 +243,7 @@ class Vistas extends Component{
                                         </th>
                                         <th>
                                             HFC - 236
-                                            {['checkbox'].map((type) => (
+                                            {['radio'].map((type) => (
                                                 <div key={`inline-${type}`} className="mb-3">
                                                     <Form.Check inline label="2.5 KG" name="group19" type={type} id={`inline-${type}-1`}/>
                                                     <Form.Check inline label="4 KG" name="group19" type={type} id={`inline-${type}-1`}/>
@@ -353,7 +353,7 @@ class Vistas extends Component{
                                     ))}
                                 </th>
                                 <th colSpan = "2">
-                                    {['checkbox'].map((type) => (
+                                    {['radio'].map((type) => (
                                         <div key={`inline-${type}`} className="mb-3">
                                              <Form.Check inline label="DERECHA" name="group32" type={type} id={`inline-${type}-1`}/>
                                             <Form.Check inline label="IZQUIERDA" name="group32" type={type} id={`inline-${type}-1`}/>
