@@ -12,7 +12,7 @@ class CredencialPerdida extends Component{
             Codigo: '',
             FechaYHora: '',
             FotoIneFrente: '',
-            FotoIneTrasera: ''
+            FotoIneTrasera: '',
         }
     }
 
@@ -26,7 +26,7 @@ class CredencialPerdida extends Component{
         e.preventDefault()
         console.log(this.state)
         axios
-            .post('http://127.0.0.1:8000/rompercandado', this.state)
+            .post('http://127.0.0.1:8000/credencialperdida', this.state)
             .then(response => {
                 console.log(response)
             })

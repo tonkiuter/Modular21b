@@ -12,7 +12,8 @@ class RomperCandado extends Component{
             Carrera:'',
             FotoIdF: 'FSASF',
             FotoIdB: 'SADFAS',
-            Descripcion: 'ALGHAASFGA',
+            Descripcion: '',
+            Fecha: '',
         }
     }
 
@@ -36,7 +37,7 @@ class RomperCandado extends Component{
     }
 
     render(){
-        const { NombreAlumno, Carrera, CodigoAlumno, Descripcion} = this.state
+        const { NombreAlumno, Carrera, CodigoAlumno, Descripcion, Fecha} = this.state
         return (
             <div>
                 <h1 className="display-3">Apertura de Candado</h1>
@@ -55,10 +56,10 @@ class RomperCandado extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                Fecha:
+                                Fecha: <input className="form-control" type="datetime-local" name="Fecha" value={Fecha} onChange={this.changeHandler}></input>
                             </div>
                             <div className="col-md">
-                                Descripcion: <textarea className="form-control" name="Descripcion"></textarea>
+                                Descripcion: <textarea className="form-control" name="Descripcion" value={Descripcion} onChange={this.changeHandler}></textarea>
                             </div>
                         </div>
                         <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>

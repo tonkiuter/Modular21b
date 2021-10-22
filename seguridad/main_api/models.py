@@ -143,6 +143,7 @@ class RomperCandado(models.Model):
     FotoIdF = models.CharField(max_length = 255)
     FotoIdB = models.CharField(max_length = 255)
     Descripcion = models.CharField(max_length = 255)
+    Fecha = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.RomperCandado
@@ -227,9 +228,11 @@ class CredencialPerdida(models.Model):
 
 class ReporteIncidentesMatPel(models.Model):
     Fecha = models.DateTimeField(auto_now=True)
+    Ubicacion = models.CharField(max_length=150)
     Fenomeno = models.CharField(max_length=100)
     Descripcion = models.CharField(max_length=250)
     Evaluacion = models.CharField(max_length=250)
+    Tareas = models.CharField(max_length = 250)
     Recursos = models.CharField(max_length=250)
     Estrategias = models.CharField(max_length=250)
 
