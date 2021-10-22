@@ -1,8 +1,8 @@
-from .models import EventoSocial, FalloCamara, SolicitudVideoCamaras, Bicicleta, PaseSalida, ActaAdministrativa, Users, Incidencias, Vistas, RomperCandado, HojaUrgencias
+from .models import EventoSocial, FalloCamara, SolicitudVideoCamaras, Bicicleta, PaseSalida, ActaAdministrativa, Users, Incidencias, Vistas, RomperCandado, HojaUrgencias, CredencialPerdida, ReporteIncidentesMatPel
 from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework import generics
-from .serializers import ActaAdministrativaSerializer, BicicletaSerializer, IncidenciasSerializer, PaseSalidaSerializer, SolicitudCamSerializer, EventoSocialSerializer,FalloCamaraSerializer, UsersSerializer, VistasSerializer, RomperCandadoSerializer, HojaUrgenciasSerializer
+from .serializers import ActaAdministrativaSerializer, BicicletaSerializer, IncidenciasSerializer, PaseSalidaSerializer, SolicitudCamSerializer, EventoSocialSerializer,FalloCamaraSerializer, UsersSerializer, VistasSerializer, RomperCandadoSerializer, HojaUrgenciasSerializer, CredencialPerdidaSerializer, ReporteIncidentesMatPelSerializer
 # Create your views here.
 
 class SolicitudCam(generics.ListCreateAPIView):
@@ -92,6 +92,22 @@ class HojaUrgenciasList(generics.ListCreateAPIView):
 class HojaUrgenciasDetail(generics.ListCreateAPIView):
     queryset = HojaUrgencias.objects.all()
     serializer_class = HojaUrgenciasSerializer
+
+class CredencialPerdidaList(generics.ListCreateAPIView):
+    queryset = CredencialPerdida.objects.all()
+    serializer_class = CredencialPerdidaSerializer
+
+class CredencialPerdidaDetail(generics.ListCreateAPIView):
+    queryset = CredencialPerdida.objects.all()
+    serializer_class = CredencialPerdidaSerializer
+
+class ReporteIncidentesMatPelList(generics.ListCreateAPIView):
+    queryset = ReporteIncidentesMatPel.objects.all()
+    serializer_class = ReporteIncidentesMatPelSerializer
+
+class ReporteIncidentesMatPelDetail(generics.ListCreateAPIView):
+    queryset = ReporteIncidentesMatPel.objects.all()
+    serializer_class = ReporteIncidentesMatPelSerializer
 
 def index(request):
     return HttpResponse("Hello, world. You're at the main_api index.")

@@ -58,18 +58,7 @@ class RomperCandado extends Component{
                                 Fecha:
                             </div>
                             <div className="col-md">
-                                <p>
-                                    Yo: <input className="form-control" type="text" id="disabledTextInput"></input>
-                                    <br></br>
-                                    autorizo que el personal de seguridad interna de CUCEI, le de apetura
-                                    <br></br>
-                                    a mi candado que se encuentra en: 
-                                    <select className="custom-select" required>
-                                        <option defaultValue>Seleccionar...</option>
-                                        <option value=""></option>
-                                        <option value=""></option>
-                                    </select>
-                                </p>
+                                Descripcion: <textarea className="form-control" name="Descripcion"></textarea>
                             </div>
                         </div>
                         <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>

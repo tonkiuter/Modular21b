@@ -1,6 +1,6 @@
 from django.db.models import fields
 from rest_framework import serializers 
-from .models import Bicicleta, SolicitudVideoCamaras,EventoSocial,FalloCamara,PaseSalida,ActaAdministrativa,Users,Incidencias,Vistas, RomperCandado, HojaUrgencias
+from .models import Bicicleta, SolicitudVideoCamaras,EventoSocial,FalloCamara,PaseSalida,ActaAdministrativa,Users,Incidencias,Vistas, RomperCandado, HojaUrgencias, CredencialPerdida, ReporteIncidentesMatPel
 
 class SolicitudCamSerializer(serializers.ModelSerializer):
     class Meta:
@@ -57,3 +57,12 @@ class HojaUrgenciasSerializer(serializers.ModelSerializer):
         model = HojaUrgencias
         fields = '__all__'
         
+class CredencialPerdidaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CredencialPerdida
+        fields = '__all__'
+
+class ReporteIncidentesMatPelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ReporteIncidentesMatPel
+        fields = '__all__'

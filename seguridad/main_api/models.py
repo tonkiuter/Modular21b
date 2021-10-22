@@ -213,3 +213,24 @@ class Incidencias(models.Model):
     Observacion = models.CharField(max_length= 255)
     def __str__(self):
         return self.Incidencias
+
+class CredencialPerdida(models.Model):
+    NombreA = models.CharField(max_length=150)
+    Carrera = models.CharField(max_length=100)
+    Codigo = models.BigIntegerField()
+    FechaYHora = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.CredencialPerdida
+
+class ReporteIncidentesMatPel(models.Model):
+    Fecha = models.DateTimeField(auto_now=True)
+    Fenomeno = models.CharField(max_length=100)
+    Descripcion = models.CharField(max_length=250)
+    Evaluacion = models.CharField(max_length=250)
+    Recursos = models.CharField(max_length=250)
+    Estrategias = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.ReporteIncidentesMatPel 
+

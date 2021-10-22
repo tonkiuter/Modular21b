@@ -69,7 +69,7 @@ class Vistas extends Component{
                                             <span className="input-group-text" id="inputGroup-sizing-default">SUPERVISION Nombre del Modulo y/o Instalacion</span>
                                         </div>
                                         <label htmlFor="validationCustom01"></label>
-                                        <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required></input>
+                                        <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required name="Lugar"></input>
                                         <div className="invalid-feedback">
                                             Falta Nombre
                                         </div>
