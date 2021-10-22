@@ -9,6 +9,7 @@ import Bicicleta from './Components/Bicicleta';
 import EventoSocial from './Components/EventoSocial';
 import ReporteIncidentesView from './Components/ReporteIncidentesView'
 import HojaUrgencias from './Components/HojaUrgencias';
+import CredencialPerdida from './Components/CredencialPerdida';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <ReporteIncidentes></ReporteIncidentes>
       <ReporteIncidentesView></ReporteIncidentesView>
       <HojaUrgencias></HojaUrgencias>
+      <CredencialPerdida></CredencialPerdida>
     </div>
   );
 }

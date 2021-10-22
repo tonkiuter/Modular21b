@@ -219,6 +219,8 @@ class CredencialPerdida(models.Model):
     Carrera = models.CharField(max_length=100)
     Codigo = models.BigIntegerField()
     FechaYHora = models.DateTimeField(auto_now=True)
+    FotoIneFrente = models.CharField(max_length=100)
+    FotoIneTrasera = models.CharField(max_length=100)
 
     def __str__(self):
         return self.CredencialPerdida
