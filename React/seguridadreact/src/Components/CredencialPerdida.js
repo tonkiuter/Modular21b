@@ -58,6 +58,12 @@ class CredencialPerdida extends Component{
                                 Fecha Y Hora: <input className="form-control" type="datetime-local" name="FechaYHora" value={FechaYHora} onChange={this.changeHandler}></input>
                             </div>
                         </div>
+                        <div className="col-md">
+                            Foto ID frente: <input className="form-control" type="file" name="FotoIneFrente" value={FotoIneFrente} onChange={this.changeHandler}></input>
+                            </div>
+                            <div className="col-md">
+                            Foto Id detras: <input className="form-control" type="file" name="FotoIneTrasera" value={FotoIneTrasera} onChange={this.changeHandler}></input>
+                            </div>
                         <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
                     </div>
                 </Form>

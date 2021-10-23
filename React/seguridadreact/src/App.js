@@ -11,6 +11,11 @@ import ReporteIncidentesView from './Components/ReporteIncidentesView'
 import HojaUrgencias from './Components/HojaUrgencias';
 import CredencialPerdida from './Components/CredencialPerdida';
 import IncidentesMatPel from './Components/IncidentesMatPel';
+import ActaAdministrativaView from './Components/ActaAdministrativaView';
+import PaseSalidaView from './Components/PaseSalidaView';
+import RomperCandadoView from './Components/RomperCandadoView';
+import CredencialPerdidaView from './Components/CredencialPerdidaView';
+import IncidentesMatPelView from './Components/IncidentesMatPelView';
 
 function App() {
   return (
@@ -18,13 +23,18 @@ function App() {
       <Bicicleta></Bicicleta>
       <EventoSocial></EventoSocial>
       <RomperCandado></RomperCandado>
+      <RomperCandadoView></RomperCandadoView>
       <ActaAdministrativa></ActaAdministrativa>
+      <ActaAdministrativaView></ActaAdministrativaView>
       <PaseSalida></PaseSalida>
+      <PaseSalidaView></PaseSalidaView>
       <ReporteIncidentes></ReporteIncidentes>
       <ReporteIncidentesView></ReporteIncidentesView>
       <HojaUrgencias></HojaUrgencias>
       <CredencialPerdida></CredencialPerdida>
+      <CredencialPerdidaView></CredencialPerdidaView>
       <IncidentesMatPel></IncidentesMatPel>
+      <IncidentesMatPelView></IncidentesMatPelView>
     </div>
   );
 }

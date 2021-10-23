@@ -98,10 +98,10 @@ class HojaUrgencias extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                Nombre: <input className="form-control" type="text" required name="Nombre" value={Nombre} onChange={this.changeHandler} required></input>
+                                Nombre: <input className="form-control" type="text" name="Nombre" value={Nombre} onChange={this.changeHandler} required></input>
                             </div>
                             <div className="col-md">
-                                Edad: <input class="form-control" type="text" required name="Edad" value={Edad} onChange={this.changeHandler} required></input>
+                                Edad: <input className="form-control" type="text" name="Edad" value={Edad} onChange={this.changeHandler} required></input>
                             </div>
                         </div>
                         <div className="row">
@@ -341,10 +341,10 @@ class HojaUrgencias extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                Saturacion: <input class="form-control" type="text" name="Saturacion" value={Saturacion} onChange={this.changeHandler}></input>
+                                Saturacion: <input className="form-control" type="text" name="Saturacion" value={Saturacion} onChange={this.changeHandler}></input>
                             </div>
                             <div className="col-md">
-                                Glucosa: <input class="form-control" type="text" name="Glucosa" value={Glucosa} onChange={this.changeHandler}></input>
+                                Glucosa: <input className="form-control" type="text" name="Glucosa" value={Glucosa} onChange={this.changeHandler}></input>
                             </div>
                             <div className="col-md">
                                 Escala Glasgow: <input className="form-control" type="text" name="EscalaGlasgow" value={EscalaGlasgow} onChange={this.changeHandler}></input>

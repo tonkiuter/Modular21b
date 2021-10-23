@@ -1,8 +1,10 @@
+//Pendiente
+/*
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
 
-class ReporteIncidentesView extends Component {
+class HojaUrgenciasView extends Component {
     constructor(props){
         super(props)
 
@@ -12,7 +14,7 @@ class ReporteIncidentesView extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://127.0.0.1:8000/incidencias')
+        axios.get('http://127.0.0.1:8000/hojaurgencias')
         .then(response => {
             console.log(response)
             this.setState({IncidentesLista: response.data})
@@ -29,11 +31,11 @@ class ReporteIncidentesView extends Component {
             <Table border='1'>
                 <thead>
                     <tr>
-                        <th>Codigo del Alumno</th>
-                        <th>Fecha y hora</th>
-                        <th>Ubicacion</th>
-                        <th>Objetos perdidos</th>
-                        <th>Foto id de frente</th>
+                        <th>Fecha</th>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Adscripcion</th>
+                        <th>Codigo</th>
                         <th>Foto id detras</th>
                         <th>Estatura</th>
                         <th>Apariencia</th>
@@ -65,4 +67,5 @@ class ReporteIncidentesView extends Component {
     }
 }
 
-export default ReporteIncidentesView
+export default HojaUrgenciasView
+*/

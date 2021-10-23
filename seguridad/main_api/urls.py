@@ -25,8 +25,8 @@ urlpatterns = [
     path('rompercandado/<int:pk>/', RomperCandadoDetail.as_view(), name='RomperCandadodetailcreate'),
     path('hojaurgencias', HojaUrgenciasList.as_view(), name='HojaUrgenciaslistcreate'),
     path('hojaurgencias/<int:pk>/', HojaUrgenciasDetail.as_view(), name='HojaUrgenciasdetailcreate'),
-    path('credencialperdida/<int:pk>/', CredencialPerdidaList.as_view(), name='CredencialPerdidalistcreate'),
-    path('credencialperdida/<int:pk>/', CredencialPerdidaDetail.as_view(), name='CredencialPerdidalistcreate'),
-    path('reporteincidentesmatpel/<int:pk>/', ReporteIncidentesMatPelList.as_view(), name='ReporteIncidentesMatPellistcreate'),
-    path('reporteincidentesmatpel/<int:pk>/', ReporteIncidentesMatPelDetail.as_view(), name='ReporteIncidentesMatPellistcreate')
+    path('credencialperdida', CredencialPerdidaList.as_view(), name='CredencialPerdidalistcreate'),
+    path('credencialperdida/<int:pk>/', CredencialPerdidaDetail.as_view(), name='CredencialPerdidadetailcreate'),
+    path('reporteincidentesmatpel', ReporteIncidentesMatPelList.as_view(), name='ReporteIncidentesMatPellistcreate'),
+    path('reporteincidentesmatpel/<int:pk>/', ReporteIncidentesMatPelDetail.as_view(), name='ReporteIncidentesMatPeldetailcreate')
 ]
