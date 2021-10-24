@@ -26,7 +26,7 @@ class CredencialPerdidaView extends Component {
         const {CredencialLista} = this.state
         console.log(CredencialLista)
         return(
-            <Table border='1'>
+            <Table bordered>
                 <thead>
                     <tr>
                         <th>Nombre del Alumno</th>

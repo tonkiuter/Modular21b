@@ -14,21 +14,9 @@ class HojaUrgencias extends Component{
             Codigo: '',
             Cargo: '',
             NoTelefono: '',
-            CUCEI: '',
-            Prepa12: '',
-            VOCA: '',
-            POLI: '',
-            CDU: '',
-            Exterior: '',
+            ProvieneDe: '',
             Ubicacion: '',
-            TrasladoCUCEI: '',
-            IMSS: '',
-            ISSSTE: '',
-            SMM: '',
-            CRM: '',
-            PRIVADO: '',
-            SeNiega: '',
-            NoAmerita: '',
+            TrasladoA: '',
             Padecimiento: '',
             Diabetes: '',
             DiabetesDiagnostico: '',
@@ -84,7 +72,7 @@ class HojaUrgencias extends Component{
     }
 
     render(){
-        const{ Fecha, Nombre, Edad, Adscripcion, Codigo, Cargo, NoTelefono, CUCEI, Prepa12, VOCA, POLI, CDU, Exterior, Ubicacion, TrasladoCUCEI, IMSS, ISSSTE, SMM, CRM, PRIVADO, SeNiega, NoAmerita, Padecimiento, Diabetes, DiabetesDiagnostico, DiabetesTratamiento, Hipertension, HipertensionDiagnostico, HipertensionTratamiento, Epilepsia, EpilepsiaDiagnostico, EpilepsiaTratamiento, Asma, AsmaDiagnostico, AsmaTratamiento, Cirugias, Alergias, Sangre, TensionArterial, FC, FR, Temperatura, Saturacion, Glucosa, EscalaGlasgow, Neurologico, CabezaCuello, Cardiopulmonar, Abdomen, Extremidades, Diagnostico, Condicion, PronostioS, Tratamiento, } = this.state
+        const{ Fecha, Nombre, Edad, Adscripcion, Codigo, Cargo, NoTelefono, ProvieneDe, Ubicacion, TrasladoA, Padecimiento, Diabetes, DiabetesDiagnostico, DiabetesTratamiento, Hipertension, HipertensionDiagnostico, HipertensionTratamiento, Epilepsia, EpilepsiaDiagnostico, EpilepsiaTratamiento, Asma, AsmaDiagnostico, AsmaTratamiento, Cirugias, Alergias, Sangre, TensionArterial, FC, FR, Temperatura, Saturacion, Glucosa, EscalaGlasgow, Neurologico, CabezaCuello, Cardiopulmonar, Abdomen, Extremidades, Diagnostico, Condicion, PronostioS, Tratamiento, } = this.state
         return(
             <div>
                 <h1 className="display-3">Hoja de Urgencias</h1>
@@ -121,48 +109,7 @@ class HojaUrgencias extends Component{
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md">
-                                {['radio'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="CUCEI" name="group1" type={type} id={`inline-${type}-1`} value={CUCEI} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="col-md">
-                                {['radio'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="PREPA #12" name="group1" type={type} id={`inline-${type}-1`} value={Prepa12} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="col-md">
-                                {['radio'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="VOCA" name="group1" type={type} id={`inline-${type}-1`} value={VOCA} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="col-md">
-                                {['radio'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="POLITECNICO" name="group1" type={type} id={`inline-${type}-1`} value={POLI} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="col-md">
-                                {['radio'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="CDU" name="group1" type={type} id={`inline-${type}-1`} value={CDU} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="col-md">
-                                {['radio'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="EXTERIOR" name="group1" type={type} id={`inline-${type}-1`} value={Exterior} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
-                            </div>
+                            Proveniente de: <input className="form-control" type="text" name="ProvieneDe" value={ProvieneDe} onChange={this.changeHandler} required></input>
                         </div>
                         <div className="row">
                             <div className="col-md">
@@ -171,65 +118,7 @@ class HojaUrgencias extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                Traslado:
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-md">
-                                {['radio'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="CUCEI" name="group2" type={type} id={`inline-${type}-1`} value={TrasladoCUCEI} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="col-md">
-                                {['radio'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="IMSS" name="group2" type={type} id={`inline-${type}-1`} value={IMSS} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="col-md">
-                                {['radio'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="ISSSTE" name="group2" type={type} id={`inline-${type}-1`} value={ISSSTE} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="col-md">
-                                {['radio'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="SMM" name="group2" type={type} id={`inline-${type}-1`} value={SMM} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="col-md">
-                                {['radio'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="CRN" name="group2" type={type} id={`inline-${type}-1`} value={CRM} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="col-md">
-                                {['radio'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="PRIVADO" name="group2" type={type} id={`inline-${type}-1`} value={PRIVADO} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="col-md">
-                                {['radio'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="Se Niega" name="group2" type={type} id={`inline-${type}-1`} value={SeNiega} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="col-md">
-                                {['radio'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="No Amerita" name="group2" type={type} id={`inline-${type}-1`} value={NoAmerita} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
+                                Traslado A: <input className="form-control" type="text" required name="TrasladoA" value={TrasladoA} onChange={this.changeHandler}></input>
                             </div>
                         </div>
                         <div className="row">

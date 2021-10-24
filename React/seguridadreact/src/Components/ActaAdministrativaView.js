@@ -26,7 +26,7 @@ class ActaAdministrativaView extends Component {
         const {ActaLista} = this.state
         console.log(ActaLista)
         return(
-            <Table border='1'>
+            <Table bordered>
                 <thead>
                     <tr>
                         <th>Codigo del Alumno</th>

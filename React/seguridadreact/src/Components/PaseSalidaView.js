@@ -26,7 +26,7 @@ class PaseSalidaView extends Component {
         const {PaseLista} = this.state
         console.log(PaseLista)
         return(
-            <Table border='1'>
+            <Table bordered>
                 <thead>
                     <tr>
                         <th>Codigo del Alumno</th>

@@ -26,7 +26,7 @@ class IncidentesMatPelView extends Component {
         const {IncidentesLista} = this.state
         console.log(IncidentesLista)
         return(
-            <Table border='1'>
+            <Table bordered>
                 <thead>
                     <tr>
                         <th>Fecha</th>
