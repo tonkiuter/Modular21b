@@ -16,6 +16,7 @@ import PaseSalidaView from './Components/PaseSalidaView';
 import RomperCandadoView from './Components/RomperCandadoView';
 import CredencialPerdidaView from './Components/CredencialPerdidaView';
 import IncidentesMatPelView from './Components/IncidentesMatPelView';
+import HojaUrgenciasView from './Components/HojaUrgenciasView';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <ReporteIncidentes></ReporteIncidentes>
       <ReporteIncidentesView></ReporteIncidentesView>
       <HojaUrgencias></HojaUrgencias>
+      <HojaUrgenciasView></HojaUrgenciasView>
       <CredencialPerdida></CredencialPerdida>
       <CredencialPerdidaView></CredencialPerdidaView>
       <IncidentesMatPel></IncidentesMatPel>

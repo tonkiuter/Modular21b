@@ -36,11 +36,11 @@ class CredencialPerdida extends Component{
     }
 
     render(){
-        const { NombreA, Carrera, Codigo, FechaYHora, FotoIneFrente, FotoIneTrasera } = this.state
+        const { NombreA, Carrera, Codigo, FotoIneFrente, FotoIneTrasera } = this.state
         return(
             <div>
                 <h1 className="display-3">Credencial Perdida y Recuperada</h1>
-                <Form className="needs-validation">
+                <Form onSubmit={this.submitHandler} className="needs-validation">
                     <div className="container">
                         <div className="row">
                             <div className="col-md">
@@ -51,11 +51,6 @@ class CredencialPerdida extends Component{
                             </div>
                             <div className="col-md">
                                 Codigo: <input className="form-control" type="text" required name="Codigo" value={Codigo} onChange={this.changeHandler}></input>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-md">
-                                Fecha Y Hora: <input className="form-control" type="datetime-local" name="FechaYHora" value={FechaYHora} onChange={this.changeHandler}></input>
                             </div>
                         </div>
                         <div className="col-md">

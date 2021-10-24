@@ -7,6 +7,7 @@ class HojaUrgencias extends Component{
         super(props)
 
         this.state={
+            id: '',
             Fecha: '',
             Nombre: '',
             Edad: '',
@@ -48,7 +49,7 @@ class HojaUrgencias extends Component{
             Diagnostico: '',
             Condicion: '',
             PronostioS: '',
-            Tratamiento: '',
+            Tratamiento: ''
         }
     }
 
@@ -58,15 +59,15 @@ class HojaUrgencias extends Component{
         })
     }
 
-    submitHandler = e=>{
+    submitHandler = e=> {
         e.preventDefault()
         console.log(this.state)
         axios
             .post('http://127.0.0.1:8000/hojaurgencias', this.state)
-            .then(response =>{
+            .then(response => {
                 console.log(response)
             })
-            .catch(error =>{
+            .catch(error => {
                 console.log(error)
             })
     }
@@ -81,44 +82,44 @@ class HojaUrgencias extends Component{
                     <div className="container">
                         <div className="row">
                             <div className="col-md">
-                                Fecha: <input className="form-control" type="datetime-local" name="Fecha" value={Fecha} onChange={this.changeHandler}></input>
+                                Fecha: <input className="form-control" type="date" name="Fecha" value={Fecha} onChange={this.changeHandler}></input>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                Nombre: <input className="form-control" type="text" name="Nombre" value={Nombre} onChange={this.changeHandler} required></input>
+                                Nombre: <input className="form-control" type="text" name="Nombre" value={Nombre} onChange={this.changeHandler} ></input>
                             </div>
                             <div className="col-md">
-                                Edad: <input className="form-control" type="text" name="Edad" value={Edad} onChange={this.changeHandler} required></input>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-md">
-                                Adscripcion: <input className="form-control" type="text" name="Adscripcion" value={Adscripcion} onChange={this.changeHandler} required></input>
-                            </div>
-                            <div className="col-md">
-                                Codigo: <input className="form-control" type="text" name="Codigo" value={Codigo} onChange={this.changeHandler} required></input>
-                            </div>
-                            <div className="col-md">
-                                Cargo: <input className="form-control" type="text" name="Cargo" value={Cargo} onChange={this.changeHandler} required></input>
+                                Edad: <input className="form-control" type="text" name="Edad" value={Edad} onChange={this.changeHandler} ></input>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                Tel/Cel: <input className="form-control" type="text" name="NoTelefono" value={NoTelefono} onChange={this.changeHandler} required></input>
+                                Adscripcion: <input className="form-control" type="text" name="Adscripcion" value={Adscripcion} onChange={this.changeHandler} ></input>
                             </div>
-                        </div>
-                        <div className="row">
-                            Proveniente de: <input className="form-control" type="text" name="ProvieneDe" value={ProvieneDe} onChange={this.changeHandler} required></input>
-                        </div>
-                        <div className="row">
                             <div className="col-md">
-                                Ubicacion del Servicio: <input className="form-control" type="text" required name="Ubicacion" value={Ubicacion} onChange={this.changeHandler}></input>
+                                Codigo: <input className="form-control" type="text" name="Codigo" value={Codigo} onChange={this.changeHandler} ></input>
+                            </div>
+                            <div className="col-md">
+                                Cargo: <input className="form-control" type="text" name="Cargo" value={Cargo} onChange={this.changeHandler} ></input>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                Traslado A: <input className="form-control" type="text" required name="TrasladoA" value={TrasladoA} onChange={this.changeHandler}></input>
+                                Tel/Cel: <input className="form-control" type="text" name="NoTelefono" value={NoTelefono} onChange={this.changeHandler} ></input>
+                            </div>
+                        </div>
+                        <div className="row">
+                            Proveniente de: <input className="form-control" type="text" name="ProvieneDe" value={ProvieneDe} onChange={this.changeHandler} ></input>
+                        </div>
+                        <div className="row">
+                            <div className="col-md">
+                                Ubicacion del Servicio: <input className="form-control" type="text" name="Ubicacion" value={Ubicacion} onChange={this.changeHandler}></input>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md">
+                                Traslado A: <input className="form-control" type="text"  name="TrasladoA" value={TrasladoA} onChange={this.changeHandler}></input>
                             </div>
                         </div>
                         <div className="row">
@@ -128,7 +129,7 @@ class HojaUrgencias extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                <textarea className="form-control" required name="Padecimiento" value={Padecimiento} onChange={this.changeHandler}></textarea>
+                                <textarea className="form-control" name="Padecimiento" value={Padecimiento} onChange={this.changeHandler}></textarea>
                             </div>
                         </div>
                         <div className="row">
@@ -138,11 +139,7 @@ class HojaUrgencias extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                {['checkbox'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="Diabetes" name="group3" type={type} id={`inline-${type}-1`} value={Diabetes} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
+                            <input className="group5" type="checkbox" name="Diabetes" value={Diabetes} onChange={this.changeHandler}/>  Diabetes 
                             </div>
                             <div className="col-md">
                                 Tiempo de Diagnostico: <input className="form-control" type="text" name="DiabetesDiagnostico" value={DiabetesDiagnostico} onChange={this.changeHandler}></input>
@@ -153,11 +150,7 @@ class HojaUrgencias extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                {['checkbox'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="Hipertension" name="group4" type={type} id={`inline-${type}-1`} value={Hipertension} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
+                            <input className="group5" type="checkbox" name="Hipertension" value={Hipertension} onChange={this.changeHandler}/>  Hipertension 
                             </div>
                             <div className="col-md">
                                 Tiempo de Diagnostico: <input className="form-control" type="text" name="HipertensionDiagnostico" value={HipertensionDiagnostico} onChange={this.changeHandler}></input>
@@ -168,11 +161,7 @@ class HojaUrgencias extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                {['checkbox'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="Epilepsia" name="group5" type={type} id={`inline-${type}-1`} value={Epilepsia} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
+                                <input className="group5" type="checkbox" name="Epilepsia" value={Epilepsia} onChange={this.changeHandler}/>  Epilepsia 
                             </div>
                             <div className="col-md">
                                 Tiempo de Diagnostico: <input className="form-control" type="text" name="EpilepsiaDiagnostico" value={EpilepsiaDiagnostico} onChange={this.changeHandler}></input>
@@ -183,11 +172,7 @@ class HojaUrgencias extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                {['checkbox'].map((type) => (
-                                    <div key={`inline-${type}`} className="mb-3">
-                                        <Form.Check inline label="Asma" name="group6" type={type} id={`inline-${type}-1`} value={Asma} onChange={this.changeHandler}/>
-                                    </div>
-                                ))}
+                            <input className="group5" type="checkbox" name="Asma" value={Asma} onChange={this.changeHandler}/>  Asma 
                             </div>
                             <div className="col-md">
                                 Tiempo de Diagnostico: <input className="form-control" type="text" name="AsmaDiagnostico" value={AsmaDiagnostico} onChange={this.changeHandler}></input>
@@ -246,7 +231,7 @@ class HojaUrgencias extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                Cabeza y Cuello: <input className="form-control" type="text" name="CabezaCuella" value={CabezaCuello} onChange={this.changeHandler}></input>
+                                Cabeza y Cuello: <input className="form-control" type="text" name="CabezaCuello" value={CabezaCuello} onChange={this.changeHandler}></input>
                             </div>
                         </div>
                         <div className="row">

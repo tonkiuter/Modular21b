@@ -1,5 +1,3 @@
-//Pendiente
-/*
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
@@ -36,29 +34,49 @@ class HojaUrgenciasView extends Component {
                         <th>Edad</th>
                         <th>Adscripcion</th>
                         <th>Codigo</th>
-                        <th>Foto id detras</th>
-                        <th>Estatura</th>
-                        <th>Apariencia</th>
-                        <th>Tez</th>
-                        <th>Cabello</th>
-                        <th>Ojos</th>
-                        <th>Cara</th>
-                        <th>Boca</th>
-                        <th>Tipo de ropa</th>
-                        <th>Gorra</th>
-                        <th>Edad aproximada</th>
-                        <th>Cicatrices</th>
-                        <th>Tatuajes</th>
-                        <th>Piercings</th>
-                        <th>Otra</th>
-                        <th>Huida</th>
-                        <th>Observacion</th>
+                        <th>Cargo</th>
+                        <th>Numero de Telefono</th>
+                        <th>Proveniencia</th>
+                        <th>Ubicacion</th>
+                        <th>Translado</th>
+                        <th>Padecimiento</th>
+                        <th>Diabetes</th>
+                        <th>Diabetes diagnostico</th>
+                        <th>Diabetes tratamiento</th>
+                        <th>Hipertension</th>
+                        <th>Hipertension diagnostico</th>
+                        <th>Hipertension tratamiento</th>
+                        <th>Epilepsia</th>
+                        <th>Epilepsia diagnostico</th>
+                        <th>Epilepsia tratamiento</th>
+                        <th>Asma</th>
+                        <th>Asma diagnostico</th>
+                        <th>Asma tratamiento</th>
+                        <th>Cirguias</th>
+                        <th>Alergias</th>
+                        <th>Tipo de sangre</th>
+                        <th>Tension arterial</th>
+                        <th>FC</th>
+                        <th>FR</th>
+                        <th>Temperatura</th>
+                        <th>Saturacion</th>
+                        <th>Glucosa</th>
+                        <th>Escala Glaslow</th>
+                        <th>Neurologico</th>
+                        <th>Cabeza y cuello</th>
+                        <th>Cardio pulmonar</th>
+                        <th>Abdomen</th>
+                        <th>Extremidades</th>
+                        <th>Diagnostico</th>
+                        <th>Condicion</th>
+                        <th>Pronostico</th>
+                        <th>Tratamiento</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         IncidentesLista.map((user) => (
-                            <tr key={user.id} ><th>{user.CodigoAlumno}</th><th>{user.FechaHora}</th><th>{user.Ubicacion}</th><th>{user.ObjetosP}</th><th>{user.FotoIdF}</th><th>{user.FotoIdB}</th><th>{user.Estatura}</th><th>{user.Apariencia}</th><th>{user.Tez}</th><th>{user.Cabello}</th><th>{user.Ojos}</th><th>{user.Cara}</th><th>{user.Boca}</th><th>{user.TipoRopa}</th><th>{user.Gorra}</th><th>{user.EdadAprox}</th><th>{user.Cicatrices}</th><th>{user.Tatuajes}</th><th>{user.Piercings}</th><th>{user.Otra}</th><th>{user.Huida}</th><th>{user.Observacion}</th></tr>
+                            <tr key={user.id} ><th>{user.Fecha}</th><th>{user.Nombre}</th><th>{user.Edad}</th><th>{user.Adscripcion}</th><th>{user.Codigo}</th><th>{user.Cargo}</th><th>{user.NoTelefono}</th><th>{user.ProvieneDe}</th><th>{user.Ubicacion}</th><th>{user.TrasladoA}</th><th>{user.Padecimiento}</th><th>{user.Diabetes}</th><th>{user.DiabetesDiagnostico}</th><th>{user.DiabetesTratamiento}</th><th>{user.Hipertencion}</th><th>{user.HipertencionDiagnostico}</th><th>{user.HipertencionTratamiento}</th><th>{user.Epilepsia}</th><th>{user.EpilepsiaDiagnostico}</th><th>{user.EpilepsiaTratamiento}</th><th>{user.Asma}</th><th>{user.AsmaDiagnostico}</th><th>{user.AsmaTratamiento}</th><th>{user.Cirugias}</th><th>{user.Alergias}</th><th>{user.Sangre}</th><th>{user.TensionArterial}</th><th>{user.FC}</th><th>{user.FR}</th><th>{user.Temperatura}</th><th>{user.Saturacion}</th><th>{user.Glucosa}</th><th>{user.EscalaGlaslow}</th><th>{user.Neurologico}</th><th>{user.CabezaCuello}</th><th>{user.Cardiopulmonar}</th><th>{user.Abdomen}</th><th>{user.Extremidades}</th><th>{user.Diagnostico}</th><th>{user.Condicion}</th><th>{user.PronostioS}</th><th>{user.Tratamiento}</th></tr>
                         ))
                     }
                 </tbody>
@@ -68,4 +86,3 @@ class HojaUrgenciasView extends Component {
 }
 
 export default HojaUrgenciasView
-*/

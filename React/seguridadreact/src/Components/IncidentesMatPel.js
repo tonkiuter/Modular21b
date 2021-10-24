@@ -7,9 +7,10 @@ class ReporteIncidentesMatPel extends Component{
         super(props)
 
         this.state={
+            id: '',
             Fecha: '',
-            Fenomeno: '',
             Ubicacion: '',
+            Fenomeno: '',
             Descripcion: '',
             Evaluacion: '',
             Tareas: '',
@@ -29,7 +30,7 @@ class ReporteIncidentesMatPel extends Component{
         console.log(this.state)
         axios
             .post('http://127.0.0.1:8000/reporteincidentesmatpel', this.state)
-            .them(response => {
+            .then(response => {
                 console.log(response)
             })
             .catch(error => {
@@ -38,16 +39,13 @@ class ReporteIncidentesMatPel extends Component{
     }
 
     render(){
-        const{ Fecha, Ubicacion, Fenomeno, Descripcion, Evaluacion, Tareas, Recursos, Estrategias } = this.state
+        const{ Ubicacion, Fenomeno, Descripcion, Evaluacion, Tareas, Recursos, Estrategias } = this.state
         return(
             <div>
                 <h1 className="display-4">Reporte Incidentes Mat-Pel</h1>
-                <Form className="needs-validation">
+                <Form onSubmit={this.submitHandler} className="needs-validation">
                     <div className="container">
                         <div className="row">
-                            <div className="col-md">
-                                Fecha: <input className="form-control" type="datetime-local" name="Fecha" value={Fecha} onChange={this.changeHandler}></input>
-                            </div>
                             <div className="col-md">
                                 Ubicacion: <input className="form-control" type="text" required name="Ubicacion" value={Ubicacion} onChange={this.changeHandler}></input>
                             </div>
