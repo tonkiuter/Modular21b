@@ -19,16 +19,16 @@ class HojaUrgencias extends Component{
             Ubicacion: '',
             TrasladoA: '',
             Padecimiento: '',
-            Diabetes: '',
+            Diabetes: 'false',
             DiabetesDiagnostico: '',
             DiabetesTratamiento: '',
-            Hipertension: '',
+            Hipertension: 'false',
             HipertensionDiagnostico: '',
             HipertensionTratamiento: '',
-            Epilepsia: '',
+            Epilepsia: 'false',
             EpilepsiaDiagnostico: '',
             EpilepsiaTratamiento: '',
-            Asma: '',
+            Asma: 'false',
             AsmaDiagnostico: '',
             AsmaTratamiento: '',
             Cirugias: '',
@@ -73,7 +73,7 @@ class HojaUrgencias extends Component{
     }
 
     render(){
-        const{ Fecha, Nombre, Edad, Adscripcion, Codigo, Cargo, NoTelefono, ProvieneDe, Ubicacion, TrasladoA, Padecimiento, Diabetes, DiabetesDiagnostico, DiabetesTratamiento, Hipertension, HipertensionDiagnostico, HipertensionTratamiento, Epilepsia, EpilepsiaDiagnostico, EpilepsiaTratamiento, Asma, AsmaDiagnostico, AsmaTratamiento, Cirugias, Alergias, Sangre, TensionArterial, FC, FR, Temperatura, Saturacion, Glucosa, EscalaGlasgow, Neurologico, CabezaCuello, Cardiopulmonar, Abdomen, Extremidades, Diagnostico, Condicion, PronostioS, Tratamiento, } = this.state
+        const{ Fecha, Nombre, Edad, Adscripcion, Codigo, Cargo, NoTelefono, ProvieneDe, Ubicacion, TrasladoA, Padecimiento,  DiabetesDiagnostico, DiabetesTratamiento, HipertensionDiagnostico, HipertensionTratamiento, EpilepsiaDiagnostico, EpilepsiaTratamiento, AsmaDiagnostico, AsmaTratamiento, Cirugias, Alergias, Sangre, TensionArterial, FC, FR, Temperatura, Saturacion, Glucosa, EscalaGlasgow, Neurologico, CabezaCuello, Cardiopulmonar, Abdomen, Extremidades, Diagnostico, Condicion, PronostioS, Tratamiento, } = this.state
         return(
             <div>
                 <h1 className="display-3">Hoja de Urgencias</h1>
@@ -139,7 +139,7 @@ class HojaUrgencias extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                            <input className="group5" type="checkbox" name="Diabetes" value={Diabetes} onChange={this.changeHandler}/>  Diabetes 
+                            <input className="group5" type="checkbox" name="Diabetes" value={true} onChange={this.changeHandler}/>  Diabetes 
                             </div>
                             <div className="col-md">
                                 Tiempo de Diagnostico: <input className="form-control" type="text" name="DiabetesDiagnostico" value={DiabetesDiagnostico} onChange={this.changeHandler}></input>
@@ -150,7 +150,7 @@ class HojaUrgencias extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                            <input className="group5" type="checkbox" name="Hipertension" value={Hipertension} onChange={this.changeHandler}/>  Hipertension 
+                            <input className="group5" type="checkbox" name="Hipertension" value={true} onChange={this.changeHandler}/>  Hipertension 
                             </div>
                             <div className="col-md">
                                 Tiempo de Diagnostico: <input className="form-control" type="text" name="HipertensionDiagnostico" value={HipertensionDiagnostico} onChange={this.changeHandler}></input>
@@ -161,7 +161,7 @@ class HojaUrgencias extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                <input className="group5" type="checkbox" name="Epilepsia" value={Epilepsia} onChange={this.changeHandler}/>  Epilepsia 
+                                <input className="group5" type="checkbox" name="Epilepsia" value={true} onChange={this.changeHandler}/>  Epilepsia 
                             </div>
                             <div className="col-md">
                                 Tiempo de Diagnostico: <input className="form-control" type="text" name="EpilepsiaDiagnostico" value={EpilepsiaDiagnostico} onChange={this.changeHandler}></input>
@@ -172,7 +172,7 @@ class HojaUrgencias extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                            <input className="group5" type="checkbox" name="Asma" value={Asma} onChange={this.changeHandler}/>  Asma 
+                            <input className="group5" type="checkbox" name="Asma" value={true} onChange={this.changeHandler}/>  Asma 
                             </div>
                             <div className="col-md">
                                 Tiempo de Diagnostico: <input className="form-control" type="text" name="AsmaDiagnostico" value={AsmaDiagnostico} onChange={this.changeHandler}></input>

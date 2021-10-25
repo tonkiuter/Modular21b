@@ -26,7 +26,7 @@ class HojaUrgenciasView extends Component {
         const {IncidentesLista} = this.state
         console.log(IncidentesLista)
         return(
-            <Table bordered>
+            <Table bordered responsive>
                 <thead>
                     <tr>
                         <th>Fecha</th>
@@ -61,7 +61,7 @@ class HojaUrgenciasView extends Component {
                         <th>Temperatura</th>
                         <th>Saturacion</th>
                         <th>Glucosa</th>
-                        <th>Escala Glaslow</th>
+                        <th>Escala Glasgow</th>
                         <th>Neurologico</th>
                         <th>Cabeza y cuello</th>
                         <th>Cardio pulmonar</th>
@@ -76,7 +76,7 @@ class HojaUrgenciasView extends Component {
                 <tbody>
                     {
                         IncidentesLista.map((user) => (
-                            <tr key={user.id} ><th>{user.Fecha}</th><th>{user.Nombre}</th><th>{user.Edad}</th><th>{user.Adscripcion}</th><th>{user.Codigo}</th><th>{user.Cargo}</th><th>{user.NoTelefono}</th><th>{user.ProvieneDe}</th><th>{user.Ubicacion}</th><th>{user.TrasladoA}</th><th>{user.Padecimiento}</th><th>{user.Diabetes}</th><th>{user.DiabetesDiagnostico}</th><th>{user.DiabetesTratamiento}</th><th>{user.Hipertencion}</th><th>{user.HipertencionDiagnostico}</th><th>{user.HipertencionTratamiento}</th><th>{user.Epilepsia}</th><th>{user.EpilepsiaDiagnostico}</th><th>{user.EpilepsiaTratamiento}</th><th>{user.Asma}</th><th>{user.AsmaDiagnostico}</th><th>{user.AsmaTratamiento}</th><th>{user.Cirugias}</th><th>{user.Alergias}</th><th>{user.Sangre}</th><th>{user.TensionArterial}</th><th>{user.FC}</th><th>{user.FR}</th><th>{user.Temperatura}</th><th>{user.Saturacion}</th><th>{user.Glucosa}</th><th>{user.EscalaGlaslow}</th><th>{user.Neurologico}</th><th>{user.CabezaCuello}</th><th>{user.Cardiopulmonar}</th><th>{user.Abdomen}</th><th>{user.Extremidades}</th><th>{user.Diagnostico}</th><th>{user.Condicion}</th><th>{user.PronostioS}</th><th>{user.Tratamiento}</th></tr>
+                            <tr key={user.id} ><th>{user.Fecha}</th><th>{user.Nombre}</th><th>{user.Edad}</th><th>{user.Adscripcion}</th><th>{user.Codigo}</th><th>{user.Cargo}</th><th>{user.NoTelefono}</th><th>{user.ProvieneDe}</th><th>{user.Ubicacion}</th><th>{user.TrasladoA}</th><th>{user.Padecimiento}</th><th>{user.Diabetes.toString()}</th><th>{user.DiabetesDiagnostico}</th><th>{user.DiabetesTratamiento}</th><th>{user.Hipertension.toString()}</th><th>{user.HipertensionDiagnostico}</th><th>{user.HipertensionTratamiento}</th><th>{user.Epilepsia.toString()}</th><th>{user.EpilepsiaDiagnostico}</th><th>{user.EpilepsiaTratamiento}</th><th>{user.Asma.toString()}</th><th>{user.AsmaDiagnostico}</th><th>{user.AsmaTratamiento}</th><th>{user.Cirugias}</th><th>{user.Alergias}</th><th>{user.Sangre}</th><th>{user.TensionArterial}</th><th>{user.FC}</th><th>{user.FR}</th><th>{user.Temperatura}</th><th>{user.Saturacion}</th><th>{user.Glucosa}</th><th>{user.EscalaGlasgow}</th><th>{user.Neurologico}</th><th>{user.CabezaCuello}</th><th>{user.Cardiopulmonar}</th><th>{user.Abdomen}</th><th>{user.Extremidades}</th><th>{user.Diagnostico}</th><th>{user.Condicion}</th><th>{user.PronostioS}</th><th>{user.Tratamiento}</th></tr>
                         ))
                     }
                 </tbody>

@@ -45,7 +45,7 @@ class SolicitudVideoCamara extends Component{
 
         return (
             <div>
-            <h1 className="display-3">Acta Administrativa</h1>
+            <h1 className="display-3">Solicitud de Video Camara</h1>
             <form onSubmit={this.submitHandler} className="needs-validation">
                 <div  className="container">
                     <div className="row">

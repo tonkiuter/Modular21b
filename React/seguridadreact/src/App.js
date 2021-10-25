@@ -17,12 +17,24 @@ import RomperCandadoView from './Components/RomperCandadoView';
 import CredencialPerdidaView from './Components/CredencialPerdidaView';
 import IncidentesMatPelView from './Components/IncidentesMatPelView';
 import HojaUrgenciasView from './Components/HojaUrgenciasView';
+import BicicletaView from './Components/BicicletaView';
+import EventoSocialView from './Components/EventoSocialView';
+import FalloCamara from './Components/FalloCamara';
+import FalloCamaraViews from './Components/FalloCamaraViews';
+import SolicitudVideoCamarasView from './Components/SolicitudVideoCamarasView';
+import SolicitudVideoCamara from './Components/SolicitudVideoCamaras';
 
 function App() {
   return (
     <div className="App">
       <Bicicleta></Bicicleta>
+      <BicicletaView></BicicletaView>
       <EventoSocial></EventoSocial>
+      <EventoSocialView></EventoSocialView>
+      <FalloCamara></FalloCamara>
+      <FalloCamaraViews></FalloCamaraViews>
+      <SolicitudVideoCamara></SolicitudVideoCamara>
+      <SolicitudVideoCamarasView></SolicitudVideoCamarasView>
       <RomperCandado></RomperCandado>
       <RomperCandadoView></RomperCandadoView>
       <ActaAdministrativa></ActaAdministrativa>

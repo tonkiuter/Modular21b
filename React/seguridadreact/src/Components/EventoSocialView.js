@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
 
-class EventoSocialViews extends Component {
+class EventoSocialView extends Component {
     constructor(props){
         super(props)
 
@@ -15,7 +15,7 @@ class EventoSocialViews extends Component {
         axios.get('http://127.0.0.1:8000/social')
         .then(response => {
             console.log(response)
-            this.setState({SolicitudVideoCamarasLista: response.data})
+            this.setState({EventoSocialLista: response.data})
         })
         .catch(error => {
             console.log(error)
@@ -68,4 +68,4 @@ class EventoSocialViews extends Component {
     }
 }
 
-export default EventoSocialViews
+export default EventoSocialView
