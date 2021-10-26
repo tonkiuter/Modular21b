@@ -82,7 +82,7 @@ class ReporteIncidentes extends Component{
     };
 
     render(){
-        const { CodigoAlumno, FechaHora, Ubicacion, ObjetosP, Estatura,
+        const { CodigoAlumno, Ubicacion, ObjetosP, Estatura,
         Apariencia, Tez, Cabello, Ojos, Cara, Boca, TipoRopa, Gorra, EdadAprox, Cicatrices,
         Tatuajes, Piercings, Otra, Huida, Observacion} = this.state
         return (
@@ -99,9 +99,6 @@ class ReporteIncidentes extends Component{
                             </div>
                             <div className="col-md">
                             Foto ID detras: <input className="form-control" type="file" name="FotoIdB" onChange={this.handleInputChange}></input>
-                            </div>
-                            <div className="col-md">
-                            Fecha y Hora: <input className="form-control" type="datetime-local" name="FechaHora" value={FechaHora} onChange={this.changeHandler}></input>
                             </div>
                             <div className="col-md">
                             Ubicacion: <input className="form-control" type="text" name="Ubicacion" value={Ubicacion} onChange={this.changeHandler}></input>

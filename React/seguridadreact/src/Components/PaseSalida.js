@@ -50,7 +50,7 @@ class PaseSalida extends Component{
     };
 
     render(){
-        const { CodigoAlumno, Sello, Descripcion, Fecha} = this.state
+        const { CodigoAlumno, Sello, Descripcion} = this.state
         return (
             <div>
                 <h1 className="display-3">Pase de Salida</h1>
@@ -71,9 +71,6 @@ class PaseSalida extends Component{
                             </div>
                             <div className="col-md">
                             Descripcion: <input className="form-control" type="text" name="Descripcion" value={Descripcion} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Fecha: <input className="form-control" type="date" name="Fecha" value={Fecha} onChange={this.changeHandler}></input>
                             </div>
                         </div>
                         <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>

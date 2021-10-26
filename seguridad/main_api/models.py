@@ -10,16 +10,16 @@ class SolicitudVideoCamaras(models.Model):
     noCamara = models.BigIntegerField()
     horario = models.CharField(max_length=30)
     hecho = models.CharField(max_length=30)
-    fotoIdF = models.ImageField()
-    fotoIdB = models.ImageField()
+    fotoIdF = models.ImageField(upload_to='SolicitudID')
+    fotoIdB = models.ImageField(upload_to='SolicitudID')
     
     def __str__(self):
         return self.codigoReporte
     
 class Bicicleta(models.Model):
     CodigoAlumno = models.BigIntegerField()
-    FotoIdF = models.ImageField()
-    FotoIdB = models.ImageField()
+    FotoIdF = models.ImageField(upload_to='BicicletaID')
+    FotoIdB = models.ImageField(upload_to='BicicletaID')
     Descripcion = models.CharField(max_length=200)
     
     def __str__(self):
@@ -128,8 +128,8 @@ class RomperCandado(models.Model):
     NombreAlumno = models.CharField(max_length = 150)
     CodigoAlumno = models.BigIntegerField()
     Carrera = models.CharField(max_length = 50)
-    FotoIdF = models.ImageField()
-    FotoIdB = models.ImageField()
+    FotoIdF = models.ImageField(upload_to='RomperCandadoID')
+    FotoIdB = models.ImageField(upload_to='RomperCandadoID')
     Descripcion = models.CharField(max_length = 255)
     Fecha = models.DateTimeField(auto_now=True)
 
@@ -151,8 +151,8 @@ class alumnos(models.Model):
 
 class PaseSalida(models.Model):
     CodigoAlumno = models.BigIntegerField()
-    FotoIdF = models.ImageField()
-    FotoIdB = models.ImageField()
+    FotoIdF = models.ImageField(upload_to='PaseSalidaID')
+    FotoIdB = models.ImageField(upload_to='PaseSalidaID')
     Sello = models.CharField(max_length = 60)
     Descripcion = models.CharField(max_length= 100)
     Fecha = models.DateField(auto_now_add=True)
@@ -182,8 +182,8 @@ class Incidencias(models.Model):
     FechaHora = models.DateTimeField(auto_now=True)
     Ubicacion = models.CharField(max_length= 255)
     ObjetosP = models.CharField(max_length= 255)
-    FotoIdF = models.ImageField()
-    FotoIdB = models.ImageField()
+    FotoIdF = models.ImageField(upload_to='IncidenciasID')
+    FotoIdB = models.ImageField(upload_to='IncidenciasID')
     Estatura = models.DecimalField(decimal_places= 2, max_digits=5)
     Apariencia = models.CharField(max_length= 255)
     Tez = models.CharField(max_length= 255)
@@ -208,8 +208,8 @@ class CredencialPerdida(models.Model):
     Carrera = models.CharField(max_length=100)
     Codigo = models.BigIntegerField()
     FechaYHora = models.DateTimeField(auto_now=True)
-    FotoIneFrente = models.ImageField()
-    FotoIneTrasera = models.ImageField()
+    FotoIneFrente = models.ImageField(upload_to='CredencialPerdidaID')
+    FotoIneTrasera = models.ImageField(upload_to='CredencialPerdidaID')
 
     def __str__(self):
         return self.CredencialPerdida
