@@ -11,8 +11,8 @@ class CredencialPerdida extends Component{
             Carrera: '',
             Codigo: '',
             FechaYHora: '',
-            FotoIneFrente: '',
-            FotoIneTrasera: '',
+            FotoIneFrente: null,
+            FotoIneTrasera: null,
         }
     }
 
@@ -22,9 +22,16 @@ class CredencialPerdida extends Component{
         })
     }
 
-    submitHandler = e=> {
+    handleInputChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.files[0]
+        });
+      };
+
+    /*submitHandler = e=> {
         e.preventDefault()
         console.log(this.state)
+
         axios
             .post('http://127.0.0.1:8000/credencialperdida', this.state)
             .then(response => {
@@ -33,10 +40,29 @@ class CredencialPerdida extends Component{
             .catch(error => {
                 console.log(error)
             })
-    }
+    }*/
+
+    submitHandler = (data) => {
+        data.preventDefault()
+        console.log(data)
+        let form_data = new FormData();
+        form_data.append('NombreA', this.state.NombreA);
+        form_data.append('Carrera', this.state.Carrera);
+        form_data.append('Codigo', this.state.Codigo);
+        form_data.append('FotoIneFrente', this.state.FotoIneFrente, this.state.FotoIneFrente.name);
+        form_data.append('FotoIneTrasera', this.state.FotoIneTrasera, this.state.FotoIneTrasera.name);
+        axios
+            .post('http://127.0.0.1:8000/credencialperdida', form_data)
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    };
 
     render(){
-        const { NombreA, Carrera, Codigo, FotoIneFrente, FotoIneTrasera } = this.state
+        const { NombreA, Carrera, Codigo } = this.state
         return(
             <div>
                 <h1 className="display-3">Credencial Perdida y Recuperada</h1>
@@ -54,10 +80,10 @@ class CredencialPerdida extends Component{
                             </div>
                         </div>
                         <div className="col-md">
-                            Foto ID frente: <input className="form-control" type="file" name="FotoIneFrente" value={FotoIneFrente} onChange={this.changeHandler}></input>
+                            Foto ID frente: <input accept="image/png, image/jpeg" className="form-control" type="file" name="FotoIneFrente" onChange={this.handleInputChange}></input>
                             </div>
                             <div className="col-md">
-                            Foto Id detras: <input className="form-control" type="file" name="FotoIneTrasera" value={FotoIneTrasera} onChange={this.changeHandler}></input>
+                            Foto Id detras: <input accept="image/png, image/jpeg" className="form-control" type="file" name="FotoIneTrasera" onChange={this.handleInputChange}></input>
                             </div>
                         <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
                     </div>

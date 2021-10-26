@@ -1,6 +1,8 @@
 from django.urls import path
 
 from .views import ActaAdministrativaDetail, ActaAdministrativaList, BicicletaDetail, BicicletaList, EventoSocialDetail, EventoSocialList, FalloCamaraDetail, FalloCamaraList, IncidenciasDetail, IncidenciasList, PaseSalidaDetail, PaseSalidaList, SolicitudCamDetail,SolicitudCam,UsersDetail, UsersList, VistasDetail, VistasList, RomperCandadoDetail, RomperCandadoList, HojaUrgenciasDetail, HojaUrgenciasList, CredencialPerdidaDetail, CredencialPerdidaList, ReporteIncidentesMatPelList, ReporteIncidentesMatPelDetail
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('solcamara', SolicitudCam.as_view(), name='Camaralistcreate'),
@@ -29,4 +31,8 @@ urlpatterns = [
     path('credencialperdida/<int:pk>/', CredencialPerdidaDetail.as_view(), name='CredencialPerdidadetailcreate'),
     path('reporteincidentesmatpel', ReporteIncidentesMatPelList.as_view(), name='ReporteIncidentesMatPellistcreate'),
     path('reporteincidentesmatpel/<int:pk>/', ReporteIncidentesMatPelDetail.as_view(), name='ReporteIncidentesMatPeldetailcreate')
+    
 ]
+if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL,
+                              document_root=settings.MEDIA_ROOT)

@@ -22,6 +22,14 @@ class CredencialPerdidaView extends Component {
         })
     }
 
+    removeCategory (ids) {
+        fetch('http://127.0.0.1:8000/credencialperdida/'+ids+'/',{
+            method: 'DELETE',
+            headers: {'Accept':'application/json','Content-Type':'application/json'}
+        })
+
+    }
+
     render(){
         const {CredencialLista} = this.state
         console.log(CredencialLista)
@@ -40,7 +48,15 @@ class CredencialPerdidaView extends Component {
                 <tbody>
                     {
                         CredencialLista.map((user) => (
-                            <tr key={user.id} ><th>{user.NombreA}</th><th>{user.Carrera}</th><th>{user.Codigo}</th><th>{user.FotoIneFrente}</th><th>{user.FotoIneTrasera}</th><th>{user.FechaYHora}</th></tr>
+                            <tr key={user.id} >
+                                <th>{user.NombreA}</th>
+                                <th>{user.Carrera}</th>
+                                <th>{user.Codigo}</th>
+                                <th><img src={user.FotoIneFrente} width="100" height="100"/> </th>
+                                <th><img src={user.FotoIneTrasera} width="100" height="100"/> </th>
+                                <th>{user.FechaYHora}</th>
+                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
+                            </tr>
                         ))
                     }
                 </tbody>

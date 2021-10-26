@@ -10,16 +10,16 @@ class SolicitudVideoCamaras(models.Model):
     noCamara = models.BigIntegerField()
     horario = models.CharField(max_length=30)
     hecho = models.CharField(max_length=30)
-    fotoIdF = models.CharField(max_length=100)
-    fotoIdB = models.CharField(max_length=100)
+    fotoIdF = models.ImageField()
+    fotoIdB = models.ImageField()
     
     def __str__(self):
         return self.codigoReporte
     
 class Bicicleta(models.Model):
     CodigoAlumno = models.BigIntegerField()
-    FotoIdF = models.CharField(max_length=30)
-    FotoIdB = models.CharField(max_length=30)
+    FotoIdF = models.ImageField()
+    FotoIdB = models.ImageField()
     Descripcion = models.CharField(max_length=200)
     
     def __str__(self):
@@ -128,8 +128,8 @@ class RomperCandado(models.Model):
     NombreAlumno = models.CharField(max_length = 150)
     CodigoAlumno = models.BigIntegerField()
     Carrera = models.CharField(max_length = 50)
-    FotoIdF = models.CharField(max_length = 255)
-    FotoIdB = models.CharField(max_length = 255)
+    FotoIdF = models.ImageField()
+    FotoIdB = models.ImageField()
     Descripcion = models.CharField(max_length = 255)
     Fecha = models.DateTimeField(auto_now=True)
 
@@ -182,8 +182,8 @@ class Incidencias(models.Model):
     FechaHora = models.DateTimeField(auto_now=True)
     Ubicacion = models.CharField(max_length= 255)
     ObjetosP = models.CharField(max_length= 255)
-    FotoIdF = models.CharField(max_length = 60)
-    FotoIdB = models.CharField(max_length = 60)
+    FotoIdF = models.ImageField()
+    FotoIdB = models.ImageField()
     Estatura = models.DecimalField(decimal_places= 2, max_digits=5)
     Apariencia = models.CharField(max_length= 255)
     Tez = models.CharField(max_length= 255)
@@ -208,8 +208,8 @@ class CredencialPerdida(models.Model):
     Carrera = models.CharField(max_length=100)
     Codigo = models.BigIntegerField()
     FechaYHora = models.DateTimeField(auto_now=True)
-    FotoIneFrente = models.CharField(max_length=100)
-    FotoIneTrasera = models.CharField(max_length=100)
+    FotoIneFrente = models.ImageField()
+    FotoIneTrasera = models.ImageField()
 
     def __str__(self):
         return self.CredencialPerdida

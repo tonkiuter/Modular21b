@@ -89,7 +89,7 @@ class HojaUrgenciasList(generics.ListCreateAPIView):
     queryset = HojaUrgencias.objects.all()
     serializer_class = HojaUrgenciasSerializer
 
-class HojaUrgenciasDetail(generics.ListCreateAPIView):
+class HojaUrgenciasDetail(generics.RetrieveDestroyAPIView):
     queryset = HojaUrgencias.objects.all()
     serializer_class = HojaUrgenciasSerializer
 
@@ -97,7 +97,7 @@ class CredencialPerdidaList(generics.ListCreateAPIView):
     queryset = CredencialPerdida.objects.all()
     serializer_class = CredencialPerdidaSerializer
 
-class CredencialPerdidaDetail(generics.ListCreateAPIView):
+class CredencialPerdidaDetail(generics.RetrieveDestroyAPIView):
     queryset = CredencialPerdida.objects.all()
     serializer_class = CredencialPerdidaSerializer
 
@@ -105,7 +105,7 @@ class ReporteIncidentesMatPelList(generics.ListCreateAPIView):
     queryset = ReporteIncidentesMatPel.objects.all()
     serializer_class = ReporteIncidentesMatPelSerializer
 
-class ReporteIncidentesMatPelDetail(generics.ListCreateAPIView):
+class ReporteIncidentesMatPelDetail(generics.RetrieveDestroyAPIView):
     queryset = ReporteIncidentesMatPel.objects.all()
     serializer_class = ReporteIncidentesMatPelSerializer
 
