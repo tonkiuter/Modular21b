@@ -11,8 +11,8 @@ class ReporteIncidentes extends Component{
             FechaHora: '',
             Ubicacion: '',
             ObjetosP: '',
-            FotoIdF: '',
-            FotoIdB: '',
+            FotoIdF: null,
+            FotoIdB: null,
             Estatura: '',
             Apariencia: '',
             Tez: '',
@@ -38,21 +38,51 @@ class ReporteIncidentes extends Component{
         })
     }
 
-    submitHandler = e=> {
-        e.preventDefault()
-        console.log(this.state)
+    handleInputChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.files[0]
+        });
+      };
+
+    submitHandler = (data) => {
+        data.preventDefault()
+        console.log(data)
+        let form_data = new FormData();
+        form_data.append('id', this.state.id);
+        form_data.append('CodigoAlumno', this.state.CodigoAlumno);
+        form_data.append('FechaHora', this.state.FechaHora);
+        form_data.append('Ubicacion', this.state.Ubicacion);
+        form_data.append('ObjetosP', this.state.ObjetosP);
+        form_data.append('FotoIdF', this.state.FotoIdF, this.state.FotoIdF.name);
+        form_data.append('FotoIdB', this.state.FotoIdB, this.state.FotoIdB.name);
+        form_data.append('Estatura', this.state.Estatura);
+        form_data.append('Apariencia', this.state.Apariencia);
+        form_data.append('Tez', this.state.Tez);
+        form_data.append('Cabello', this.state.Cabello);
+        form_data.append('Ojos', this.state.Ojos);
+        form_data.append('Cara', this.state.Cara);
+        form_data.append('Boca', this.state.Boca);
+        form_data.append('TipoRopa', this.state.TipoRopa);
+        form_data.append('Gorra', this.state.Gorra);
+        form_data.append('EdadAprox', this.state.EdadAprox);
+        form_data.append('Cicatrices', this.state.Cicatrices);
+        form_data.append('Tatuajes', this.state.Tatuajes);
+        form_data.append('Piercings', this.state.Piercings);
+        form_data.append('Otra', this.state.Otra);
+        form_data.append('Huida', this.state.Huida);
+        form_data.append('Observacion', this.state.Observacion);
         axios
-            .post('http://127.0.0.1:8000/incidencias', this.state)
+            .post('http://127.0.0.1:8000/incidencias', form_data)
             .then(response => {
                 console.log(response)
             })
             .catch(error => {
                 console.log(error)
             })
-    }
+    };
 
     render(){
-        const { CodigoAlumno, FotoIdF, FotoIdB, FechaHora, Ubicacion, ObjetosP, Estatura,
+        const { CodigoAlumno, FechaHora, Ubicacion, ObjetosP, Estatura,
         Apariencia, Tez, Cabello, Ojos, Cara, Boca, TipoRopa, Gorra, EdadAprox, Cicatrices,
         Tatuajes, Piercings, Otra, Huida, Observacion} = this.state
         return (
@@ -65,10 +95,10 @@ class ReporteIncidentes extends Component{
                             Codigo Alumno: <input className="form-control" type="text" name="CodigoAlumno" value={CodigoAlumno} onChange={this.changeHandler}></input>
                             </div>
                             <div className="col-md">
-                            Foto ID frente: <input className="form-control" type="text" name="FotoIdF" value={FotoIdF} onChange={this.changeHandler}></input>
+                            Foto ID frente: <input className="form-control" type="file" name="FotoIdF" onChange={this.handleInputChange}></input>
                             </div>
                             <div className="col-md">
-                            Foto ID detras: <input className="form-control" type="text" name="FotoIdB" value={FotoIdB} onChange={this.changeHandler}></input>
+                            Foto ID detras: <input className="form-control" type="file" name="FotoIdB" onChange={this.handleInputChange}></input>
                             </div>
                             <div className="col-md">
                             Fecha y Hora: <input className="form-control" type="datetime-local" name="FechaHora" value={FechaHora} onChange={this.changeHandler}></input>

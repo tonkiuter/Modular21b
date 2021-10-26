@@ -28,20 +28,6 @@ class CredencialPerdida extends Component{
         });
       };
 
-    /*submitHandler = e=> {
-        e.preventDefault()
-        console.log(this.state)
-
-        axios
-            .post('http://127.0.0.1:8000/credencialperdida', this.state)
-            .then(response => {
-                console.log(response)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-    }*/
-
     submitHandler = (data) => {
         data.preventDefault()
         console.log(data)

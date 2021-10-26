@@ -21,6 +21,14 @@ class PaseSalidaView extends Component {
             console.log(error)
         })
     }
+    
+    removeCategory (ids) {
+        fetch('http://127.0.0.1:8000/pasesalida/'+ids+'/',{
+            method: 'DELETE',
+            headers: {'Accept':'application/json','Content-Type':'application/json'}
+        })
+
+    }
 
     render(){
         const {PaseLista} = this.state
@@ -40,7 +48,15 @@ class PaseSalidaView extends Component {
                 <tbody>
                     {
                         PaseLista.map((user) => (
-                            <tr key={user.id} ><th>{user.CodigoAlumno}</th><th>{user.FotoIdF}</th><th>{user.FotoIdB}</th><th>{user.Sello}</th><th>{user.Descripcion}</th><th>{user.Fecha}</th></tr>
+                            <tr key={user.id} >
+                                <th>{user.CodigoAlumno}</th>
+                                <th><img src={user.FotoIdF} width="100" height="100" alt ="imagen"/> </th>
+                                <th><img src={user.FotoIdB} width="100" height="100" alt ="imagen"/> </th>
+                                <th>{user.Sello}</th>
+                                <th>{user.Descripcion}</th>
+                                <th>{user.Fecha}</th>
+                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
+                            </tr>
                         ))
                     }
                 </tbody>

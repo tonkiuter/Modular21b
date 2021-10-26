@@ -21,6 +21,14 @@ class ReporteIncidentesView extends Component {
             console.log(error)
         })
     }
+    
+    removeCategory (ids) {
+        fetch('http://127.0.0.1:8000/incidencias/'+ids+'/',{
+            method: 'DELETE',
+            headers: {'Accept':'application/json','Content-Type':'application/json'}
+        })
+
+    }
 
     render(){
         const {IncidentesLista} = this.state
@@ -56,7 +64,31 @@ class ReporteIncidentesView extends Component {
                 <tbody>
                     {
                         IncidentesLista.map((user) => (
-                            <tr key={user.id} ><th>{user.CodigoAlumno}</th><th>{user.FechaHora}</th><th>{user.Ubicacion}</th><th>{user.ObjetosP}</th><th>{user.FotoIdF}</th><th>{user.FotoIdB}</th><th>{user.Estatura}</th><th>{user.Apariencia}</th><th>{user.Tez}</th><th>{user.Cabello}</th><th>{user.Ojos}</th><th>{user.Cara}</th><th>{user.Boca}</th><th>{user.TipoRopa}</th><th>{user.Gorra}</th><th>{user.EdadAprox}</th><th>{user.Cicatrices}</th><th>{user.Tatuajes}</th><th>{user.Piercings}</th><th>{user.Otra}</th><th>{user.Huida}</th><th>{user.Observacion}</th></tr>
+                            <tr key={user.id} >
+                                <th>{user.CodigoAlumno}</th>
+                                <th>{user.FechaHora}</th>
+                                <th>{user.Ubicacion}</th>
+                                <th>{user.ObjetosP}</th>
+                                <th><img src={user.FotoIdF} width="100" height="100" alt ="imagen"/> </th>
+                                <th><img src={user.FotoIdB} width="100" height="100" alt ="imagen"/> </th>
+                                <th>{user.Estatura}</th>
+                                <th>{user.Apariencia}</th>
+                                <th>{user.Tez}</th>
+                                <th>{user.Cabello}</th>
+                                <th>{user.Ojos}</th>
+                                <th>{user.Cara}</th>
+                                <th>{user.Boca}</th>
+                                <th>{user.TipoRopa}</th>
+                                <th>{user.Gorra}</th>
+                                <th>{user.EdadAprox}</th>
+                                <th>{user.Cicatrices}</th>
+                                <th>{user.Tatuajes}</th>
+                                <th>{user.Piercings}</th>
+                                <th>{user.Otra}</th>
+                                <th>{user.Huida}</th>
+                                <th>{user.Observacion}</th>
+                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
+                            </tr>
                         ))
                     }
                 </tbody>

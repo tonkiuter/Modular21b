@@ -22,6 +22,15 @@ class EventoSocialView extends Component {
         })
     }
 
+    
+    removeCategory (ids) {
+        fetch('http://127.0.0.1:8000/social/'+ids+'/',{
+            method: 'DELETE',
+            headers: {'Accept':'application/json','Content-Type':'application/json'}
+        })
+
+    }
+
     render(){
         const {EventoSocialLista} = this.state
         console.log(EventoSocialLista)
@@ -59,6 +68,7 @@ class EventoSocialView extends Component {
                                 <th>{user.NombreEncargado}</th>
                                 <th>{user.TelefonoEncargado}</th>
                                 <th>{user.CorreoEncargado}</th>
+                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
                             </tr>
                         ))
                     }

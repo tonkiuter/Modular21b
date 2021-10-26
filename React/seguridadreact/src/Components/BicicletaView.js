@@ -22,6 +22,14 @@ class BicicletaView extends Component {
         })
     }
 
+    removeCategory (ids) {
+        fetch('http://127.0.0.1:8000/bicicleta/'+ids+'/',{
+            method: 'DELETE',
+            headers: {'Accept':'application/json','Content-Type':'application/json'}
+        })
+
+    }
+    
     render(){
         const {BicicletaLista} = this.state
         console.log(BicicletaLista)
@@ -30,7 +38,7 @@ class BicicletaView extends Component {
                 <thead>
                     <tr>
                         <th>CodigoAlumno</th>
-                        <th>Carrera</th>
+                        <th>Foto id frente</th>
                         <th>Foto id detras</th>
                         <th>Descripcion</th>
                     </tr>
@@ -38,7 +46,13 @@ class BicicletaView extends Component {
                 <tbody>
                     {
                         BicicletaLista.map((user) => (
-                            <tr key={user.id} ><th>{user.CodigoAlumno}</th><th>{user.Carrera}</th><th>{user.FotoIdF}</th><th>{user.FotoIdB}</th></tr>
+                            <tr key={user.id} >
+                                <th>{user.CodigoAlumno}</th>
+                                <th><img src={user.FotoIdF} width="100" height="100" alt ="imagen"/> </th>
+                                <th><img src={user.FotoIdB} width="100" height="100" alt ="imagen"/> </th>
+                                <th>{user.Descripcion}</th>
+                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
+                            </tr>
                         ))
                     }
                 </tbody>

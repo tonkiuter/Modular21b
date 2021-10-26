@@ -21,6 +21,14 @@ class ActaAdministrativaView extends Component {
             console.log(error)
         })
     }
+    
+    removeCategory (ids) {
+        fetch('http://127.0.0.1:8000/actaadministrativa/'+ids+'/',{
+            method: 'DELETE',
+            headers: {'Accept':'application/json','Content-Type':'application/json'}
+        })
+
+    }
 
     render(){
         const {ActaLista} = this.state
@@ -39,7 +47,15 @@ class ActaAdministrativaView extends Component {
                 <tbody>
                     {
                         ActaLista.map((user) => (
-                            <tr key={user.id} ><th>{user.CodigoAlumno}</th><th>{user.NoOficio}</th><th>{user.Lugar}</th><th>{user.NombreAl}</th><th>{user.Causa}</th></tr>
+                            <tr key={user.id} >
+                                <th>{user.CodigoAlumno}</th>
+                                <th>{user.NoOficio}</th>
+                                <th>{user.Lugar}</th>
+                                <th>{user.NombreAl}</th>
+                                <th>{user.Causa}</th>
+                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
+                            </tr>
+                            
                         ))
                     }
                 </tbody>

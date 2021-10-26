@@ -8,8 +8,8 @@ class Bicicleta extends Component{
         this.state = {
             id: '',
             CodigoAlumno: '',
-            FotoIdF : 'qqqq',
-            FotoIdB : 'wwww',
+            FotoIdF : null,
+            FotoIdB : null,
             Descripcion: '',
         }
     }
@@ -21,23 +21,34 @@ class Bicicleta extends Component{
         })
     }
 
+    handleInputChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.files[0]
+        });
+      };
 
-    submitHandler = e => {
-        e.preventDefault()
-        console.log(this.state)
+    submitHandler = (data) => {
+        data.preventDefault()
+        console.log(data)
+        let form_data = new FormData();
+        form_data.append('id', this.state.id);
+        form_data.append('CodigoAlumno', this.state.CodigoAlumno);
+        form_data.append('FotoIdF', this.state.FotoIdF, this.state.FotoIdF.name);
+        form_data.append('FotoIdB', this.state.FotoIdB, this.state.FotoIdB.name);
+        form_data.append('Descripcion', this.state.Descripcion);
         axios
-            .post('http://127.0.0.1:8000/bicicleta', this.state)
+            .post('http://127.0.0.1:8000/bicicleta', form_data)
             .then(response => {
                 console.log(response)
             })
             .catch(error => {
                 console.log(error)
             })
-    }
+    };
 
     render(){
         // dateSolicitud Poner en la api la hora del sistema
-        const {CodigoAlumno,FotoIdB,FotoIdF,Descripcion } = this.state;
+        const {CodigoAlumno,Descripcion } = this.state;
 
         return (
             <div>
@@ -50,11 +61,11 @@ class Bicicleta extends Component{
                         </div>
                     
                         <div className="col-md">
-                        FotoIdB: <input className="form-control" type="text" name="FotoIdB" value={FotoIdB} onChange={this.changeHandler}></input>
+                        FotoIdB: <input className="form-control" type="file" name="FotoIdB" onChange={this.handleInputChange}></input>
                         </div>
                     
                         <div className="col-md">
-                        FotoIdF: <input className="form-control" type="text" name="FotoIdF" value={FotoIdF} onChange={this.changeHandler}></input>
+                        FotoIdF: <input className="form-control" type="file" name="FotoIdF" onChange={this.handleInputChange}></input>
                         </div>
     
                         <div className="col-md">

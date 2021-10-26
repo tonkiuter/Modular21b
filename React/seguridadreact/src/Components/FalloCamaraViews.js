@@ -21,6 +21,14 @@ class FalloCamaraViews extends Component {
             console.log(error)
         })
     }
+    
+    removeCategory (ids) {
+        fetch('http://127.0.0.1:8000/camara/'+ids+'/',{
+            method: 'DELETE',
+            headers: {'Accept':'application/json','Content-Type':'application/json'}
+        })
+
+    }
 
     render(){
         const {FalloCamaraLista} = this.state
@@ -57,6 +65,7 @@ class FalloCamaraViews extends Component {
                                 <th>{user.MateriaUt}</th>
                                 <th>{user.Solucionado}</th>
                                 <th>{user.Observaciones}</th>
+                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
                             </tr>
                         ))
                     }

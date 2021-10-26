@@ -21,6 +21,14 @@ class SolicitudVideoCamarasView extends Component {
             console.log(error)
         })
     }
+    
+    removeCategory (ids) {
+        fetch('http://127.0.0.1:8000/solcamara/'+ids+'/',{
+            method: 'DELETE',
+            headers: {'Accept':'application/json','Content-Type':'application/json'}
+        })
+
+    }
 
     render(){
         const {SolicitudVideoCamarasLista} = this.state
@@ -49,8 +57,9 @@ class SolicitudVideoCamarasView extends Component {
                                 <th>{user.noCamara}</th>
                                 <th>{user.horario}</th>
                                 <th>{user.hecho}</th>
-                                <th>{user.fotoIdF}</th>
-                                <th>{user.fotoIdB}</th>
+                                <th><img src={user.fotoIdF} width="100" height="100" alt ="imagen"/> </th>
+                                <th><img src={user.fotoIdB} width="100" height="100" alt ="imagen"/> </th>
+                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
                             </tr>
                         ))
                     }

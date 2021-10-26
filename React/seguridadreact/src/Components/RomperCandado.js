@@ -10,8 +10,8 @@ class RomperCandado extends Component{
             NombreAlumno:'',
             CodigoAlumno:'',
             Carrera:'',
-            FotoIdF: 'FSASF',
-            FotoIdB: 'SADFAS',
+            FotoIdF: null,
+            FotoIdB: null,
             Descripcion: '',
             Fecha: '',
         }
@@ -23,21 +23,36 @@ class RomperCandado extends Component{
         })
     }
 
-    submitHandler = e=> {
-        e.preventDefault()
-        console.log(this.state)
+    handleInputChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.files[0]
+        });
+      };
+
+    submitHandler = (data) => {
+        data.preventDefault()
+        console.log(data)
+        let form_data = new FormData();
+        form_data.append('id', this.state.id);
+        form_data.append('NombreAlumno', this.state.NombreAlumno);
+        form_data.append('CodigoAlumno', this.state.CodigoAlumno);
+        form_data.append('Carrera', this.state.Carrera);
+        form_data.append('FotoIdF', this.state.FotoIdF, this.state.FotoIdF.name);
+        form_data.append('FotoIdB', this.state.FotoIdB, this.state.FotoIdB.name);
+        form_data.append('Descripcion', this.state.Descripcion);
+        form_data.append('Fecha', this.state.Fecha);
         axios
-            .post('http://127.0.0.1:8000/rompercandado', this.state)
+            .post('http://127.0.0.1:8000/rompercandado', form_data)
             .then(response => {
                 console.log(response)
             })
             .catch(error => {
                 console.log(error)
             })
-    }
+    };
 
     render(){
-        const { NombreAlumno, Carrera, CodigoAlumno, Descripcion, Fecha} = this.state
+        const { NombreAlumno, Carrera, CodigoAlumno, Descripcion} = this.state
         return (
             <div>
                 <h1 className="display-3">Apertura de Candado</h1>
@@ -56,10 +71,13 @@ class RomperCandado extends Component{
                         </div>
                         <div className="row">
                             <div className="col-md">
-                                Fecha: <input className="form-control" type="datetime-local" name="Fecha" value={Fecha} onChange={this.changeHandler}></input>
+                                Descripcion: <textarea className="form-control" name="Descripcion" value={Descripcion} onChange={this.changeHandler}></textarea>
                             </div>
                             <div className="col-md">
-                                Descripcion: <textarea className="form-control" name="Descripcion" value={Descripcion} onChange={this.changeHandler}></textarea>
+                            Foto ID frente: <input accept="image/png, image/jpeg" className="form-control" type="file" name="FotoIdF" onChange={this.handleInputChange}></input>
+                            </div>
+                            <div className="col-md">
+                            Foto Id detras: <input accept="image/png, image/jpeg" className="form-control" type="file" name="FotoIdB" onChange={this.handleInputChange}></input>
                             </div>
                         </div>
                         <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>

@@ -18,7 +18,7 @@ class BicicletaList(generics.ListCreateAPIView):
     serializer_class = BicicletaSerializer
 
 class BicicletaDetail(generics.RetrieveDestroyAPIView):
-    queryset = SolicitudVideoCamaras.objects.all()
+    queryset = Bicicleta.objects.all()
     serializer_class = BicicletaSerializer
 
 class EventoSocialList(generics.ListCreateAPIView):

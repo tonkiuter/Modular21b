@@ -8,8 +8,8 @@ class PaseSalida extends Component{
         this.state={
             id: '',
             CodigoAlumno: '',
-            FotoIdF: '',
-            FotoIdB: '',
+            FotoIdF: null,
+            FotoIdB: null,
             Sello: '',
             Descripcion: '',
             Fecha: '',
@@ -22,21 +22,35 @@ class PaseSalida extends Component{
         })
     }
 
-    submitHandler = e=> {
-        e.preventDefault()
+    handleInputChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.files[0]
+        });
+      };
+
+    submitHandler = (data) => {
+        data.preventDefault()
         console.log(this.state)
+        let form_data = new FormData();
+        form_data.append('id', this.state.id);
+        form_data.append('CodigoAlumno', this.state.CodigoAlumno);
+        form_data.append('FotoIdF', this.state.FotoIdF, this.state.FotoIdF.name);
+        form_data.append('FotoIdB', this.state.FotoIdB, this.state.FotoIdB.name);
+        form_data.append('Sello', this.state.Sello);
+        form_data.append('Descripcion', this.state.Descripcion);
+        form_data.append('Fecha', this.state.Fecha);
         axios
-            .post('http://127.0.0.1:8000/pasesalida', this.state)
+            .post('http://127.0.0.1:8000/pasesalida', form_data)
             .then(response => {
                 console.log(response)
             })
             .catch(error => {
                 console.log(error)
             })
-    }
+    };
 
     render(){
-        const { CodigoAlumno, FotoIdF, FotoIdB, Sello, Descripcion, Fecha} = this.state
+        const { CodigoAlumno, Sello, Descripcion, Fecha} = this.state
         return (
             <div>
                 <h1 className="display-3">Pase de Salida</h1>
@@ -47,10 +61,10 @@ class PaseSalida extends Component{
                             Codigo Alumno: <input className="form-control" type="text" name="CodigoAlumno" value={CodigoAlumno} onChange={this.changeHandler}></input>
                             </div>
                             <div className="col-md">
-                            Foto ID frente: <input className="form-control" type="file" name="FotoIdF" value={FotoIdF} onChange={this.changeHandler}></input>
+                            Foto ID frente: <input className="form-control" type="file" name="FotoIdF" onChange={this.handleInputChange}></input>
                             </div>
                             <div className="col-md">
-                            Foto Id detras: <input className="form-control" type="file" name="FotoIdB" value={FotoIdB} onChange={this.changeHandler}></input>
+                            Foto Id detras: <input className="form-control" type="file" name="FotoIdB" onChange={this.handleInputChange}></input>
                             </div>
                             <div className="col-md">
                             Sello: <input className="form-control" type="text" name="Sello" value={Sello} onChange={this.changeHandler}></input>

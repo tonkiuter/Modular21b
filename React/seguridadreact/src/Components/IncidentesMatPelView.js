@@ -21,6 +21,14 @@ class IncidentesMatPelView extends Component {
             console.log(error)
         })
     }
+    
+    removeCategory (ids) {
+        fetch('http://127.0.0.1:8000/reporteincidentesmatpel/'+ids+'/',{
+            method: 'DELETE',
+            headers: {'Accept':'application/json','Content-Type':'application/json'}
+        })
+
+    }
 
     render(){
         const {IncidentesLista} = this.state
@@ -42,7 +50,17 @@ class IncidentesMatPelView extends Component {
                 <tbody>
                     {
                         IncidentesLista.map((user) => (
-                            <tr key={user.id} ><th>{user.Fecha}</th><th>{user.Ubicacion}</th><th>{user.Fenomeno}</th><th>{user.Descripcion}</th><th>{user.Evaluacion}</th><th>{user.Tareas}</th><th>{user.Recursos}</th><th>{user.Estrategias}</th></tr>
+                            <tr key={user.id} >
+                                <th>{user.Fecha}</th>
+                                <th>{user.Ubicacion}</th>
+                                <th>{user.Fenomeno}</th>
+                                <th>{user.Descripcion}</th>
+                                <th>{user.Evaluacion}</th>
+                                <th>{user.Tareas}</th>
+                                <th>{user.Recursos}</th>
+                                <th>{user.Estrategias}</th>
+                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
+                            </tr>
                         ))
                     }
                 </tbody>

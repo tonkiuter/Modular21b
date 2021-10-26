@@ -25,23 +25,38 @@ class SolicitudVideoCamara extends Component{
         })
     }
 
+    handleInputChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.files[0]
+        });
+      };
 
-    submitHandler = e=> {
-        e.preventDefault()
+    submitHandler = (data) => {
+        data.preventDefault()
         console.log(this.state)
+        let form_data = new FormData();
+        form_data.append('id', this.state.id);
+        form_data.append('codigoAlumno', this.state.codigoAlumno);
+        form_data.append('atendio', this.state.atendio);
+        form_data.append('dateSolicitud', this.state.dateSolicitud);
+        form_data.append('noCamara', this.state.noCamara);
+        form_data.append('horario', this.state.horario);
+        form_data.append('hecho', this.state.hecho);
+        form_data.append('fotoIdF', this.state.fotoIdF, this.state.fotoIdF.name);
+        form_data.append('fotoIdB', this.state.fotoIdB, this.state.fotoIdB.name);
         axios
-            .post('http://127.0.0.1:8000/solcamara', this.state)
+            .post('http://127.0.0.1:8000/solcamara', form_data)
             .then(response => {
                 console.log(response)
             })
             .catch(error => {
                 console.log(error)
             })
-    }
+    };
 
     render(){
         // dateSolicitud Poner en la api la hora del sistema
-        const {codigoAlumno, atendio,noCamara,horario,hecho,fotoIdB,fotoIdF} = this.state;
+        const {codigoAlumno, atendio,noCamara,horario,hecho} = this.state;
 
         return (
             <div>
@@ -50,25 +65,25 @@ class SolicitudVideoCamara extends Component{
                 <div  className="container">
                     <div className="row">
                         <div className="col-md">
-                        Codigo Alumno: <input className="form-control" type="text" name="CodigoAlumno" value={codigoAlumno} onChange={this.changeHandler}></input>
+                        Codigo Alumno: <input className="form-control" type="text" name="codigoAlumno" value={codigoAlumno} onChange={this.changeHandler}></input>
                         </div>
                         <div className="col-md">
-                        Atendio: <input className="form-control" type="text" name="NombreAl" value={atendio} onChange={this.changeHandler}></input>
+                        Atendio: <input className="form-control" type="text" name="atendio" value={atendio} onChange={this.changeHandler}></input>
                         </div>
                         <div className="col-md">
-                        No. Camara: <input className="form-control" type="text" name="NoOficio" value={noCamara} onChange={this.changeHandler}></input>
+                        No. Camara: <input className="form-control" type="text" name="noCamara" value={noCamara} onChange={this.changeHandler}></input>
                         </div>
                         <div className="col-md">
-                        Horario: <input className="form-control" type="text" name="Lugar" value={horario} onChange={this.changeHandler}></input>
+                        Horario: <input className="form-control" type="text" name="horario" value={horario} onChange={this.changeHandler}></input>
                         </div>
                         <div className="col-md">
-                        Hecho: <input className="form-control" type="text" name="Causa" value={hecho} onChange={this.changeHandler}></input>
+                        Hecho: <input className="form-control" type="text" name="hecho" value={hecho} onChange={this.changeHandler}></input>
                         </div>
                         <div className="col-md">
-                        FotoIdB: <input className="form-control" type="text" name="Causa" value={fotoIdB} onChange={this.changeHandler}></input>
+                        FotoIdB: <input className="form-control" type="file" name="fotoIdB" onChange={this.handleInputChange}></input>
                         </div>
                         <div className="col-md">
-                        FotoIdF: <input className="form-control" type="text" name="Causa" value={fotoIdF} onChange={this.changeHandler}></input>
+                        FotoIdF: <input className="form-control" type="file" name="fotoIdF" onChange={this.handleInputChange}></input>
                         </div>
                     </div>
                     <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
