@@ -22,7 +22,7 @@ class PaseSalidaView extends Component {
         var img = new Image()
         img.src = elt.FotoIdF
         var img2 = new Image()
-        img.src = elt.FotoIdB
+        img2.src = elt.FotoIdB
 
         const doc = new jsPDF(orientation, unit, size);
         doc.setFontSize(15);
@@ -39,8 +39,13 @@ class PaseSalidaView extends Component {
             if (data.section === 'body' && data.column.index === 2) {
                 data.cell.width=300
                 data.cell.height=100
-                doc.addImage(img, 'JPEG', data.cell.x + 2, data.cell.y + 2, data.cell.width, data.cell.height)
-              }
+                doc.addImage(img, 'JPEG', data.cell.x + 2, data.cell.y + 2, data.cell.width, data.cell.height, "Alias","SLOW")
+            }
+            if (data.section === 'body' && data.column.index === 3) {
+                data.cell.width=300
+                data.cell.height=100
+                doc.addImage(img2, 'JPEG', data.cell.x + 2, data.cell.y + 2, data.cell.width, data.cell.height, "Alias","SLOW")
+            }
           }
           
         };

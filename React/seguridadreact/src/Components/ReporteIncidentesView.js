@@ -33,16 +33,33 @@ class ReporteIncidentesView extends Component {
         const doc = new jsPDF(orientation, unit, size);
         doc.setFontSize(15);
 
+        var img = new Image()
+        img.src = elt.FotoIdF
+        var img2 = new Image()
+        img2.src = elt.FotoIdB
+
         const title = "Reporte de Incidente";
         const headers = [["ID", "Codigo", "Fecha y hora ","Ubicacion","Objetos Perdidos","Foto Id Frente","Foto Id Detras","Estatura","Apariencia","Tez","Cabello","Ojos","Cara","Boca",
                         "Tipo de ropa","Gorra","Edad Aproximada","Cicatrices","Tatuajes","Piercings","Otra","Huida","Observacion"]];
-        const data = [[elt.id, elt.CodigoAlumno, elt.FechaHora, elt.Ubicacion, elt.ObjetosP, elt.Estatura, elt.Apariencia, elt.Tez, elt.Cabello, elt.Ojos,
+        const data = [[elt.id, elt.CodigoAlumno, elt.FechaHora, elt.Ubicacion, elt.ObjetosP, elt.FotoIdF, elt.FotoIdB, elt.Estatura, elt.Apariencia, elt.Tez, elt.Cabello, elt.Ojos,
         elt.Cara, elt.Boca, elt.TipoRopa, elt.Gorra, elt.EdadAprox, elt.Cicatrices, elt.Tatuajes, elt.Piercings, elt.Otra, elt.Huida, elt.Observacion]];
     
         let content = {
           startY: 50,
           head: headers,
-          body: data
+          body: data, 
+          didDrawCell: function (data) {
+            if (data.section === 'body' && data.column.index === 5) {
+                data.cell.width=300
+                data.cell.height=100
+                doc.addImage(img, 'JPEG', data.cell.x + 2, data.cell.y + 2, data.cell.width, data.cell.height, "Alias","SLOW")
+            }
+            if (data.section === 'body' && data.column.index === 6) {
+                data.cell.width=300
+                data.cell.height=100
+                doc.addImage(img2, 'JPEG', data.cell.x + 2, data.cell.y + 2, data.cell.width, data.cell.height, "Alias","SLOW")
+            }
+          }
         };
         doc.text(title, marginLeft, 40);
         doc.autoTable(content);
