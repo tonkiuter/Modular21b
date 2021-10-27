@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import 'react-bootstrap';
-import { Form, FormCheck, Table } from 'react-bootstrap';
+import { Form, Table } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 class Vistas extends Component{

@@ -32,6 +32,7 @@ import FalloCamara from './Components/FalloCamara';
 import FalloCamaraViews from './Components/FalloCamaraViews';
 import SolicitudVideoCamarasView from './Components/SolicitudVideoCamarasView';
 import SolicitudVideoCamara from './Components/SolicitudVideoCamaras';
+import Vistas from './Components/Vistas';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Link to='/urgencias' className= "btn btn-dark">Urgencias</Link>
           <Link to='/crendencialperdida' className= "btn btn-dark">Crendencial</Link>
           <Link to='/incidentesmatpet' className= "btn btn-dark">IncidentesMatPel</Link>
+          <Link to='/vistas' className= "btn btn-dark">Vistas</Link>
         </div>
       
       <hr/>
@@ -148,6 +150,11 @@ function App() {
       <Route path= '/incidentesmatpet/view' exact>
         <IncidentesMatPelView></IncidentesMatPelView>
       </Route>
+      
+      <Route path= '/vistas' exact>
+        <Vistas></Vistas>
+      </Route>
+
       </Switch>
       </div>
     </Router>
