@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from 'react-bootstrap/Navbar'
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -32,10 +33,37 @@ import FalloCamara from './Components/FalloCamara';
 import FalloCamaraViews from './Components/FalloCamaraViews';
 import SolicitudVideoCamarasView from './Components/SolicitudVideoCamarasView';
 import SolicitudVideoCamara from './Components/SolicitudVideoCamaras';
+import { Container, Nav } from 'react-bootstrap';
+
+/*function App(){
+  return(
+    <Router>
+      <Navbar bg="dark" expand="lg" fixed="top" variant="dark">
+        <Container>
+          <Navbar.Brand>
+            <img alt="" src="353px-Escudo_UdeG.svg.png" width="30" height="30" className="d-inline-block align-top"/>{' '}
+            Seguridad CUCEI
+          </Navbar.Brand>
+          <Nav className="me-auto">
+            <Link to='/ActaAdministrativa' className= "btn btn-dark">Acta Administrativa</Link>
+          </Nav>
+        </Container>
+      </Navbar>
+      <Switch>
+        <Route path='/ActaAdministrativa' exact>
+          <ActaAdministrativa></ActaAdministrativa>
+        </Route>
+        <Route path='/actaadmin/view' exact>
+          <ActaAdministrativaView></ActaAdministrativaView>
+        </Route>
+      </Switch>
+    </Router>
+  );
+}*/
 
 function App() {
   return (
-    // Router inicializa nuestro enrutado
+    //Router inicializa nuestro enrutado
     <Router>
       <div className="container mt-5">
         <div className= "btn-group">
@@ -52,12 +80,11 @@ function App() {
           <Link to='/crendencialperdida' className= "btn btn-dark">Crendencial</Link>
           <Link to='/incidentesmatpet' className= "btn btn-dark">IncidentesMatPel</Link>
         </div>
-      
       <hr/>
       {/* Switch metemos todas nuestras rutas especificas donde decimos que es lo que va dentro de cada una */}
       <Switch>
       {/* Route especificamos nuestras rutas y lo que contienen */}
-      <Route path='/' exact>
+      /<Route path='/' exact>
         Inicio
       </Route>
 
