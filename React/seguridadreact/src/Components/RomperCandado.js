@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import { Link } from "react-router-dom";
 class RomperCandado extends Component{
     constructor(props) {
         super(props)
@@ -55,6 +55,9 @@ class RomperCandado extends Component{
         const { NombreAlumno, Carrera, CodigoAlumno, Descripcion} = this.state
         return (
             <div>
+            <div className= "container mt-5">
+            <Link to='/rompercandado/view' className= "btn btn-dark">Lista</Link>
+            </div>
                 <h1 className="display-3">Apertura de Candado</h1>
                 <form onSubmit={this.submitHandler} className="needs-validation">
                     <div  className="container">

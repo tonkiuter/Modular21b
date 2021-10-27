@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Form } from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 class CredencialPerdida extends Component{
     constructor(props){
@@ -51,6 +52,10 @@ class CredencialPerdida extends Component{
         const { NombreA, Carrera, Codigo } = this.state
         return(
             <div>
+
+            <div className= "container mt-5">
+            <Link to='/crendecialperdida/view' className= "btn btn-dark">Lista</Link>
+            </div>
                 <h1 className="display-3">Credencial Perdida y Recuperada</h1>
                 <Form onSubmit={this.submitHandler} className="needs-validation">
                     <div className="container">

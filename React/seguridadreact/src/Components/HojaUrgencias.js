@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Form } from "react-bootstrap";
+import {Link} from "react-router-dom"; 
 
 class HojaUrgencias extends Component{
     constructor(props){
@@ -76,6 +77,9 @@ class HojaUrgencias extends Component{
         const{ Fecha, Nombre, Edad, Adscripcion, Codigo, Cargo, NoTelefono, ProvieneDe, Ubicacion, TrasladoA, Padecimiento,  DiabetesDiagnostico, DiabetesTratamiento, HipertensionDiagnostico, HipertensionTratamiento, EpilepsiaDiagnostico, EpilepsiaTratamiento, AsmaDiagnostico, AsmaTratamiento, Cirugias, Alergias, Sangre, TensionArterial, FC, FR, Temperatura, Saturacion, Glucosa, EscalaGlasgow, Neurologico, CabezaCuello, Cardiopulmonar, Abdomen, Extremidades, Diagnostico, Condicion, PronostioS, Tratamiento, } = this.state
         return(
             <div>
+            <div className= "container mt-5">
+            <Link to='/urgencias/view' className= "btn btn-dark">Lista</Link>
+            </div>
                 <h1 className="display-3">Hoja de Urgencias</h1>
                 <h3 className="display-4">Ficha Clinica</h3>
                 <Form onSubmit={this.submitHandler} className="needs-validation"> 

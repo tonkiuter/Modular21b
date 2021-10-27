@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 class FalloCamara extends Component{
     constructor(props){
@@ -51,6 +52,9 @@ class FalloCamara extends Component{
 
         return (
             <div>
+            <div className= "container mt-5">
+            <Link to='/fallocamara/view' className= "btn btn-dark">Lista</Link>
+            </div>
             <h1 className="display-3">Fallo Camara</h1>
             <form onSubmit={this.submitHandler} className="needs-validation">
                 <div  className="container">

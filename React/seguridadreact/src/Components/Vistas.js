@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import 'react-bootstrap';
 import { Form, FormCheck, Table } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 class Vistas extends Component{
     constructor(props) {
@@ -48,6 +49,9 @@ class Vistas extends Component{
         const { Lugar, Departamento, Equipo, NoEquipo, Planta, Agente, CapaciddadKG, CapacidadLB, Soporte, UltimaCarga, PH, Activado, Comentarios, Existe} = this.state
         return (
             <div>
+            <div className= "container mt-5">
+            <Link to='/vistas/view' className= "btn btn-dark">Lista</Link>
+            </div>
                 <Form onSubmit={this.submitHandler} className="needs-validation">
                     <Table bordered>
                         <thead>

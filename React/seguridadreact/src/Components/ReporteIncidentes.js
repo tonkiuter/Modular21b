@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import {Link} from "react-router-dom";
 class ReporteIncidentes extends Component{
     constructor(props) {
         super(props)
@@ -87,6 +87,9 @@ class ReporteIncidentes extends Component{
         Tatuajes, Piercings, Otra, Huida, Observacion} = this.state
         return (
             <div>
+           <div className= "container mt-5">
+            <Link to='/reporteincidentes/view' className= "btn btn-dark">Lista</Link>
+            </div>
                 <h1 className="display-3">Reporte de Incidentes</h1>
                 <form onSubmit={this.submitHandler} className="needs-validation">
                     <div  className="container">

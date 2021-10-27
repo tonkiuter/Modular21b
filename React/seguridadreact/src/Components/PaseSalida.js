@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import { Link } from "react-router-dom";
 class PaseSalida extends Component{
     constructor(props) {
         super(props)
@@ -51,8 +51,11 @@ class PaseSalida extends Component{
 
     render(){
         const { CodigoAlumno, Sello, Descripcion} = this.state
-        return (
+        return (            
             <div>
+            <div className= "container mt-5">
+            <Link to='/pasesalida/view' className= "btn btn-dark">Lista</Link>
+            </div>
                 <h1 className="display-3">Pase de Salida</h1>
                 <form onSubmit={this.submitHandler} className="needs-validation">
                     <div  className="container">

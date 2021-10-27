@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 class ActaAdministrativa extends Component{
     constructor(props) {
@@ -38,6 +39,11 @@ class ActaAdministrativa extends Component{
         const { CodigoAlumno, NoOficio, Lugar, NombreAl, Causa} = this.state
         return (
             <div>
+
+            <div className= "container mt-5">
+            <Link to='/actaadmin/view' className= "btn btn-dark">Lista</Link>
+            </div>
+
                 <h1 className="display-3">Acta Administrativa</h1>
                 <form onSubmit={this.submitHandler} className="needs-validation">
                     <div  className="container">
