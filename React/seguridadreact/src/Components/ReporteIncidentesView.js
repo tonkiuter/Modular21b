@@ -44,7 +44,6 @@ class ReporteIncidentesView extends Component {
           head: headers,
           body: data
         };
-    
         doc.text(title, marginLeft, 40);
         doc.autoTable(content);
         doc.save("Reportes de Incidente ID: "+elt.id+".pdf")
