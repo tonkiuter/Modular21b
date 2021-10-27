@@ -10,7 +10,7 @@ class FalloCamaraViews extends Component {
             FalloCamaraLista: []
         }
     }
-
+    
     componentDidMount(){
         axios.get('http://127.0.0.1:8000/camara')
         .then(response => {
@@ -63,7 +63,7 @@ class FalloCamaraViews extends Component {
                                 <th>{user.DescFalla}</th>
                                 <th>{user.Toreos}</th>
                                 <th>{user.MateriaUt}</th>
-                                <th>{user.Solucionado}</th>
+                                <th>{user.Solucionado.toString()}</th>
                                 <th>{user.Observaciones}</th>
                                 <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
                             </tr>

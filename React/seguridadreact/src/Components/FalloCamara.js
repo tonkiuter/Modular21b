@@ -49,7 +49,7 @@ class FalloCamara extends Component{
 
 
         const {NoCamara,Informacion, SITE, Modulo, Marca, DescFalla, Toreos,
-                 MateriaUt, Solucionado, Observaciones} = this.state;
+                 MateriaUt, Solucionado, Observaciones, IP} = this.state;
 
         return (
             <div>
@@ -65,6 +65,9 @@ class FalloCamara extends Component{
                         </div>
                         <div className= "col-md">
                         Informacion: <input className="form-control" type="text" name="Informacion" value={Informacion} onChange={this.changeHandler}></input>
+                        </div>
+                        <div className= "col-md">
+                        IP: <input className="form-control" type="text" name="IP" value={IP} onChange={this.changeHandler}></input>
                         </div>
                         <div className="col-md">
                         SITE: <input className="form-control" type="text" name="SITE" value={SITE} onChange={this.changeHandler}></input>

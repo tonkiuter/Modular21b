@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 class PaseSalidaView extends Component {
     constructor(props){
@@ -9,6 +11,32 @@ class PaseSalidaView extends Component {
         this.state={
             PaseLista: []
         }
+    }
+
+    exportPDF = (elt) => {
+        const unit = "pt";
+        const size = "A3"; // Use A1, A2, A3 or A4
+        const orientation = "landscape"; // portrait or landscape
+        const marginLeft = 40;
+
+        var img = new Image()
+        img.src = elt.FotoIdF
+
+        const doc = new jsPDF(orientation, unit, size);
+        doc.setFontSize(15);
+
+        const title = "Reporte Pase salida";
+        const headers = [["ID","Codigo", "Foto Frente","Foto Back","Sello","Descripcion","Fecha"]];
+        const data = [[elt.id, elt.CodigoAlumno, elt.FotoIdF, elt.FotoIdB, elt.Sello, elt.Descripcion, elt.Fecha]];
+    
+        let content = {
+          startY: 50,
+          head: headers,
+          body: data
+        };
+        doc.text(title, marginLeft, 40);
+        doc.autoTable(content);
+        doc.save("Reportes de Pase salida ID: "+elt.id+".pdf")
     }
 
     componentDidMount(){
@@ -26,7 +54,7 @@ class PaseSalidaView extends Component {
         fetch('http://127.0.0.1:8000/pasesalida/'+ids+'/',{
             method: 'DELETE',
             headers: {'Accept':'application/json','Content-Type':'application/json'}
-        })
+        }) 
         window.location.reload()
     }
 
@@ -37,6 +65,7 @@ class PaseSalidaView extends Component {
             <Table bordered>
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Codigo del Alumno</th>
                         <th>Foto id de frente</th>
                         <th>Foto id detras</th>
@@ -48,7 +77,8 @@ class PaseSalidaView extends Component {
                 <tbody>
                     {
                         PaseLista.map((user) => (
-                            <tr key={user.id} >
+                            <tr key={user.id}>
+                                <th>{user.id}</th>
                                 <th>{user.CodigoAlumno}</th>
                                 <th><img src={user.FotoIdF} width="100" height="100" alt ="imagen"/> </th>
                                 <th><img src={user.FotoIdB} width="100" height="100" alt ="imagen"/> </th>
@@ -56,6 +86,7 @@ class PaseSalidaView extends Component {
                                 <th>{user.Descripcion}</th>
                                 <th>{user.Fecha}</th>
                                 <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
+                                <th><button onClick={() => this.exportPDF(user)}>Generar Reporte</button></th>
                             </tr>
                         ))
                     }
