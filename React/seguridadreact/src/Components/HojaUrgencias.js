@@ -67,6 +67,7 @@ class HojaUrgencias extends Component{
             .post('http://127.0.0.1:8000/hojaurgencias', this.state)
             .then(response => {
                 console.log(response)
+                window.location.reload()
             })
             .catch(error => {
                 console.log(error)
@@ -78,7 +79,7 @@ class HojaUrgencias extends Component{
         return(
             <div>
             <div className= "container mt-5">
-            <Link to='/urgencias/view' className= "btn btn-dark">Lista</Link>
+            <Link to='/hojaurgencias/view' className= "btn btn-dark">Lista</Link>
             </div>
                 <h1 className="display-3">Hoja de Urgencias</h1>
                 <h3 className="display-4">Ficha Clinica</h3>

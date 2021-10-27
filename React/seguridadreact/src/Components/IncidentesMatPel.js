@@ -33,6 +33,7 @@ class ReporteIncidentesMatPel extends Component{
             .post('http://127.0.0.1:8000/reporteincidentesmatpel', this.state)
             .then(response => {
                 console.log(response)
+                window.location.reload()
             })
             .catch(error => {
                 console.log(error)

@@ -37,6 +37,7 @@ class EventoSocial extends Component{
             .post('http://127.0.0.1:8000/social', this.state)
             .then(response => {
                 console.log(response)
+                window.location.reload()
             })
             .catch(error => {
                 console.log(error)

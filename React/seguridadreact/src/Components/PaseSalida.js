@@ -43,6 +43,7 @@ class PaseSalida extends Component{
             .post('http://127.0.0.1:8000/pasesalida', form_data)
             .then(response => {
                 console.log(response)
+                window.location.reload()
             })
             .catch(error => {
                 console.log(error)

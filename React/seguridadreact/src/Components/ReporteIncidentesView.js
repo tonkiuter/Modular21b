@@ -27,14 +27,14 @@ class ReporteIncidentesView extends Component {
             method: 'DELETE',
             headers: {'Accept':'application/json','Content-Type':'application/json'}
         })
-
+        window.location.reload()
     }
 
     render(){
         const {IncidentesLista} = this.state
         console.log(IncidentesLista)
         return(
-            <Table bordered>
+            <Table bordered responsive>
                 <thead>
                     <tr>
                         <th>Codigo del Alumno</th>

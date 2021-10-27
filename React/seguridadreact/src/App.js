@@ -32,7 +32,6 @@ import FalloCamara from './Components/FalloCamara';
 import FalloCamaraViews from './Components/FalloCamaraViews';
 import SolicitudVideoCamarasView from './Components/SolicitudVideoCamarasView';
 import SolicitudVideoCamara from './Components/SolicitudVideoCamaras';
-import Vistas from './Components/Vistas';
 
 function App() {
   return (
@@ -49,10 +48,9 @@ function App() {
           <Link to='/actaadmin' className= "btn btn-dark">Acta Admin</Link>
           <Link to='/pasesalida' className= "btn btn-dark">Pase Salida</Link>
           <Link to='/reporteincidentes' className= "btn btn-dark">Incidencias</Link>
-          <Link to='/urgencias' className= "btn btn-dark">Urgencias</Link>
+          <Link to='/hojaurgencias' className= "btn btn-dark">Urgencias</Link>
           <Link to='/crendencialperdida' className= "btn btn-dark">Crendencial</Link>
           <Link to='/incidentesmatpet' className= "btn btn-dark">IncidentesMatPel</Link>
-          <Link to='/vistas' className= "btn btn-dark">Vistas</Link>
         </div>
       
       <hr/>
@@ -127,11 +125,11 @@ function App() {
       <ReporteIncidentesView></ReporteIncidentesView>
       </Route>
 
-      <Route path='urgencias' exact>
+      <Route path='/hojaurgencias' exact>
         <HojaUrgencias></HojaUrgencias>
       </Route>
 
-      <Route path='urgencias/view' exact>
+      <Route path='/hojaurgencias/view' exact>
         <HojaUrgenciasView></HojaUrgenciasView>
       </Route>
 
@@ -149,10 +147,6 @@ function App() {
 
       <Route path= '/incidentesmatpet/view' exact>
         <IncidentesMatPelView></IncidentesMatPelView>
-      </Route>
-      
-      <Route path= '/vistas' exact>
-        <Vistas></Vistas>
       </Route>
 
       </Switch>

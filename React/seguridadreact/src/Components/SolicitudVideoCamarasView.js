@@ -27,7 +27,7 @@ class SolicitudVideoCamarasView extends Component {
             method: 'DELETE',
             headers: {'Accept':'application/json','Content-Type':'application/json'}
         })
-
+        window.location.reload()
     }
 
     render(){

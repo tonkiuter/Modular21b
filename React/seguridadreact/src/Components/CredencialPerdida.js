@@ -42,6 +42,7 @@ class CredencialPerdida extends Component{
             .post('http://127.0.0.1:8000/credencialperdida', form_data)
             .then(response => {
                 console.log(response)
+                window.location.reload()
             })
             .catch(error => {
                 console.log(error)
@@ -54,7 +55,7 @@ class CredencialPerdida extends Component{
             <div>
 
             <div className= "container mt-5">
-            <Link to='/crendecialperdida/view' className= "btn btn-dark">Lista</Link>
+            <Link to='/crendencialperdida/view' className= "btn btn-dark">Lista</Link>
             </div>
                 <h1 className="display-3">Credencial Perdida y Recuperada</h1>
                 <Form onSubmit={this.submitHandler} className="needs-validation">
