@@ -17,6 +17,7 @@ class ReporteIncidentesMatPel extends Component{
             Tareas: '',
             Recursos: '',
             Estrategias: '',
+            EvidenciaFoto: '',
         }
     }
 
@@ -59,8 +60,6 @@ class ReporteIncidentesMatPel extends Component{
                             <Col>
                                 Ubicacion: <input className="form-control" type="text" required name="Ubicacion" value={Ubicacion} onChange={this.changeHandler}></input>
                             </Col>
-                        </Row>
-                        <Row>
                             <Col>
                                 Fenomeno Perutbador:  <input className="form-control" type="text" required name="Fenomeno" value={Fenomeno} onChange={this.changeHandler}></input>
                             </Col>
@@ -80,6 +79,9 @@ class ReporteIncidentesMatPel extends Component{
                             </Col>
                             <Col>
                                 Estrategias y Recomendaciones para evitar Incidencias: <textarea className="form-control" name="Estrategias" value={Estrategias} onChange={this.changeHandler}></textarea>
+                            </Col>
+                            <Col>
+                                Evidencia Fotografica: <input className="form-control" type="file" name="EvidenciaFoto" onChange={this.handleInputChange}></input>
                             </Col>
                         </Row>
                         <br></br>

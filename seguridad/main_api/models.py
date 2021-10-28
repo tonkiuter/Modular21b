@@ -224,6 +224,7 @@ class ReporteIncidentesMatPel(models.Model):
     Tareas = models.CharField(max_length = 250)
     Recursos = models.CharField(max_length=250)
     Estrategias = models.CharField(max_length=250)
+    EvidenciaFoto = models.ImageField(upload_to='ReporteIncidentesMatPelID')
 
     def __str__(self):
         return self.ReporteIncidentesMatPel 
