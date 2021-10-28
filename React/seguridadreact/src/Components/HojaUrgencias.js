@@ -80,7 +80,7 @@ class HojaUrgencias extends Component{
             <div>
                 ~{"\n"}
                 <div className= "container mt-5">
-                    <Link to='/hojaurgencias/view' className= "btn btn-info">Lista</Link>
+                    <Link to='/hojaurgencias/view' className= "btn btn-info">Listado</Link>
                 </div>
                 <h1 className="display-3" align="center">
                     <img alt="" src="HojaUrgenciasIcon.png" width="75" height="75"/>{' '}
@@ -116,37 +116,37 @@ class HojaUrgencias extends Component{
                         </Row>
                         <Row>
                             <Col>
-                                Tel/Cel: <input className="form-control" type="text" name="NoTelefono" value={NoTelefono} onChange={this.changeHandler} ></input>
+                                Tel/Cel: <input className="form-control" type="text" name="NoTelefono" placeholder="10 Digitos" value={NoTelefono} onChange={this.changeHandler} ></input>
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                                Proveniente de: <input className="form-control" type="text" name="ProvieneDe" value={ProvieneDe} onChange={this.changeHandler} ></input>
+                                Proveniente de: <input className="form-control" type="text" name="ProvieneDe" placeholder="Escuela o Institucion de Procedencia" value={ProvieneDe} onChange={this.changeHandler} ></input>
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                                Ubicacion del Servicio: <input className="form-control" type="text" name="Ubicacion" value={Ubicacion} onChange={this.changeHandler}></input>
+                                Ubicacion del Servicio: <input className="form-control" type="text" name="Ubicacion" placeholder="Donde solicita el servicio" value={Ubicacion} onChange={this.changeHandler}></input>
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                                Traslado A: <input className="form-control" type="text"  name="TrasladoA" value={TrasladoA} onChange={this.changeHandler}></input>
+                                Traslado A: <input className="form-control" type="text"  name="TrasladoA" placeholder="Institucion de salud a la que sera trasladado de ser necesario" value={TrasladoA} onChange={this.changeHandler}></input>
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                                <u>Principio y Evolucion del Paciente:</u>
+                                <h2 align="center">Principio y Evolucion del Paciente:</h2>
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                                <textarea className="form-control" name="Padecimiento" value={Padecimiento} onChange={this.changeHandler}></textarea>
+                                <textarea className="form-control" name="Padecimiento" placeholder="Descripcion y evolucion de los sintomas" value={Padecimiento} onChange={this.changeHandler}></textarea>
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                                <u>Antescedentes de Importancia:</u>
+                                <h2 align="center">Antescedentes de Importancia:</h2>
                             </Col>
                         </Row>
                         <Row>
@@ -208,7 +208,7 @@ class HojaUrgencias extends Component{
                         </Row>
                         <Row>
                             <Col>
-                                <u>Exploracion Fisica:</u>
+                                <h2 align="center">Exploracion Fisica:</h2>
                             </Col>
                         </Row>
                         <Row>
@@ -276,7 +276,7 @@ class HojaUrgencias extends Component{
                         </Row>
                         <Row>
                             <Col>
-                                Tratamiento: <textarea className="form-control" name="Tratamiento" value={Tratamiento} onChange={this.changeHandler}></textarea>
+                                Tratamiento: <textarea className="form-control" name="Tratamiento" placeholder="Tratamiento y/o medicamentos indicados por el medico de la institucion" value={Tratamiento} onChange={this.changeHandler}></textarea>
                             </Col>
                         </Row>
                     </Container>

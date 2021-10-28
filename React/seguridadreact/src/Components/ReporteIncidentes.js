@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
+import { Col, Container, Form, Row } from 'react-bootstrap';
 class ReporteIncidentes extends Component{
     constructor(props) {
         super(props)
@@ -90,83 +91,119 @@ class ReporteIncidentes extends Component{
             <div>
                 ~{'\n'}
                 <div className= "container mt-5">
-                    <Link to='/reporteincidentes/view' className= "btn btn-dark">Lista</Link>
+                    <Link to='/reporteincidentes/view' className= "btn btn-info">Listado</Link>
                 </div>
                 <h1 className="display-3" align="center">
-                
-                    Reporte de Incidentes
-                
+                    <img alt="" src="ReporteIncidentesIcon.png" width="75" height="75"/>{' '}
+                    Reporte de Incidentes{' '}
+                    <img alt="" src="ReporteIncidentesIcon.png" width="75" height="75"/>
                 </h1>
-                <form onSubmit={this.submitHandler} className="needs-validation">
-                    <div  className="container">
-                        <div className="row">
-                            <div className="col-md">
-                            Codigo Alumno: <input className="form-control" type="text" name="CodigoAlumno" value={CodigoAlumno} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Foto ID frente: <input className="form-control" type="file" name="FotoIdF" onChange={this.handleInputChange}></input>
-                            </div>
-                            <div className="col-md">
-                            Foto ID detras: <input className="form-control" type="file" name="FotoIdB" onChange={this.handleInputChange}></input>
-                            </div>
-                            <div className="col-md">
-                            Ubicacion: <input className="form-control" type="text" name="Ubicacion" value={Ubicacion} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Objetos perdidos: <input className="form-control" type="text" name="ObjetosP" value={ObjetosP} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Estatura en metros: <input className="form-control" type="number" step="0.01" name="Estatura" value={Estatura} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Apariencia: <input className="form-control" type="text" name="Apariencia" value={Apariencia} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Tez: <input className="form-control" type="text" name="Tez" value={Tez} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Cabello: <input className="form-control" type="text" name="Cabello" value={Cabello} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Ojos: <input className="form-control" type="text" name="Ojos" value={Ojos} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Cara: <input className="form-control" type="text" name="Cara" value={Cara} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Boca: <input className="form-control" type="text" name="Boca" value={Boca} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Tipo de Ropa: <input className="form-control" type="text" name="TipoRopa" value={TipoRopa} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Gorra: <input className="form-control" type="text" name="Gorra" value={Gorra} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Edad Aproximada: <input className="form-control" type="number" min="1" max="100" step="1" name="EdadAprox" value={EdadAprox} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Cicatrices: <input className="form-control" type="text" name="Cicatrices" value={Cicatrices} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Tatuajes: <input className="form-control" type="text" name="Tatuajes" value={Tatuajes} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Piercings: <input className="form-control" type="text" name="Piercings" value={Piercings} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Otra: <input className="form-control" type="text" name="Otra" value={Otra} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Huida: <input className="form-control" type="text" name="Huida" value={Huida} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Observacion: <input className="form-control" type="text" name="Observacion" value={Observacion} onChange={this.changeHandler}></input>
-                            </div>
-                        </div>
-                        <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
-                    </div>
-                </form>
+                <Form onSubmit={this.submitHandler} className="needs-validation">
+                    <Container>
+                        <Row>
+                            <Col>
+                                <h2 align="center">Datos de Identificacion del Afectado</h2>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Codigo Alumno: <input className="form-control" type="text" name="CodigoAlumno" value={CodigoAlumno} onChange={this.changeHandler}></input>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <h2 align="center">Datos del Incidente</h2>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Ubicacion: <input className="form-control" type="text" name="Ubicacion" placeholder="calles, cruces, frente a algun comercio o local" value={Ubicacion} onChange={this.changeHandler}></input>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Objetos perdidos: <input className="form-control" type="text" name="ObjetosP" value={ObjetosP} onChange={this.changeHandler}></input>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                               <h2 align="center">Medida Filiacion del Agresor</h2> 
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Estatura en metros: <input className="form-control" type="number" step="0.01" name="Estatura" value={Estatura} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Apariencia: <input className="form-control" type="text" name="Apariencia" value={Apariencia} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Tez: <input className="form-control" type="text" name="Tez" value={Tez} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Cabello: <input className="form-control" type="text" name="Cabello" value={Cabello} onChange={this.changeHandler}></input>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Ojos: <input className="form-control" type="text" name="Ojos" value={Ojos} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Cara: <input className="form-control" type="text" name="Cara" value={Cara} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Boca: <input className="form-control" type="text" name="Boca" value={Boca} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Tipo de Ropa: <input className="form-control" type="text" name="TipoRopa" value={TipoRopa} onChange={this.changeHandler}></input>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Gorra: <input className="form-control" type="text" name="Gorra" value={Gorra} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Edad Aproximada: <input className="form-control" type="number" min="1" max="100" step="1" name="EdadAprox" value={EdadAprox} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Cicatrices: <input className="form-control" type="text" name="Cicatrices" value={Cicatrices} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Tatuajes: <input className="form-control" type="text" name="Tatuajes" value={Tatuajes} onChange={this.changeHandler}></input>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Piercings: <input className="form-control" type="text" name="Piercings" value={Piercings} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Otra: <input className="form-control" type="text" name="Otra" value={Otra} onChange={this.changeHandler}></input>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Medio Utilizado Para Huir: <input className="form-control" type="text" name="Huida" placeholder="Caracteristicas del vehiculo" value={Huida} onChange={this.changeHandler}></input>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Observaciones: <input className="form-control" type="text" name="Observacion" value={Observacion} onChange={this.changeHandler}></input>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Identificacion Frente: <input className="form-control" type="file" name="FotoIdF" onChange={this.handleInputChange}></input>
+                            </Col>
+                            <Col>
+                                Identificacion Detras: <input className="form-control" type="file" name="FotoIdB" onChange={this.handleInputChange}></input>
+                            </Col>
+                        </Row>
+                        <br></br>
+                        <center>
+                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                        </center>
+                    </Container>
+                </Form>
             </div>
         )
     }

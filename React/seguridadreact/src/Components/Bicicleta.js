@@ -76,7 +76,7 @@ class Bicicleta extends Component{
                                 Identificacion Atras: <input className="form-control" type="file" name="FotoIdF" onChange={this.handleInputChange}></input>
                             </Col>
                             <Col>
-                                Descripcion: <input className="form-control" type="text" name="Descripcion" value={Descripcion} onChange={this.changeHandler}></input>
+                                Descripcion: <input className="form-control" type="text" name="Descripcion" placeholder="Caracteristicas del vehiculo" value={Descripcion} onChange={this.changeHandler}></input>
                             </Col>
                         </Row>
                         <br></br>

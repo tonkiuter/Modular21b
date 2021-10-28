@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import { Col, Container, Form, Row } from "react-bootstrap";
 class SolicitudVideoCamara extends Component{
     constructor(props){
         super(props)
@@ -62,39 +63,48 @@ class SolicitudVideoCamara extends Component{
         return (
             <div>
                 ~{'\n'}
-            <div className= "container mt-5">
-            <Link to='/solicitudcam/view' className= "btn btn-dark">Lista</Link>
-            </div>
-            <h1 className="display-3">Solicitud de Video Camara</h1>
-            <form onSubmit={this.submitHandler} className="needs-validation">
-                <div  className="container">
-                    <div className="row">
-                        <div className="col-md">
-                        Codigo Alumno: <input className="form-control" type="text" name="codigoAlumno" value={codigoAlumno} onChange={this.changeHandler}></input>
-                        </div>
-                        <div className="col-md">
-                        Atendio: <input className="form-control" type="text" name="atendio" value={atendio} onChange={this.changeHandler}></input>
-                        </div>
-                        <div className="col-md">
-                        No. Camara: <input className="form-control" type="text" name="noCamara" value={noCamara} onChange={this.changeHandler}></input>
-                        </div>
-                        <div className="col-md">
-                        Horario: <input className="form-control" type="text" name="horario" value={horario} onChange={this.changeHandler}></input>
-                        </div>
-                        <div className="col-md">
-                        Hecho: <input className="form-control" type="text" name="hecho" value={hecho} onChange={this.changeHandler}></input>
-                        </div>
-                        <div className="col-md">
-                        FotoIdB: <input className="form-control" type="file" name="fotoIdB" onChange={this.handleInputChange}></input>
-                        </div>
-                        <div className="col-md">
-                        FotoIdF: <input className="form-control" type="file" name="fotoIdF" onChange={this.handleInputChange}></input>
-                        </div>
-                    </div>
-                    <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                <div className= "container mt-5">
+                    <Link to='/solicitudcam/view' className= "btn btn-info">Listado</Link>
                 </div>
-            </form>
-        </div>
+                <h1 className="display-3" align="center">
+                    <img alt="" src="VideoCamaraIcon.jpg" width="60" height="60"/>{' '}
+                    Solicitud de Video Camara{' '}
+                    <img alt="" src="VideoCamaraIcon.jpg" width="60" height="60"/>
+                </h1>
+                <Form onSubmit={this.submitHandler} className="needs-validation">
+                    <Container>
+                        <Row>
+                            <Col>
+                                Codigo Alumno: <input className="form-control" type="text" name="codigoAlumno" value={codigoAlumno} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Atendio: <input className="form-control" type="text" name="atendio" value={atendio} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                No. Camara: <input className="form-control" type="text" name="noCamara" value={noCamara} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Horarios: <input className="form-control" type="text" name="horario" value={horario} onChange={this.changeHandler}></input>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Hechos: <input className="form-control" type="text" name="hecho" value={hecho} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                FotoIdB: <input className="form-control" type="file" name="fotoIdB" onChange={this.handleInputChange}></input>
+                            </Col>
+                            <Col>
+                                FotoIdF: <input className="form-control" type="file" name="fotoIdF" onChange={this.handleInputChange}></input>
+                            </Col>
+                        </Row>
+                        <br></br>
+                        <center>
+                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                        </center>
+                    </Container>
+                </Form>
+            </div>
         )
     }
 }

@@ -76,10 +76,12 @@ class CredencialPerdida extends Component{
                             </Col>
                         </Row>
                         <Row>
-                            Foto ID frente: <input accept="image/png, image/jpeg" className="form-control" type="file" name="FotoIneFrente" onChange={this.handleInputChange}></input>
-                        </Row>
-                        <Row>
-                            Foto Id detras: <input accept="image/png, image/jpeg" className="form-control" type="file" name="FotoIneTrasera" onChange={this.handleInputChange}></input>
+                            <Col>
+                                Identificacion Frente: <input accept="image/png, image/jpeg" className="form-control" type="file" name="FotoIneFrente" onChange={this.handleInputChange}></input>
+                            </Col>
+                            <Col>
+                                Identificacion Detras: <input accept="image/png, image/jpeg" className="form-control" type="file" name="FotoIneTrasera" onChange={this.handleInputChange}></input>
+                            </Col>
                         </Row>
                         <br></br>
                         <center>

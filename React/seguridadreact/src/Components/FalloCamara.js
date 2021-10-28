@@ -56,7 +56,7 @@ class FalloCamara extends Component{
             <div>
                 ~{"\n"}
                 <div className= "container mt-5">
-                    <Link to='/fallocamara/view' className= "btn btn-info">Lista</Link>
+                    <Link to='/fallocamara/view' className= "btn btn-info">Listado</Link>
                 </div>
                 <h1 className="display-3" align="center">
                     <img alt="" src="FalloCamaraIcon.jpg" width="75" height="75"/>{' '}

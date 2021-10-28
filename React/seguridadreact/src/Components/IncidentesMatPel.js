@@ -46,7 +46,7 @@ class ReporteIncidentesMatPel extends Component{
             <div>
                 ~{"\n"}
                 <div className= "container mt-5">
-                    <Link to='/incidentesmatpet/view' className= "btn btn-info">Lista</Link>
+                    <Link to='/incidentesmatpet/view' className= "btn btn-info">Listado</Link>
                 </div>
                 <h1 className="display-4" align="center">
                     <img alt="" src="IncidentesIcon.png" width="75" height="75"/>{' '}

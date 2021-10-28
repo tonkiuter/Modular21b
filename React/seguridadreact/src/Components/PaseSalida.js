@@ -57,7 +57,7 @@ class PaseSalida extends Component{
             <div>
                 ~{'\n'}
                 <div className= "container mt-5">
-                    <Link to='/pasesalida/view' className= "btn btn-info">Lista</Link>
+                    <Link to='/pasesalida/view' className= "btn btn-info">Listado</Link>
                 </div>
                 <h1 className="display-3" align="center">
                     <img alt="" src="PaseSalidaIcon.jpg" width="75" height="75"/>{' '}
@@ -76,6 +76,8 @@ class PaseSalida extends Component{
                             <Col>
                                 Identificacion Detras: <input className="form-control" type="file" name="FotoIdB" onChange={this.handleInputChange}></input>
                             </Col>
+                        </Row>
+                        <Row>
                             <Col>
                                 Sello: <input className="form-control" type="text" name="Sello" value={Sello} onChange={this.changeHandler}></input>
                             </Col>

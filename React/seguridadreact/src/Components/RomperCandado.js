@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { Col, Container, Form, Row } from 'react-bootstrap';
 class RomperCandado extends Component{
     constructor(props) {
         super(props)
@@ -57,37 +58,44 @@ class RomperCandado extends Component{
         return (
             <div>
                 ~{'\n'}
-            <div className= "container mt-5">
-            <Link to='/rompercandado/view' className= "btn btn-dark">Lista</Link>
-            </div>
-                <h1 className="display-3">Apertura de Candado</h1>
-                <form onSubmit={this.submitHandler} className="needs-validation">
-                    <div  className="container">
-                        <div className="row">
-                            <div className="col-md">
+                <div className= "container mt-5">
+                    <Link to='/rompercandado/view' className= "btn btn-info">Listado</Link>
+                </div>
+                <h1 className="display-3" align="center">
+                    <img alt="" src="RomperCandadoIcon.png" width="60" height="60"/>{' '}
+                    Apertura de Candado{' '}
+                    <img alt="" src="RomperCandadoIcon.png" width="60" height="60"/>
+                </h1>
+                <Form onSubmit={this.submitHandler} className="needs-validation">
+                    <Container>
+                        <Row>
+                            <Col>
                                 Nombre de Alumno: <input className="form-control" type="text" name="NombreAlumno" value={NombreAlumno} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
+                            </Col>
+                            <Col>
                                 Carrera: <input className="form-control" type="text" name="Carrera" value={Carrera} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
+                            </Col>
+                            <Col>
                                 Codigo: <input className="form-control" type="text" name="CodigoAlumno" value={CodigoAlumno} onChange={this.changeHandler}></input>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-md">
-                                Descripcion: <textarea className="form-control" name="Descripcion" value={Descripcion} onChange={this.changeHandler}></textarea>
-                            </div>
-                            <div className="col-md">
-                            Foto ID frente: <input accept="image/png, image/jpeg" className="form-control" type="file" name="FotoIdF" onChange={this.handleInputChange}></input>
-                            </div>
-                            <div className="col-md">
-                            Foto Id detras: <input accept="image/png, image/jpeg" className="form-control" type="file" name="FotoIdB" onChange={this.handleInputChange}></input>
-                            </div>
-                        </div>
-                        <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
-                    </div>
-                </form>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Descripcion: <textarea className="form-control" name="Descripcion" placeholder="Caracteristicas y ubicacion del candado" value={Descripcion} onChange={this.changeHandler}></textarea>
+                            </Col>
+                            <Col>
+                                Identificacion Frente: <input accept="image/png, image/jpeg" className="form-control" type="file" name="FotoIdF" onChange={this.handleInputChange}></input>
+                            </Col>
+                            <Col>
+                                Identificacion Detras: <input accept="image/png, image/jpeg" className="form-control" type="file" name="FotoIdB" onChange={this.handleInputChange}></input>
+                            </Col>
+                        </Row>
+                        <br></br>
+                        <center>
+                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                        </center>
+                    </Container>
+                </Form>
             </div>
         )
     }
