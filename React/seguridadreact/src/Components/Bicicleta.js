@@ -53,7 +53,7 @@ class Bicicleta extends Component{
 
         return (
             <div>
-
+                ~{"\n"}
             <div className= "container mt-5">
             <Link to='/bicicleta/view' className= "btn btn-dark">Lista</Link>
             </div>

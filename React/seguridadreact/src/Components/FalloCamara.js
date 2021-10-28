@@ -53,6 +53,7 @@ class FalloCamara extends Component{
 
         return (
             <div>
+                ~{"\n"}
             <div className= "container mt-5">
             <Link to='/fallocamara/view' className= "btn btn-dark">Lista</Link>
             </div>

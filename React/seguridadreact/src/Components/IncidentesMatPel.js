@@ -44,6 +44,7 @@ class ReporteIncidentesMatPel extends Component{
         const{ Ubicacion, Fenomeno, Descripcion, Evaluacion, Tareas, Recursos, Estrategias } = this.state
         return(
             <div>
+                ~{"\n"}
             <div className= "container mt-5">
             <Link to='/incidentesmatpet/view' className= "btn btn-dark">Lista</Link>
             </div>

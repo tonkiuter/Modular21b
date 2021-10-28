@@ -56,6 +56,7 @@ class RomperCandado extends Component{
         const { NombreAlumno, Carrera, CodigoAlumno, Descripcion} = this.state
         return (
             <div>
+                ~{'\n'}
             <div className= "container mt-5">
             <Link to='/rompercandado/view' className= "btn btn-dark">Lista</Link>
             </div>

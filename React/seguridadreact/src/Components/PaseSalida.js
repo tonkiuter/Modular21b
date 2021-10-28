@@ -54,6 +54,7 @@ class PaseSalida extends Component{
         const { CodigoAlumno, Sello, Descripcion} = this.state
         return (            
             <div>
+                ~{'\n'}
             <div className= "container mt-5">
             <Link to='/pasesalida/view' className= "btn btn-dark">Lista</Link>
             </div>

@@ -61,6 +61,7 @@ class SolicitudVideoCamara extends Component{
 
         return (
             <div>
+                ~{'\n'}
             <div className= "container mt-5">
             <Link to='/solicitudcam/view' className= "btn btn-dark">Lista</Link>
             </div>

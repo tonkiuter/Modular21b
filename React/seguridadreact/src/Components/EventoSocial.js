@@ -51,6 +51,7 @@ class EventoSocial extends Component{
 
         return (
             <div>
+                ~{"\n"}
             <div className= "container mt-5">
             <Link to='/social/view' className= "btn btn-dark">Lista</Link>
             </div>

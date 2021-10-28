@@ -40,8 +40,9 @@ class ActaAdministrativa extends Component{
         const { CodigoAlumno, NoOficio, Lugar, NombreAl, Causa} = this.state
         return (
             <div>
+                ~{"\n"}
                 <div className= "container mt-5">
-                    <Link to='/actaadmin/view' className= "btn btn-dark">Lista</Link>
+                    <Link to='/actaadmin/view' className="btn btn-dark">Lista</Link>
                 </div>
                 <h1 className="display-3" align="center">Acta Administrativa</h1>
                 <form onSubmit={this.submitHandler} className="needs-validation">
