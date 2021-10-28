@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Form } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 class ReporteIncidentesMatPel extends Component{
@@ -45,41 +45,48 @@ class ReporteIncidentesMatPel extends Component{
         return(
             <div>
                 ~{"\n"}
-            <div className= "container mt-5">
-            <Link to='/incidentesmatpet/view' className= "btn btn-dark">Lista</Link>
-            </div>
-                <h1 className="display-4">Reporte Incidentes Mat-Pel</h1>
+                <div className= "container mt-5">
+                    <Link to='/incidentesmatpet/view' className= "btn btn-info">Lista</Link>
+                </div>
+                <h1 className="display-4" align="center">
+                    <img alt="" src="IncidentesIcon.png" width="75" height="75"/>{' '}
+                    Reporte Incidentes Mat-Pel{' '}
+                    <img alt="" src="IncidentesIcon.png" width="75" height="75"/>{' '}
+                </h1>
                 <Form onSubmit={this.submitHandler} className="needs-validation">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md">
+                    <Container>
+                        <Row>
+                            <Col>
                                 Ubicacion: <input className="form-control" type="text" required name="Ubicacion" value={Ubicacion} onChange={this.changeHandler}></input>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-md">
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
                                 Fenomeno Perutbador:  <input className="form-control" type="text" required name="Fenomeno" value={Fenomeno} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
+                            </Col>
+                            <Col>
                                 Descripcion de los Hechos: <textarea className="form-control" required name="Descripcion" value={Descripcion} onChange={this.changeHandler}></textarea>
-                            </div>
-                            <div className="col-md">
+                            </Col>
+                            <Col>
                                 Evaluacion de Daños: <textarea className="form-control" required name="Evaluacion" value={Evaluacion} onChange={this.changeHandler}></textarea>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-md">
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
                                 Tareas Realizadas:  <textarea className="form-control" required name="Tareas" value={Tareas} onChange={this.changeHandler}></textarea>
-                            </div>
-                            <div className="col-md">
+                            </Col>
+                            <Col>
                                 Recursos Humanos y Materiales Utilizados: <textarea className="form-control" required name="Recursos" value={Recursos} onChange={this.changeHandler}></textarea>
-                            </div>
-                            <div className="col-md">
+                            </Col>
+                            <Col>
                                 Estrategias y Recomendaciones para evitar Incidencias: <textarea className="form-control" name="Estrategias" value={Estrategias} onChange={this.changeHandler}></textarea>
-                            </div>
-                        </div>
-                        <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
-                    </div>
+                            </Col>
+                        </Row>
+                        <br></br>
+                        <center>
+                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                        </center>
+                    </Container>
                 </Form>
             </div>
         )

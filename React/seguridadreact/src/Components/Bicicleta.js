@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Col, Container, Form, Row } from "react-bootstrap";
 class Bicicleta extends Component{
     constructor(props){
         super(props)
@@ -54,36 +55,39 @@ class Bicicleta extends Component{
         return (
             <div>
                 ~{"\n"}
-            <div className= "container mt-5">
-            <Link to='/bicicleta/view' className= "btn btn-dark">Lista</Link>
-            </div>
-            <h1 className="display-3">Bicicleta</h1>
-            <form onSubmit={this.submitHandler} className="needs-validation">
-                <div className="container">
-                    <div className="row">
-                    <div className="col-md">
-                    CodigoAlumno: <input className="form-control" type="text" name="CodigoAlumno" value={CodigoAlumno} onChange={this.changeHandler}></input>
-                        </div>
-                    
-                        <div className="col-md">
-                        FotoIdB: <input className="form-control" type="file" name="FotoIdB" onChange={this.handleInputChange}></input>
-                        </div>
-                    
-                        <div className="col-md">
-                        FotoIdF: <input className="form-control" type="file" name="FotoIdF" onChange={this.handleInputChange}></input>
-                        </div>
-    
-                        <div className="col-md">
-                        Descripcion: <input className="form-control" type="text" name="Descripcion" value={Descripcion} onChange={this.changeHandler}></input>
-                        </div>
-                    </div>
-                    <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                <div className= "container mt-5">
+                    <Link to='/bicicleta/view' className= "btn btn-info">Listado</Link>
                 </div>
-            </form>
-        </div>
+                <h1 className="display-3" align="center">
+                    <img alt="" src="BiciSinSeguroIcon.jpg" width="75" height="75"/>{' '}
+                    Bicicleta Sin Asegurar{' '}
+                    <img alt="" src="BiciSinSeguroIcon.jpg" width="75" height="75"/>
+                </h1>
+                <Form onSubmit={this.submitHandler} className="needs-validation">
+                    <Container>
+                        <Row>
+                            <Col>
+                                Codigo de Alumno: <input className="form-control" type="text" name="CodigoAlumno" value={CodigoAlumno} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Identificacion Frente: <input className="form-control" type="file" name="FotoIdB" onChange={this.handleInputChange}></input>
+                            </Col>
+                            <Col>
+                                Identificacion Atras: <input className="form-control" type="file" name="FotoIdF" onChange={this.handleInputChange}></input>
+                            </Col>
+                            <Col>
+                                Descripcion: <input className="form-control" type="text" name="Descripcion" value={Descripcion} onChange={this.changeHandler}></input>
+                            </Col>
+                        </Row>
+                        <br></br>
+                        <center>
+                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                        </center>
+                    </Container>
+                </Form>
+            </div>
         )
     }
-
 }
 
 export default Bicicleta

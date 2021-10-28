@@ -89,10 +89,14 @@ class ReporteIncidentes extends Component{
         return (
             <div>
                 ~{'\n'}
-           <div className= "container mt-5">
-            <Link to='/reporteincidentes/view' className= "btn btn-dark">Lista</Link>
-            </div>
-                <h1 className="display-3">Reporte de Incidentes</h1>
+                <div className= "container mt-5">
+                    <Link to='/reporteincidentes/view' className= "btn btn-dark">Lista</Link>
+                </div>
+                <h1 className="display-3" align="center">
+                
+                    Reporte de Incidentes
+                
+                </h1>
                 <form onSubmit={this.submitHandler} className="needs-validation">
                     <div  className="container">
                         <div className="row">

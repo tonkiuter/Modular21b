@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { Col, Container, Form, Row } from 'react-bootstrap';
 class PaseSalida extends Component{
     constructor(props) {
         super(props)
@@ -55,32 +56,39 @@ class PaseSalida extends Component{
         return (            
             <div>
                 ~{'\n'}
-            <div className= "container mt-5">
-            <Link to='/pasesalida/view' className= "btn btn-dark">Lista</Link>
-            </div>
-                <h1 className="display-3">Pase de Salida</h1>
-                <form onSubmit={this.submitHandler} className="needs-validation">
-                    <div  className="container">
-                        <div className="row">
-                            <div className="col-md">
-                            Codigo Alumno: <input className="form-control" type="text" name="CodigoAlumno" value={CodigoAlumno} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Foto ID frente: <input className="form-control" type="file" name="FotoIdF" onChange={this.handleInputChange}></input>
-                            </div>
-                            <div className="col-md">
-                            Foto Id detras: <input className="form-control" type="file" name="FotoIdB" onChange={this.handleInputChange}></input>
-                            </div>
-                            <div className="col-md">
-                            Sello: <input className="form-control" type="text" name="Sello" value={Sello} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Descripcion: <input className="form-control" type="text" name="Descripcion" value={Descripcion} onChange={this.changeHandler}></input>
-                            </div>
-                        </div>
-                        <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
-                    </div>
-                </form>
+                <div className= "container mt-5">
+                    <Link to='/pasesalida/view' className= "btn btn-info">Lista</Link>
+                </div>
+                <h1 className="display-3" align="center">
+                    <img alt="" src="PaseSalidaIcon.jpg" width="75" height="75"/>{' '}
+                    Pase de Salida{' '}
+                    <img alt="" src="PaseSalidaIcon.jpg" width="75" height="75"/>
+                </h1>
+                <Form onSubmit={this.submitHandler} className="needs-validation">
+                    <Container>
+                        <Row>
+                            <Col>
+                                Codigo Alumno: <input className="form-control" type="text" name="CodigoAlumno" value={CodigoAlumno} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Identificacion Frente: <input className="form-control" type="file" name="FotoIdF" onChange={this.handleInputChange}></input>
+                            </Col>
+                            <Col>
+                                Identificacion Detras: <input className="form-control" type="file" name="FotoIdB" onChange={this.handleInputChange}></input>
+                            </Col>
+                            <Col>
+                                Sello: <input className="form-control" type="text" name="Sello" value={Sello} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Descripcion: <input className="form-control" type="text" name="Descripcion" value={Descripcion} onChange={this.changeHandler}></input>
+                            </Col>
+                        </Row>
+                        <br></br>
+                        <center>
+                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                        </center>
+                    </Container>
+                </Form>
             </div>
         )
     }

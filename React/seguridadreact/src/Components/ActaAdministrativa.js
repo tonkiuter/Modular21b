@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { Col, Container, Form, Row } from 'react-bootstrap';
 
 class ActaAdministrativa extends Component{
     constructor(props) {
@@ -42,33 +43,41 @@ class ActaAdministrativa extends Component{
             <div>
                 ~{"\n"}
                 <div className= "container mt-5">
-                    <Link to='/actaadmin/view' className="btn btn-dark">Lista</Link>
+                    <Link to='/actaadmin/view' className="btn btn-info">Listado</Link>
                 </div>
-                <h1 className="display-3" align="center">Acta Administrativa</h1>
-                <form onSubmit={this.submitHandler} className="needs-validation">
-                    <div  className="container">
-                        <div className="row">
-                            <div className="col-md">
-                            Codigo Alumno: <input className="form-control" type="text" name="CodigoAlumno" value={CodigoAlumno} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Nombre Alumno: <input className="form-control" type="text" name="NombreAl" value={NombreAl} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            No. Oficio: <input className="form-control" type="text" name="NoOficio" value={NoOficio} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Lugar: <input className="form-control" type="text" name="Lugar" value={Lugar} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
-                            Causa: <input className="form-control" type="text" name="Causa" value={Causa} onChange={this.changeHandler}></input>
-                            </div>
-                        </div>
-                        <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
-                    </div>
-                </form>
+                <h1 className="display-3" align="center">
+                    <img alt="" src="ActaAdminIcon.jpg" width="30" height="30"/>{' '}
+                    Acta Administrativa{' '}
+                    <img alt="" src="ActaAdminIcon.jpg" width="30" height="30"/>
+                </h1>
+                <Form onSubmit={this.submitHandler} className="needs-validation">
+                    <Container>
+                        <Row>
+                            <Col>
+                                Codigo de Alumno: <input className="form-control" type="text" name="CodigoAlumno" value={CodigoAlumno} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Nombre de Alumno: <input className="form-control" type="text" name="NombreAl" value={NombreAl} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                No. Oficio: <input className="form-control" type="text" name="NoOficio" value={NoOficio} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Lugar: <input className="form-control" type="text" name="Lugar" value={Lugar} onChange={this.changeHandler}></input>
+                            </Col>
+                            <Col>
+                                Causa: <input className="form-control" type="text" name="Causa" value={Causa} onChange={this.changeHandler}></input>
+                            </Col>
+                        </Row>
+                        <br></br>
+                        <center>
+                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Guardar</button>
+                        </center>
+                    </Container>
+                </Form>
             </div>
         )
     }
 }
+
 export default ActaAdministrativa

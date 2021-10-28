@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Form } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 class CredencialPerdida extends Component{
@@ -54,31 +54,38 @@ class CredencialPerdida extends Component{
         return(
             <div>
                 ~{"\n"}
-            <div className= "container mt-5">
-            <Link to='/crendencialperdida/view' className= "btn btn-dark">Lista</Link>
-            </div>
-                <h1 className="display-3">Credencial Perdida y Recuperada</h1>
+                <div className= "container mt-5">
+                    <Link to='/crendencialperdida/view' className= "btn btn-info">Listado</Link>
+                </div>
+                <h1 className="display-3" align="center">
+                    <img alt="" src="CredencialIcon.png" width="75" height="75"/>{' '}
+                    Credencial Perdida y Recuperada{' '}
+                    <img alt="" src="CredencialIcon.png" width="75" height="75"/>
+                </h1>
                 <Form onSubmit={this.submitHandler} className="needs-validation">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md">
+                    <Container>
+                        <Row>
+                            <Col>
                                 Nombre de Alumno: <input className="form-control" type="text" required name="NombreA" value={NombreA} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className ="col-md">
+                            </Col>
+                            <Col>
                                 Carrera: <input className="form-control" type="text" required name="Carrera" value={Carrera} onChange={this.changeHandler}></input>
-                            </div>
-                            <div className="col-md">
+                            </Col>
+                            <Col>
                                 Codigo: <input className="form-control" type="text" required name="Codigo" value={Codigo} onChange={this.changeHandler}></input>
-                            </div>
-                        </div>
-                        <div className="col-md">
+                            </Col>
+                        </Row>
+                        <Row>
                             Foto ID frente: <input accept="image/png, image/jpeg" className="form-control" type="file" name="FotoIneFrente" onChange={this.handleInputChange}></input>
-                            </div>
-                            <div className="col-md">
+                        </Row>
+                        <Row>
                             Foto Id detras: <input accept="image/png, image/jpeg" className="form-control" type="file" name="FotoIneTrasera" onChange={this.handleInputChange}></input>
-                            </div>
-                        <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
-                    </div>
+                        </Row>
+                        <br></br>
+                        <center>
+                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                        </center>                    
+                    </Container>
                 </Form>
             </div>
         )

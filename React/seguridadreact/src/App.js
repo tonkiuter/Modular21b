@@ -34,137 +34,138 @@ import FalloCamaraViews from './Components/FalloCamaraViews';
 import SolicitudVideoCamarasView from './Components/SolicitudVideoCamarasView';
 import SolicitudVideoCamara from './Components/SolicitudVideoCamaras';
 import { Container, Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
-import Button from 'react-bootstrap';
+//import Button from 'react-bootstrap';
+//import cucei from './images/cucei.png';
 
 function App(){
   return(
-    <Router>
-      <Navbar bg="dark" expand="lg" fixed="top" variant="dark" expand={false} collapseOnSelect>
-        <Container fluid>
-          <Navbar.Brand>
-            <img alt="" src="353px-Escudo_UdeG.svg.png" width="30" height="30" className="d-inline-block align-top"/>{' '}
-            Seguridad CUCEI
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="offcanvasNavbar responsive-navbar-nav"/>
-          <Navbar.Offcanvas id="offcanvasNavbar" arial-labelledby="offcanvasNavbarLabel" placement="end">
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title id="offcanvasNavbarLabel">Menu</Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3" id="collasible-nav-dropdown">
-                <NavDropdown title="Seguridad" id="offcanvasNavbarDropdown">
-                  <NavDropdown.Item>
-                    <Link to='/actaadmin' className="btn btn-outline-dark">Acta Administrativa</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Link to='/bicicleta' className="btn btn-outline-dark">Bicicleta Sin Asegurar</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Link to='/crendencialperdida' className="btn btn-outline-dark">Credencial Perdida</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Link to='/social' className="btn btn-outline-dark">Evento Social-Organizativo</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Link to='/hojaurgencias' className="btn btn-outline-dark">Hoja de Urgencias</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Link to='/incidentesmatpet' className="btn btn-outline-dark">Incidentes Material Peligroso</Link>{' '}
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Link to='/pasesalida' className="btn btn-outline-dark">Pase de Salida</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Link to='/reporteincidentes' className= "btn btn-outline-dark">Reporte de Incidencias</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Link to='/rompercandado' className= "btn btn-outline-dark">Apertura de Candado</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <Link to='/solicitudcam' className= "btn btn-outline-dark">Solicitud de VideoCamaras</Link>
-                  </NavDropdown.Item>
-                </NavDropdown>
-                <NavDropdown title="Mantenimiento" id="offcanvasNavbarDropdown">
-                  <NavDropdown.Item>
-                    <Link to='/fallocamara' className="btn btn-outline-dark">Fallo de Camara/Switch</Link>
-                  </NavDropdown.Item>
-                </NavDropdown>
-              </Nav>
-              ~{'\n'}
-              <Nav.Link to='' className="btn btn-outline-danger">Cerrar Session</Nav.Link>
-            </Offcanvas.Body>
-          </Navbar.Offcanvas>
-        </Container>
-      </Navbar>
-      <Switch>
-        <Route path='/actaadmin' exact>
-          <ActaAdministrativa></ActaAdministrativa>
-        </Route>
-        <Route path='/actaadmin/view' exact>
-          <ActaAdministrativaView></ActaAdministrativaView>
-        </Route>
-        <Route path='/bicicleta' exact>  
-          <Bicicleta></Bicicleta>
-        </Route>
-        <Route path='/bicicleta/view'>  
-          <BicicletaView></BicicletaView>
-        </Route>
-        <Route path='/crendencialperdida' exact>
-          <CredencialPerdida></CredencialPerdida>
-        </Route>
-        <Route path='/crendencialperdida/view' exact>
-          <CredencialPerdidaView></CredencialPerdidaView>
-        </Route>
-        <Route path = '/social' exact>
-          <EventoSocial></EventoSocial>
-        </Route>
-        <Route path = '/social/view' exact>
-          <EventoSocialView></EventoSocialView>
-        </Route>
-        <Route path= '/fallocamara' exact>
-          <FalloCamara></FalloCamara>
-        </Route>
-        <Route path= '/fallocamara/view' exact>
-          <FalloCamaraViews></FalloCamaraViews>
-        </Route>
-        <Route path='/hojaurgencias' exact>
-          <HojaUrgencias></HojaUrgencias>
-        </Route>
-        <Route path='/hojaurgencias/view' exact>
-          <HojaUrgenciasView></HojaUrgenciasView>
-        </Route>
-        <Route path= '/incidentesmatpet' exact>
-          <IncidentesMatPel></IncidentesMatPel>
-        </Route>
-        <Route path= '/incidentesmatpet/view' exact>
-          <IncidentesMatPelView></IncidentesMatPelView>
-        </Route>
-        <Route path='/pasesalida' exact>
-          <PaseSalida></PaseSalida>
-        </Route>
-        <Route path='/pasesalida/view' exact>
-          <PaseSalidaView></PaseSalidaView>
-        </Route>
-        <Route path= '/reporteincidentes' exact>
-          <ReporteIncidentes></ReporteIncidentes>
-        </Route>
-        <Route path= '/reporteincidentes/view' exact>
-          <ReporteIncidentesView></ReporteIncidentesView>
-        </Route>
-        <Route path='/rompercandado' exact>
-          <RomperCandado></RomperCandado>
-        </Route>
-        <Route path='/rompercandado/view' exact>
-          <RomperCandadoView></RomperCandadoView>
-        </Route>
-        <Route path= '/solicitudcam' exact>
-          <SolicitudVideoCamara></SolicitudVideoCamara>
-        </Route>
-        <Route path= '/solicitudcam/view' exact>
-          <SolicitudVideoCamarasView></SolicitudVideoCamarasView>
-        </Route>
-      </Switch>
-    </Router>
+      <Router>
+        <Navbar bg="dark" fixed="top" variant="dark" expand={false} collapseOnSelect>
+          <Container fluid>
+            <Navbar.Brand>
+              <img alt="" src="353px-Escudo_UdeG.svg.png" width="30" height="30" className="d-inline-block align-top"/>{' '}
+              Seguridad CUCEI
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="offcanvasNavbar responsive-navbar-nav"/>
+            <Navbar.Offcanvas id="offcanvasNavbar" arial-labelledby="offcanvasNavbarLabel" placement="end">
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id="offcanvasNavbarLabel">Menu</Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Nav className="justify-content-end flex-grow-1 pe-3" id="collasible-nav-dropdown">
+                  <NavDropdown title="Seguridad" id="offcanvasNavbarDropdown">
+                    <NavDropdown.Item>
+                      <Link to='/actaadmin' className="btn btn-outline-dark">Acta Administrativa</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to='/bicicleta' className="btn btn-outline-dark">Bicicleta Sin Asegurar</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to='/crendencialperdida' className="btn btn-outline-dark">Credencial Perdida</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to='/social' className="btn btn-outline-dark">Evento Social-Organizativo</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to='/hojaurgencias' className="btn btn-outline-dark">Hoja de Urgencias</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to='/incidentesmatpet' className="btn btn-outline-dark">Incidentes Material Peligroso</Link>{' '}
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to='/pasesalida' className="btn btn-outline-dark">Pase de Salida</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to='/reporteincidentes' className= "btn btn-outline-dark">Reporte de Incidencias</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to='/rompercandado' className= "btn btn-outline-dark">Apertura de Candado</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to='/solicitudcam' className= "btn btn-outline-dark">Solicitud de VideoCamaras</Link>
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                  <NavDropdown title="Mantenimiento" id="offcanvasNavbarDropdown">
+                    <NavDropdown.Item>
+                      <Link to='/fallocamara' className="btn btn-outline-dark">Fallo de Camara/Switch</Link>
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                </Nav>
+                ~{'\n'}
+                <Nav.Link to='' className="btn btn-outline-danger">Cerrar Session</Nav.Link>
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+        <Switch>
+          <Route path='/actaadmin' exact>
+            <ActaAdministrativa></ActaAdministrativa>
+          </Route>
+          <Route path='/actaadmin/view' exact>
+            <ActaAdministrativaView></ActaAdministrativaView>
+          </Route>
+          <Route path='/bicicleta' exact>  
+            <Bicicleta></Bicicleta>
+          </Route>
+          <Route path='/bicicleta/view'>  
+            <BicicletaView></BicicletaView>
+          </Route>
+          <Route path='/crendencialperdida' exact>
+            <CredencialPerdida></CredencialPerdida>
+          </Route>
+          <Route path='/crendencialperdida/view' exact>
+            <CredencialPerdidaView></CredencialPerdidaView>
+          </Route>
+          <Route path = '/social' exact>
+            <EventoSocial></EventoSocial>
+          </Route>
+          <Route path = '/social/view' exact>
+            <EventoSocialView></EventoSocialView>
+          </Route>
+          <Route path= '/fallocamara' exact>
+            <FalloCamara></FalloCamara>
+          </Route>
+          <Route path= '/fallocamara/view' exact>
+            <FalloCamaraViews></FalloCamaraViews>
+          </Route>
+          <Route path='/hojaurgencias' exact>
+            <HojaUrgencias></HojaUrgencias>
+          </Route>
+          <Route path='/hojaurgencias/view' exact>
+            <HojaUrgenciasView></HojaUrgenciasView>
+          </Route>
+          <Route path= '/incidentesmatpet' exact>
+            <IncidentesMatPel></IncidentesMatPel>
+          </Route>
+          <Route path= '/incidentesmatpet/view' exact>
+            <IncidentesMatPelView></IncidentesMatPelView>
+          </Route>
+          <Route path='/pasesalida' exact>
+            <PaseSalida></PaseSalida>
+          </Route>
+          <Route path='/pasesalida/view' exact>
+            <PaseSalidaView></PaseSalidaView>
+          </Route>
+          <Route path= '/reporteincidentes' exact>
+            <ReporteIncidentes></ReporteIncidentes>
+          </Route>
+          <Route path= '/reporteincidentes/view' exact>
+            <ReporteIncidentesView></ReporteIncidentesView>
+          </Route>
+          <Route path='/rompercandado' exact>
+            <RomperCandado></RomperCandado>
+          </Route>
+          <Route path='/rompercandado/view' exact>
+            <RomperCandadoView></RomperCandadoView>
+          </Route>
+          <Route path= '/solicitudcam' exact>
+            <SolicitudVideoCamara></SolicitudVideoCamara>
+          </Route>
+          <Route path= '/solicitudcam/view' exact>
+            <SolicitudVideoCamarasView></SolicitudVideoCamarasView>
+          </Route>
+        </Switch>
+      </Router>
   );
 }
 
