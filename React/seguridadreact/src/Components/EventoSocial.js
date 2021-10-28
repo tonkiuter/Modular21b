@@ -93,7 +93,7 @@ class EventoSocial extends Component{
                         </Row>
                         <Row>
                             <Col>
-                                Estado: <input className="form-control" type="text" name="Estado" value={Estado} onChange={this.changeHandler}></input>
+                                Estado de fuerza: <input className="form-control" type="text" name="Estado" value={Estado} onChange={this.changeHandler}></input>
                             </Col>
                             <Col>
                                 Nombre del Encargado: <input className="form-control" type="text" name="NombreEncargado" value={NombreEncargado} onChange={this.changeHandler}></input>

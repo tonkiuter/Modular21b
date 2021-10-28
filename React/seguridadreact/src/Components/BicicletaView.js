@@ -34,7 +34,7 @@ class BicicletaView extends Component {
         const {BicicletaLista} = this.state
         console.log(BicicletaLista)
         return(
-            <Table bordered>
+            <Table bordered responsive>
                 <thead>
                     <tr>
                         <th>CodigoAlumno</th>

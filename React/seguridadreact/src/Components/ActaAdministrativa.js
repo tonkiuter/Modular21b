@@ -62,6 +62,8 @@ class ActaAdministrativa extends Component{
                             <Col>
                                 No. Oficio: <input className="form-control" type="text" name="NoOficio" value={NoOficio} onChange={this.changeHandler}></input>
                             </Col>
+                        </Row>
+                        <Row>
                             <Col>
                                 Lugar: <input className="form-control" type="text" name="Lugar" value={Lugar} onChange={this.changeHandler}></input>
                             </Col>

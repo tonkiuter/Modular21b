@@ -60,7 +60,7 @@ class ActaAdministrativaView extends Component {
         const {ActaLista} = this.state
         console.log(ActaLista)
         return(
-            <Table bordered>
+            <Table bordered responsive>
                 <thead>
                     <tr>
                         <th>ID</th>
