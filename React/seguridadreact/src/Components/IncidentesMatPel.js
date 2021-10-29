@@ -17,7 +17,7 @@ class ReporteIncidentesMatPel extends Component{
             Tareas: '',
             Recursos: '',
             Estrategias: '',
-            EvidenciaFoto: '',
+            EvidenciaFoto: null,
         }
     }
 
@@ -27,11 +27,28 @@ class ReporteIncidentesMatPel extends Component{
         })
     }
 
-    submitHandler = e=> {
-        e.preventDefault()
-        console.log(this.state)
+    handleInputChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.files[0]
+        });
+    };
+
+    submitHandler = (data) => {
+        data.preventDefault()
+        console.log(data)
+        let form_data = new FormData();
+        form_data.append('id', this.state.id);
+        form_data.append('Fecha', this.state.Fecha);
+        form_data.append('Ubicacion', this.state.Ubicacion);
+        form_data.append('Fenomeno', this.state.Fenomeno);
+        form_data.append('Descripcion', this.state.Descripcion);
+        form_data.append('Evaluacion', this.state.Evaluacion);
+        form_data.append('Tareas', this.state.Tareas);
+        form_data.append('Recursos', this.state.Recursos);
+        form_data.append('Estrategias', this.state.Estrategias);
+        form_data.append('EvidenciaFoto', this.state.EvidenciaFoto, this.state.EvidenciaFoto.name);
         axios
-            .post('http://127.0.0.1:8000/reporteincidentesmatpel', this.state)
+            .post('http://127.0.0.1:8000/reporteincidentesmatpel', form_data)
             .then(response => {
                 console.log(response)
                 window.location.reload()
@@ -39,7 +56,7 @@ class ReporteIncidentesMatPel extends Component{
             .catch(error => {
                 console.log(error)
             })
-    }
+    };
 
     render(){
         const{ Ubicacion, Fenomeno, Descripcion, Evaluacion, Tareas, Recursos, Estrategias } = this.state

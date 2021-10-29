@@ -40,9 +40,9 @@ class ReporteIncidentesView extends Component {
 
         const title = "Reporte de Incidente";
         const headers = [["ID", "Codigo", "Fecha y hora ","Ubicacion","Objetos Perdidos","Foto Id Frente","Foto Id Detras","Estatura","Apariencia","Tez","Cabello","Ojos","Cara","Boca",
-                        "Tipo de ropa","Gorra","Edad Aproximada","Cicatrices","Tatuajes","Piercings","Otra","Huida","Observacion"]];
+                        "Tipo de ropa","Gorra","Edad Aproximada","Cicatrices","Tatuajes","Piercings","Otra","Huida","Observacion", "Descripcion"]];
         const data = [[elt.id, elt.CodigoAlumno, elt.FechaHora, elt.Ubicacion, elt.ObjetosP, elt.FotoIdF, elt.FotoIdB, elt.Estatura, elt.Apariencia, elt.Tez, elt.Cabello, elt.Ojos,
-        elt.Cara, elt.Boca, elt.TipoRopa, elt.Gorra, elt.EdadAprox, elt.Cicatrices, elt.Tatuajes, elt.Piercings, elt.Otra, elt.Huida, elt.Observacion]];
+        elt.Cara, elt.Boca, elt.TipoRopa, elt.Gorra, elt.EdadAprox, elt.Cicatrices, elt.Tatuajes, elt.Piercings, elt.Otra, elt.Huida, elt.Observacion, elt.Descripcion]];
     
         let content = {
           startY: 50,
@@ -104,6 +104,7 @@ class ReporteIncidentesView extends Component {
                         <th>Otra</th>
                         <th>Huida</th>
                         <th>Observacion</th>
+                        <th>Descripcion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -133,6 +134,7 @@ class ReporteIncidentesView extends Component {
                                 <th>{user.Otra}</th>
                                 <th>{user.Huida}</th>
                                 <th>{user.Observacion}</th>
+                                <th>{user.Descripcion}</th>
                                 <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
                                 <th><button onClick={() => this.exportPDF(user)}>Generar Reporte</button></th>
                             </tr>

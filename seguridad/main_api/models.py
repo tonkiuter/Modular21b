@@ -201,6 +201,7 @@ class Incidencias(models.Model):
     Otra = models.CharField(max_length= 255)
     Huida = models.CharField(max_length= 255)
     Observacion = models.CharField(max_length= 255)
+    Descripcion = models.CharField(max_length= 500, default="Descripcion")
     def __str__(self):
         return self.Incidencias
 
@@ -224,7 +225,7 @@ class ReporteIncidentesMatPel(models.Model):
     Tareas = models.CharField(max_length = 250)
     Recursos = models.CharField(max_length=250)
     Estrategias = models.CharField(max_length=250)
-    EvidenciaFoto = models.ImageField(upload_to='ReporteIncidentesMatPelID')
+    EvidenciaFoto = models.ImageField(upload_to='ReporteIncidentesMatPelID', blank=True)
 
     def __str__(self):
         return self.ReporteIncidentesMatPel 
