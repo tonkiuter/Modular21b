@@ -98,7 +98,6 @@ function App(){
               </Nav>
               ~{'\n'}
               <Logout></Logout>
-              {/* <Nav.Link to='/logout' className="btn btn-outline-danger">Cerrar Session</Nav.Link> */}
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>

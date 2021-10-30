@@ -91,8 +91,9 @@ class ReporteIncidentes extends Component{
         Tatuajes, Piercings, Otra, Huida, Observacion, Descripcion} = this.state
         return (
             <div>
-                ~{'\n'}
+                
                 <div className= "container mt-5">
+                    <br></br>
                     <Link to='/reporteincidentes/view' className= "btn btn-info">Listado</Link>
                 </div>
                 <h1 className="display-3" align="center">
@@ -129,7 +130,7 @@ class ReporteIncidentes extends Component{
                         </Row>
                         <Row>
                             <Col>
-                               <h2 align="center">Medida Filiacion del Agresor</h2> 
+                               <h2 align="center">Media Filiacion del Agresor</h2> 
                             </Col>
                         </Row>
                         <Row>
