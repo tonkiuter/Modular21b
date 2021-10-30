@@ -93,7 +93,7 @@ class ReporteIncidentes extends Component{
             <div>
                 
                 <div className= "container mt-5">
-                <br></br>
+                    <br></br>
                     <Link to='/reporteincidentes/view' className= "btn btn-info">Listado</Link>
                 </div>
                 <h1 className="display-3" align="center">
