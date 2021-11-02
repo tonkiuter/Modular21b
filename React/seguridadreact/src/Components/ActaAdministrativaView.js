@@ -82,7 +82,7 @@ class ActaAdministrativaView extends Component {
                 <tbody>
                     {
                         ActaLista.map((user) => (
-                            <tr key={user.id} >
+                            <tr key={user.id}>
                                 <th>{user.id}</th>
                                 <th>{user.CodigoAlumno}</th>
                                 <th>{user.NoOficio}</th>
@@ -90,10 +90,8 @@ class ActaAdministrativaView extends Component {
                                 <th>{user.NombreAl}</th>
                                 <th>{user.Causa}</th>
                                 <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
-                                <th><button onClick={() => this.exportPDF(user)}>Generar Reporte</button>
-                        </th>
+                                <th><button onClick={() => this.exportPDF(user)}>Generar Reporte</button></th>
                             </tr>
-                            
                         ))
                     }
                 </tbody>
