@@ -37,6 +37,14 @@ class RomperCandadoView extends Component {
             <Table bordered>
                 <thead>
                     <tr>
+                        <th>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                        </th>
+                    </tr>
+                    <tr>
                         <th>Nombre del Alumno</th>
                         <th>Codigo del Alumno</th>
                         <th>Carrera</th>

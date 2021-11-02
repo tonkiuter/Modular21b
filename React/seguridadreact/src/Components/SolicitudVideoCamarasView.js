@@ -37,6 +37,14 @@ class SolicitudVideoCamarasView extends Component {
             <Table bordered>
                 <thead>
                     <tr>
+                        <th>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                        </th>
+                    </tr>
+                    <tr>
                         <th>Codigo del Alumno</th>
                         <th>Atendio</th>
                         <th>Fecha Solicitud</th>

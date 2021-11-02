@@ -62,10 +62,14 @@ class ActaAdministrativaView extends Component {
         return(
             <Table bordered responsive>
                 <thead>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
+                    <tr>
+                        <th>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                        </th>
+                    </tr>
                     <tr>
                         <th>ID</th>
                         <th>Codigo del Alumno</th>

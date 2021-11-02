@@ -81,6 +81,14 @@ class PaseSalidaView extends Component {
             <Table bordered>
                 <thead>
                     <tr>
+                        <th>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                        </th>
+                    </tr>
+                    <tr>
                         <th>ID</th>
                         <th>Codigo del Alumno</th>
                         <th>Foto id de frente</th>

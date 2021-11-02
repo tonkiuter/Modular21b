@@ -37,6 +37,14 @@ class IncidentesMatPelView extends Component {
             <Table bordered>
                 <thead>
                     <tr>
+                        <th>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                        </th>
+                    </tr>
+                    <tr>
                         <th>Fecha</th>
                         <th>Ubicacion</th>
                         <th>Fenomeno</th>

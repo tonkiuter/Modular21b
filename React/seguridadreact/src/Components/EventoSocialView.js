@@ -38,6 +38,14 @@ class EventoSocialView extends Component {
             <Table bordered>
                 <thead>
                     <tr>
+                        <th>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                        </th>
+                    </tr>
+                    <tr>
                         <th>NombreEvento</th>
                         <th>FechaHora</th>
                         <th>Pronostico</th>

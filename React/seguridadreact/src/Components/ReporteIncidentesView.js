@@ -81,6 +81,14 @@ class ReporteIncidentesView extends Component {
             <Table bordered responsive>
                 <thead>
                     <tr>
+                        <th>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                        </th>
+                    </tr>
+                    <tr>
                         <th>ID</th>
                         <th>Codigo del Alumno</th>
                         <th>Fecha y hora</th>

@@ -37,6 +37,14 @@ class HojaUrgenciasView extends Component {
             <Table bordered responsive>
                 <thead>
                     <tr>
+                        <th>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                        </th>
+                    </tr>
+                    <tr>
                         <th>Fecha</th>
                         <th>Nombre</th>
                         <th>Edad</th>

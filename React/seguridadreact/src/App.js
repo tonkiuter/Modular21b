@@ -46,7 +46,7 @@ function App(){
       <Navbar bg="dark" fixed="top" variant="dark" expand={false} collapseOnSelect>
         <Container fluid>
           <Navbar.Brand>
-            <img alt="" src="353px-Escudo_UdeG.svg.png" width="30" height="30" className="d-inline-block align-top" />{' '}
+            <img alt="" src="/353px-Escudo_UdeG.svg.png" width="30" height="30" className="d-inline-block align-top" />{' '}
             Seguridad CUCEI
           </Navbar.Brand>
           {/* Login */}

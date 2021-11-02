@@ -37,6 +37,14 @@ class BicicletaView extends Component {
             <Table bordered responsive>
                 <thead>
                     <tr>
+                        <th>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                        </th>
+                    </tr>
+                    <tr>
                         <th>CodigoAlumno</th>
                         <th>Foto id frente</th>
                         <th>Foto id detras</th>

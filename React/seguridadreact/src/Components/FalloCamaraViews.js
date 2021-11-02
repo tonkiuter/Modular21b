@@ -37,6 +37,14 @@ class FalloCamaraViews extends Component {
             <Table bordered>
                 <thead>
                     <tr>
+                        <th>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                        </th>
+                    </tr>
+                    <tr>
                         <th>NoCamara</th>
                         <th>Informacion</th>
                         <th>IP</th>
