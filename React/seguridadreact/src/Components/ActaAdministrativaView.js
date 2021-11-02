@@ -60,42 +60,40 @@ class ActaAdministrativaView extends Component {
         const {ActaLista} = this.state
         console.log(ActaLista)
         return(
-            <Table bordered responsive>
-                <thead>
-                    <tr>
-                        <th>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>ID</th>
-                        <th>Codigo del Alumno</th>
-                        <th>Numero de oficio</th>
-                        <th>Lugar</th>
-                        <th>Nombre del alumno</th>
-                        <th>Causa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        ActaLista.map((user) => (
-                            <tr key={user.id}>
-                                <th>{user.id}</th>
-                                <th>{user.CodigoAlumno}</th>
-                                <th>{user.NoOficio}</th>
-                                <th>{user.Lugar}</th>
-                                <th>{user.NombreAl}</th>
-                                <th>{user.Causa}</th>
-                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
-                                <th><button onClick={() => this.exportPDF(user)}>Generar Reporte</button></th>
-                            </tr>
-                        ))
-                    }
-                </tbody>
-            </Table>
+            <div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Table bordered responsive>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Codigo del Alumno</th>
+                            <th>Numero de oficio</th>
+                            <th>Lugar</th>
+                            <th>Nombre del alumno</th>
+                            <th>Causa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            ActaLista.map((user) => (
+                                <tr key={user.id}>
+                                    <th>{user.id}</th>
+                                    <th>{user.CodigoAlumno}</th>
+                                    <th>{user.NoOficio}</th>
+                                    <th>{user.Lugar}</th>
+                                    <th>{user.NombreAl}</th>
+                                    <th>{user.Causa}</th>
+                                    <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
+                                    <th><button onClick={() => this.exportPDF(user)}>Generar Reporte</button></th>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </Table>
+            </div>
         )
     }
 }
