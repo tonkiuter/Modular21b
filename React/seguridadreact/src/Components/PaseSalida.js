@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import { Col, Container, Form, Row } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button'
+
 class PaseSalida extends Component{
     constructor(props) {
         super(props)
@@ -55,7 +57,8 @@ class PaseSalida extends Component{
         const { CodigoAlumno, Sello, Descripcion} = this.state
         return (            
             <div>
-                ~{'\n'}
+                <br></br>
+                <br></br>
                 <div className= "container mt-5">
                     <Link to='/pasesalida/view' className= "btn btn-info">Listado</Link>
                 </div>
@@ -87,7 +90,7 @@ class PaseSalida extends Component{
                         </Row>
                         <br></br>
                         <center>
-                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                            <Button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Guardar</Button>
                         </center>
                     </Container>
                 </Form>
@@ -95,4 +98,5 @@ class PaseSalida extends Component{
         )
     }
 }
+
 export default PaseSalida

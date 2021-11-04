@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
 import { Col, Container, Form, Row } from 'react-bootstrap';
+
 class ReporteIncidentes extends Component{
     constructor(props) {
         super(props)
@@ -91,7 +92,7 @@ class ReporteIncidentes extends Component{
         Tatuajes, Piercings, Otra, Huida, Observacion, Descripcion} = this.state
         return (
             <div>
-                
+                <br></br>
                 <div className= "container mt-5">
                     <br></br>
                     <Link to='/reporteincidentes/view' className= "btn btn-info">Listado</Link>
@@ -208,7 +209,7 @@ class ReporteIncidentes extends Component{
                         </Row>
                         <br></br>
                         <center>
-                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Guardar</button>
                         </center>
                     </Container>
                 </Form>
@@ -216,4 +217,5 @@ class ReporteIncidentes extends Component{
         )
     }
 }
+
 export default ReporteIncidentes

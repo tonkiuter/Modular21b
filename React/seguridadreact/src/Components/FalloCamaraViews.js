@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
 class FalloCamaraViews extends Component {
     constructor(props){
@@ -34,51 +35,49 @@ class FalloCamaraViews extends Component {
         const {FalloCamaraLista} = this.state
         console.log(FalloCamaraLista)
         return(
-            <Table bordered>
-                <thead>
-                    <tr>
-                        <th>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>NoCamara</th>
-                        <th>Informacion</th>
-                        <th>IP</th>
-                        <th>SITE</th>
-                        <th>Modulo</th>
-                        <th>Marca</th>
-                        <th>DescFalla</th>
-                        <th>Toreos</th>
-                        <th>MateriaUt</th>
-                        <th>Solucionado</th>
-                        <th>Observaciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        FalloCamaraLista.map((user) => (
-                            <tr key={user.id} >
-                                <th>{user.NoCamara}</th>
-                                <th>{user.Informacion}</th>
-                                <th>{user.IP}</th>
-                                <th>{user.SITE}</th>
-                                <th>{user.Modulo}</th>
-                                <th>{user.Marca}</th>
-                                <th>{user.DescFalla}</th>
-                                <th>{user.Toreos}</th>
-                                <th>{user.MateriaUt}</th>
-                                <th>{user.Solucionado.toString()}</th>
-                                <th>{user.Observaciones}</th>
-                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
-                            </tr>
-                        ))
-                    }
-                </tbody>
-            </Table>
+            <div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Table bordered responsive striped>
+                    <thead>
+                        <tr>
+                            <th>No. Camara</th>
+                            <th>Informacion</th>
+                            <th>IP</th>
+                            <th>SITE</th>
+                            <th>Modulo</th>
+                            <th>Marca</th>
+                            <th>Descripcion de Falla</th>
+                            <th>Toreos</th>
+                            <th>Material</th>
+                            <th>Solucionado</th>
+                            <th>Observaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            FalloCamaraLista.map((user) => (
+                                <tr key={user.id} >
+                                    <th>{user.NoCamara}</th>
+                                    <th>{user.Informacion}</th>
+                                    <th>{user.IP}</th>
+                                    <th>{user.SITE}</th>
+                                    <th>{user.Modulo}</th>
+                                    <th>{user.Marca}</th>
+                                    <th>{user.DescFalla}</th>
+                                    <th>{user.Toreos}</th>
+                                    <th>{user.MateriaUt}</th>
+                                    <th>{user.Solucionado.toString()}</th>
+                                    <th>{user.Observaciones}</th>
+                                    <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </Table>
+            </div>
         )
     }
 }

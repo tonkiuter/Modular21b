@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Table } from 'react-bootstrap';
 import jsPDF from "jspdf";
 import "jspdf-autotable";
+import Button from 'react-bootstrap/Button'
 
 class ActaAdministrativaView extends Component {
     constructor(props){
@@ -65,14 +66,14 @@ class ActaAdministrativaView extends Component {
                 <br></br>
                 <br></br>
                 <br></br>
-                <Table bordered responsive>
+                <Table bordered responsive striped>
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Codigo del Alumno</th>
-                            <th>Numero de oficio</th>
+                            <th>Codigo de Alumno</th>
+                            <th>No. Oficio</th>
                             <th>Lugar</th>
-                            <th>Nombre del alumno</th>
+                            <th>Nombre de Alumno</th>
                             <th>Causa</th>
                         </tr>
                     </thead>
@@ -86,8 +87,8 @@ class ActaAdministrativaView extends Component {
                                     <th>{user.Lugar}</th>
                                     <th>{user.NombreAl}</th>
                                     <th>{user.Causa}</th>
-                                    <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
-                                    <th><button onClick={() => this.exportPDF(user)}>Generar Reporte</button></th>
+                                    <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
+                                    <th><Button variant="info" onClick={() => this.exportPDF(user)}>Generar Reporte</Button></th>
                                 </tr>
                             ))
                         }

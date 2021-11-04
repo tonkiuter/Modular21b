@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import { Col, Container, Row, Form } from "react-bootstrap";
+
 class EventoSocial extends Component{
     constructor(props){
         super(props)
@@ -52,7 +53,8 @@ class EventoSocial extends Component{
 
         return (
             <div>
-                ~{"\n"}
+                <br></br>
+                <br></br>
                 <div className= "container mt-5">
                     <Link to='/social/view' className= "btn btn-info">Listado</Link>
                 </div>
@@ -107,7 +109,7 @@ class EventoSocial extends Component{
                         </Row>
                         <br></br>
                         <center>
-                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Guardar</button>
                         </center>
                     </Container>
                 </Form>

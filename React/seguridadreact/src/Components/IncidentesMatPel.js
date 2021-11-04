@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 class ReporteIncidentesMatPel extends Component{
     constructor(props){
@@ -62,7 +63,8 @@ class ReporteIncidentesMatPel extends Component{
         const{ Ubicacion, Fenomeno, Descripcion, Evaluacion, Tareas, Recursos, Estrategias } = this.state
         return(
             <div>
-                ~{"\n"}
+                <br></br>
+                <br></br>
                 <div className= "container mt-5">
                     <Link to='/incidentesmatpet/view' className= "btn btn-info">Listado</Link>
                 </div>
@@ -83,17 +85,19 @@ class ReporteIncidentesMatPel extends Component{
                             <Col>
                                 Descripcion de los Hechos: <textarea className="form-control" required name="Descripcion" value={Descripcion} onChange={this.changeHandler}></textarea>
                             </Col>
+                        </Row>
+                        <Row>
                             <Col>
                                 Evaluacion de Daños: <textarea className="form-control" required name="Evaluacion" value={Evaluacion} onChange={this.changeHandler}></textarea>
                             </Col>
-                        </Row>
-                        <Row>
                             <Col>
                                 Tareas Realizadas:  <textarea className="form-control" required name="Tareas" value={Tareas} onChange={this.changeHandler}></textarea>
                             </Col>
                             <Col>
                                 Recursos Humanos y Materiales Utilizados: <textarea className="form-control" required name="Recursos" value={Recursos} onChange={this.changeHandler}></textarea>
                             </Col>
+                        </Row>
+                        <Row>
                             <Col>
                                 Estrategias y Recomendaciones para evitar Incidencias: <textarea className="form-control" name="Estrategias" value={Estrategias} onChange={this.changeHandler}></textarea>
                             </Col>
@@ -103,7 +107,7 @@ class ReporteIncidentesMatPel extends Component{
                         </Row>
                         <br></br>
                         <center>
-                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                            <Button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Guardar</Button>
                         </center>
                     </Container>
                 </Form>

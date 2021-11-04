@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
 class RomperCandadoView extends Component {
     constructor(props){
@@ -34,42 +35,40 @@ class RomperCandadoView extends Component {
         const {RomperLista} = this.state
         console.log(RomperLista)
         return(
-            <Table bordered>
-                <thead>
-                    <tr>
-                        <th>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Nombre del Alumno</th>
-                        <th>Codigo del Alumno</th>
-                        <th>Carrera</th>
-                        <th>Foto id de frente</th>
-                        <th>Foto id detras</th>
-                        <th>Descripcion</th>
-                        <th>Fecha</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        RomperLista.map((user) => (
-                            <tr key={user.id} >
-                                <th>{user.NombreAlumno}</th>
-                                <th>{user.CodigoAlumno}</th>
-                                <th><img src={user.FotoIdF} width="100" height="100" alt ="imagen"/> </th>
-                                <th><img src={user.FotoIdB} width="100" height="100" alt ="imagen"/> </th>
-                                <th>{user.Descripcion}</th>
-                                <th>{user.Fecha}</th>
-                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
-                            </tr>
-                        ))
-                    }
-                </tbody>
-            </Table>
+            <div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Table bordered striped responsive>
+                    <thead>
+                        <tr>
+                            <th>Nombre de Alumno</th>
+                            <th>Codigo de Alumno</th>
+                            <th>Carrera</th>
+                            <th>Identificacion Frente</th>
+                            <th>Identificacion Detras</th>
+                            <th>Descripcion</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            RomperLista.map((user) => (
+                                <tr key={user.id} >
+                                    <th>{user.NombreAlumno}</th>
+                                    <th>{user.CodigoAlumno}</th>
+                                    <th><img src={user.FotoIdF} width="100" height="100" alt ="imagen"/> </th>
+                                    <th><img src={user.FotoIdB} width="100" height="100" alt ="imagen"/> </th>
+                                    <th>{user.Descripcion}</th>
+                                    <th>{user.Fecha}</th>
+                                    <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </Table>
+            </div>
         )
     }
 }

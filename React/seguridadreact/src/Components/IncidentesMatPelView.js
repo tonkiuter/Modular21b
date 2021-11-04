@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
 class IncidentesMatPelView extends Component {
     constructor(props){
@@ -34,45 +35,43 @@ class IncidentesMatPelView extends Component {
         const {IncidentesLista} = this.state
         console.log(IncidentesLista)
         return(
-            <Table bordered>
-                <thead>
-                    <tr>
-                        <th>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Ubicacion</th>
-                        <th>Fenomeno</th>
-                        <th>Descripcion</th>
-                        <th>Evaluacion</th>
-                        <th>Tareas</th>
-                        <th>Recursos</th>
-                        <th>Estrategias</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        IncidentesLista.map((user) => (
-                            <tr key={user.id} >
-                                <th>{user.Fecha}</th>
-                                <th>{user.Ubicacion}</th>
-                                <th>{user.Fenomeno}</th>
-                                <th>{user.Descripcion}</th>
-                                <th>{user.Evaluacion}</th>
-                                <th>{user.Tareas}</th>
-                                <th>{user.Recursos}</th>
-                                <th>{user.Estrategias}</th>
-                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
-                            </tr>
-                        ))
-                    }
-                </tbody>
-            </Table>
+            <div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Table bordered responsive striped>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Ubicacion</th>
+                            <th>Fenomeno</th>
+                            <th>Descripcion</th>
+                            <th>Evaluacion</th>
+                            <th>Tareas</th>
+                            <th>Recursos</th>
+                            <th>Estrategias</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            IncidentesLista.map((user) => (
+                                <tr key={user.id} >
+                                    <th>{user.Fecha}</th>
+                                    <th>{user.Ubicacion}</th>
+                                    <th>{user.Fenomeno}</th>
+                                    <th>{user.Descripcion}</th>
+                                    <th>{user.Evaluacion}</th>
+                                    <th>{user.Tareas}</th>
+                                    <th>{user.Recursos}</th>
+                                    <th>{user.Estrategias}</th>
+                                    <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </Table>
+            </div>
         )
     }
 }
