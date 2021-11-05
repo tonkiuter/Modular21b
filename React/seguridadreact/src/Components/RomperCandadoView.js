@@ -106,6 +106,7 @@ class RomperCandadoView extends Component {
                                     <th>{user.Descripcion}</th>
                                     <th>{user.Fecha}</th>
                                     <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
+                                    <th><Button variant="info" onClick={() => this.exportPDF(user)}></Button></th>
                                 </tr>
                             ))
                         }
