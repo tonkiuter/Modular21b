@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 class RomperCandadoView extends Component {
     constructor(props){
@@ -12,6 +14,47 @@ class RomperCandadoView extends Component {
         }
     }
 
+    exportPDF = (elt) => {
+        const unit = "pt";
+        const size = "A3";
+        const orientation = "landscape";
+        const marginLeft = 40;
+
+        var img = new Image()
+        img.src = elt.FotoIdF
+        var img2 = new Image()
+        img2.src = elt.FotoIdB
+
+        const doc = new jsPDF(orientation, unit, size);
+        doc.setFontSize(15);
+
+        const title = "Reporte Apertura de Candado";
+        const headers = [["ID", "Nombre", "Codigo", "Carrera", "Descripcion", "Identificacion Frente", "Identificacion Detras", "Fecha"]];
+        const data = [[elt.id, elt.NombreAlumno, elt.CodigoAlumno, elt.Carrera, elt.Descripcion, elt.FotoIdF, elt.FotoIdB, elt.Fecha]];
+
+        let content = {
+            startY: 50,
+            head: headers,
+            body: data,
+            didDrawCell: function (data) {
+                if (data.section === 'body' && data.column.index === 5){
+                    data.cell.width=300
+                    data.cell.height=100
+                    doc.addImage(img, 'JPEG', data.cell.x + 2, data.cell.y +2, data.cell.width, data.cell.height, "Alias", "SLOW")
+                }
+                if (data.section === 'body' && data.column.index === 6){
+                    data.cell.width=300
+                    data.cell.height=100
+                    doc.addImage(img2, 'JPEG', data.cell.x + 2, data.cell.y + 2, data.cell.width, data.cell.height, "Alias","SLOW")
+                }
+            }
+        }
+
+        doc.text(title, marginLeft, 40);
+        doc.autoTable(content);
+        doc.save("Reporte Apertura de Candado ID: "+elt.id+".pdf")
+    }
+    
     componentDidMount(){
         axios.get('http://127.0.0.1:8000/rompercandado')
         .then(response => {

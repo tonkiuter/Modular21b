@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 class IncidentesMatPelView extends Component {
     constructor(props){
@@ -10,6 +12,40 @@ class IncidentesMatPelView extends Component {
         this.state={
             IncidentesLista: []
         }
+    }
+
+    exportPDF = (elt) => {
+        const unit = "pt";
+        const size = "A3"; // Use A1, A2, A3 or A4
+        const orientation = "landscape"; // portrait or landscape
+        const marginLeft = 40;
+
+        var img = new Image()
+        img.src = elt.EvidenciaFoto
+
+        const doc = new jsPDF(orientation, unit, size);
+        doc.setFontSize(15);
+
+        const title = "Reporte Incidentes Material Peligroso";
+        const headers = [["ID","Fecha", "Ubicacion","Fenomeno","Descripcion","Evaluacion","Tareas","Recursos","Estrategias","EvidenciaFoto"]];
+        const data = [[elt.id, elt.Fecha, elt.Ubicacion, elt.Fenomeno, elt.Descripcion, elt.Evaluacion, elt.Tareas, elt.Recursos, elt.Estrategias, elt.EvidenciaFoto]];
+    
+        let content = {
+          startY: 50,
+          head: headers,
+          body: data,
+          didDrawCell: function (data) {
+            if (data.section === 'body' && data.column.index === 10) {
+                data.cell.width=300
+                data.cell.height=100
+                doc.addImage(img, 'JPEG', data.cell.x + 2, data.cell.y + 2, data.cell.width, data.cell.height, "Alias","SLOW")
+            }
+          }
+        };
+        
+        doc.text(title, marginLeft, 40);
+        doc.autoTable(content);
+        doc.save("Reporte Incidentes Material Peligroso ID: "+elt.id+".pdf")
     }
 
     componentDidMount(){
@@ -66,6 +102,7 @@ class IncidentesMatPelView extends Component {
                                     <th>{user.Recursos}</th>
                                     <th>{user.Estrategias}</th>
                                     <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
+                                    <th><Button variant="info" onClick={() => this.exportPDF(user)}>Generar Reporte</Button></th>
                                 </tr>
                             ))
                         }

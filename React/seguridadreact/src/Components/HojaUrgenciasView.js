@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 class HojaUrgenciasView extends Component {
     constructor(props){
@@ -10,6 +12,30 @@ class HojaUrgenciasView extends Component {
         this.state={
             IncidentesLista: []
         }
+    }
+
+    exportPDF = (elt) => {
+        const unit = "pt";
+        const size = "A3";
+        const orientation = "landscape";
+        const marginLeft = 40;
+
+        const doc = new jsPDF(orientation, unit, size);
+        doc.setFontSize(15);
+
+        const title = "Hoja de Urgencias";
+        const headers = [["ID", "Fecha", "Nombre", "Edad", "Adscripcion", "Codigo", "Cargo", "Telefono", "Proviene", "Ubicacion", "Traslado", "Padecimientos", "Diabetes", "Diagnostico", "Tratamiento", "Hipertension", "Diagnostico", "Tratamiento", "Epilepsia", "Diagnostico", "Tratamiento", "Asma", "Diagnostico", "Tratamiento", "Cirugias", "Alergias", "Sangre", "Tension Arterial", "FC", "FR", "Temperatura", "Saturacion", "Glucosa", "Escala Glasgow", "Neurologico", "Cabeza y Cuello", "Cardiopulmonar", "Abdomen", "Extremidades", "Diagnostico", "Condicion", "Pronostico", "Tratamiento"]];
+        const data = [[elt.id, elt.Fecha, elt.Nombre, elt.Edad, elt.Adscripcion, elt.Codigo, elt.Cargo, elt.NoTelefono, elt.ProvieneDe, elt.Ubicacion, elt.TrasladoA, elt.Padecimiento, elt.Diabetes, elt.DiabetesDiagnostico, elt.DiabetesTratamiento, elt.Hipertension, elt.HipertensionDiagnostico, elt.HipertensionTratamiento, elt.Epilepsia, elt.EpilepsiaDiagnostico, elt.EpilepsiaTratamiento, elt.Asma, elt.AsmaDiagnostico, elt.AsmaTratamiento, elt.Cirugias, elt.Alergias, elt.Sangre, elt.TensionArterial, elt.FC, elt.FR, elt.Temperatura, elt.Saturacion, elt.Glucosa, elt.EscalaGlasgow, elt.Neurologico, elt.CabezaCuello, elt.Cardiopulmonar, elt.Abdomen, elt.Extremidades, elt.Diagnostico, elt.Condicion, elt.PronostioS, elt.Tratamiento]];
+
+        let content = {
+            startY: 50,
+            head: headers,
+            body: data
+        }
+
+        doc.text(title, marginLeft, 40);
+        doc.autoTable(content);
+        doc.save("Hoja de Urgencias ID: "+elt.id+".pdf")
     }
 
     componentDidMount(){
@@ -134,6 +160,7 @@ class HojaUrgenciasView extends Component {
                                     <th>{user.PronostioS}</th>
                                     <th>{user.Tratamiento}</th>
                                     <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
+                                    <th><Button variant="info" onClick={() => this.exportPDF(user)}>Generar Reporte</Button></th>
                                 </tr>
                             ))
                         }

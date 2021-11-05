@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 class CredencialPerdidaView extends Component {
     constructor(props){
@@ -21,6 +23,47 @@ class CredencialPerdidaView extends Component {
         .catch(error => {
             console.log(error)
         })
+    }
+
+    exportPDF = (elt) => {
+        const unit = "pt";
+        const size = "A3";
+        const orientation = "landscape";
+        const marginLeft = 40;
+
+        var img = new Image()
+        img.src = elt.FotoIneFrente
+        var img2 = new Image()
+        img2.src = elt.FotoIneTrasera
+
+        const doc = new jsPDF(orientation, unit, size);
+        doc.setFontSize(15);
+
+        const title = "Reporte Credencial Perdida";
+        const headers = [["ID", "Nombre", "Carrera", "Codigo", "Identificacion Frente", "Identificacion Detras", "Fecha"]];
+        const data = [[elt.id, elt.NombreA, elt.Carrera, elt.FotoIneFrente, elt.FotoIneTrasera, elt.FechaYHora]];
+
+        let content = {
+            startY: 50,
+            head: headers,
+            body: data,
+            didDrawCell: function (data) {
+                if (data.section === 'body' && data.column.index === 3){
+                    data.cell.width=300
+                    data.cell.height=100
+                    doc.addImage(img, 'JPEG', data.cell.x + 2, data.cell.y +2, data.cell.width, data.cell.height, "Alias", "SLOW")
+                }
+                if (data.section === 'body' && data.column.index === 4){
+                    data.cell.width=300
+                    data.cell.height=100
+                    doc.addImage(img2, 'JPEG', data.cell.x + 2, data.cell.y + 2, data.cell.width, data.cell.height, "Alias","SLOW")
+                }
+            }
+        }
+
+        doc.text(title, marginLeft, 40);
+        doc.autoTable(content);
+        doc.save("Reporte Credencial Perdida ID: "+elt.id+".pdf")
     }
 
     removeCategory (ids) {
@@ -62,6 +105,7 @@ class CredencialPerdidaView extends Component {
                                     <th><img src={user.FotoIneTrasera} width="100" height="100" alt ="imagen"/> </th>
                                     <th>{user.FechaYHora}</th>
                                     <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
+                                    <th><Button variant="info" onClick={() => this.exportPDF(user)}>Generar Reporte</Button></th>
                                 </tr>
                             ))
                         }
