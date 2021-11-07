@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
-<<<<<<< HEAD
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-=======
 import Button from 'react-bootstrap/Button';
->>>>>>> b6e80054b4fbd58ca23ef95bd0df98481be7fc4b
 
 class BicicletaView extends Component {
     constructor(props){
@@ -82,7 +79,6 @@ class BicicletaView extends Component {
         const {BicicletaLista} = this.state
         console.log(BicicletaLista)
         return(
-<<<<<<< HEAD
             <Table bordered responsive>
                 <thead>
                     <tr>
@@ -107,37 +103,6 @@ class BicicletaView extends Component {
                     }
                 </tbody>
             </Table>
-=======
-            <div>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <Table bordered responsive striped>
-                    <thead>
-                        <tr>
-                            <th>Codigo de Alumno</th>
-                            <th>Identificacion Frente</th>
-                            <th>Identificacion Detras</th>
-                            <th>Descripcion</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            BicicletaLista.map((user) => (
-                                <tr key={user.id} >
-                                    <th>{user.CodigoAlumno}</th>
-                                    <th><img src={user.FotoIdF} width="100" height="100" alt ="imagen"/> </th>
-                                    <th><img src={user.FotoIdB} width="100" height="100" alt ="imagen"/> </th>
-                                    <th>{user.Descripcion}</th>
-                                    <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
-                                </tr>
-                            ))
-                        }
-                    </tbody>
-                </Table>
-            </div>
->>>>>>> b6e80054b4fbd58ca23ef95bd0df98481be7fc4b
         )
     }
 }
