@@ -57,10 +57,7 @@ function App(){
             <img alt="" src="/353px-Escudo_UdeG.svg.png" width="30" height="30" className="d-inline-block align-top" />{' '}
             Seguridad CUCEI
           </Navbar.Brand>
-          {/* Login */}
-          {/* <div id="myDiv" >
-          <Login></Login>
-          </div> */}
+
           <Navbar.Toggle aria-controls="offcanvasNavbar responsive-navbar-nav" />
           <Navbar.Offcanvas id="offcanvasNavbar" arial-labelledby="offcanvasNavbarLabel" placement="end">
             <LoginButton/>
@@ -69,7 +66,6 @@ function App(){
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3" id="collasible-nav-dropdown">
-              {/* <Login></Login> */}
                 <NavDropdown title="Seguridad" id="offcanvasNavbarDropdown">
                   <NavDropdown.Item>
                     <Link to='/actaadmin' className="btn btn-outline-dark">Acta Administrativa</Link>

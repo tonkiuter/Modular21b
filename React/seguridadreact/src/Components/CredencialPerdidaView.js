@@ -56,7 +56,7 @@ class CredencialPerdidaView extends Component {
                 if (data.section === 'body' && data.column.index === 4){
                     data.cell.width=300
                     data.cell.height=100
-                    doc.addImage(img2, 'JPEG', data.cell.x + 2, data.cell.y + 2, data.cell.width, data.cell.height, "Alias","SLOW")
+                    doc.addImage(img2, 'JPEG', data.cell.x + 2, data.cell.y + 2, data.cell.width, data.cell.height, "Alias2","SLOW")
                 }
             }
         }
