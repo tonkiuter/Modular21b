@@ -6,9 +6,19 @@ export const LogoutButton = () => {
   const { logout } = useAuth0();
 
   return (
+
     <button className="btn btn-outline-danger" onClick={() => logout({ returnTo: window.location.origin })}>
       Logout
     </button>
+
+    // <div>
+    //   <GoogleLogout 
+    //     clientId={clientId}
+    //     buttonText="Cerrar Sesion"
+    //     onLogoutSuccess={onSuccess}
+    //   ></GoogleLogout>
+    // </div>
+
   );
 };
 

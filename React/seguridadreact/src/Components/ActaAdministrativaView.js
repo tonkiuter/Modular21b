@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Table } from 'react-bootstrap';
 import jsPDF from "jspdf";
 import "jspdf-autotable";
+import Button from 'react-bootstrap/Button'
 
 class ActaAdministrativaView extends Component {
     constructor(props){
@@ -53,43 +54,47 @@ class ActaAdministrativaView extends Component {
             method: 'DELETE',
             headers: {'Accept':'application/json','Content-Type':'application/json'}
         })
-        window.location.reload()
+        //window.location.reload()
     }
 
     render(){
         const {ActaLista} = this.state
         console.log(ActaLista)
         return(
-            <Table bordered responsive>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Codigo del Alumno</th>
-                        <th>Numero de oficio</th>
-                        <th>Lugar</th>
-                        <th>Nombre del alumno</th>
-                        <th>Causa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        ActaLista.map((user) => (
-                            <tr key={user.id} >
-                                <th>{user.id}</th>
-                                <th>{user.CodigoAlumno}</th>
-                                <th>{user.NoOficio}</th>
-                                <th>{user.Lugar}</th>
-                                <th>{user.NombreAl}</th>
-                                <th>{user.Causa}</th>
-                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
-                                <th><button onClick={() => this.exportPDF(user)}>Generar Reporte</button>
-                        </th>
-                            </tr>
-                            
-                        ))
-                    }
-                </tbody>
-            </Table>
+            <div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Table bordered responsive striped>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Codigo de Alumno</th>
+                            <th>No. Oficio</th>
+                            <th>Lugar</th>
+                            <th>Nombre de Alumno</th>
+                            <th>Causa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            ActaLista.map((user) => (
+                                <tr key={user.id}>
+                                    <th>{user.id}</th>
+                                    <th>{user.CodigoAlumno}</th>
+                                    <th>{user.NoOficio}</th>
+                                    <th>{user.Lugar}</th>
+                                    <th>{user.NombreAl}</th>
+                                    <th>{user.Causa}</th>
+                                    <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
+                                    <th><Button variant="info" onClick={() => this.exportPDF(user)}>Generar Reporte</Button></th>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </Table>
+            </div>
         )
     }
 }

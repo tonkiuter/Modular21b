@@ -53,7 +53,8 @@ class CredencialPerdida extends Component{
         const { NombreA, Carrera, Codigo } = this.state
         return(
             <div>
-                ~{"\n"}
+                <br></br>
+                <br></br>
                 <div className= "container mt-5">
                     <Link to='/crendencialperdida/view' className= "btn btn-info">Listado</Link>
                 </div>

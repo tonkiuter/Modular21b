@@ -54,7 +54,8 @@ class FalloCamara extends Component{
 
         return (
             <div>
-                ~{"\n"}
+                <br></br>
+                <br></br>
                 <div className= "container mt-5">
                     <Link to='/fallocamara/view' className= "btn btn-info">Listado</Link>
                 </div>
@@ -111,7 +112,7 @@ class FalloCamara extends Component{
                         </Row>
                         <br></br>
                         <center>
-                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Guardar</button>
                         </center>
                     </Container>
                 </Form>

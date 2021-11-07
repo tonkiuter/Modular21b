@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
 import { Col, Container, Form, Row } from 'react-bootstrap';
+
 class ReporteIncidentes extends Component{
     constructor(props) {
         super(props)
@@ -30,6 +31,7 @@ class ReporteIncidentes extends Component{
             Otra: '',
             Huida: '',
             Observacion: '',
+            Descripcion: '',
         }
     }
 
@@ -72,6 +74,7 @@ class ReporteIncidentes extends Component{
         form_data.append('Otra', this.state.Otra);
         form_data.append('Huida', this.state.Huida);
         form_data.append('Observacion', this.state.Observacion);
+        form_data.append('Descripcion', this.state.Descripcion);
         axios
             .post('http://127.0.0.1:8000/incidencias', form_data)
             .then(response => {
@@ -86,11 +89,12 @@ class ReporteIncidentes extends Component{
     render(){
         const { CodigoAlumno, Ubicacion, ObjetosP, Estatura,
         Apariencia, Tez, Cabello, Ojos, Cara, Boca, TipoRopa, Gorra, EdadAprox, Cicatrices,
-        Tatuajes, Piercings, Otra, Huida, Observacion} = this.state
+        Tatuajes, Piercings, Otra, Huida, Observacion, Descripcion} = this.state
         return (
             <div>
-                ~{'\n'}
+                <br></br>
                 <div className= "container mt-5">
+                    <br></br>
                     <Link to='/reporteincidentes/view' className= "btn btn-info">Listado</Link>
                 </div>
                 <h1 className="display-3" align="center">
@@ -127,7 +131,7 @@ class ReporteIncidentes extends Component{
                         </Row>
                         <Row>
                             <Col>
-                               <h2 align="center">Medida Filiacion del Agresor</h2> 
+                               <h2 align="center">Media Filiacion del Agresor</h2> 
                             </Col>
                         </Row>
                         <Row>
@@ -192,6 +196,11 @@ class ReporteIncidentes extends Component{
                         </Row>
                         <Row>
                             <Col>
+                                Descripcion del incidente: <textarea className="form-control" name="Descripcion" placeholder="Descripcion del incidente" value={Descripcion} onChange={this.changeHandler}></textarea>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
                                 Identificacion Frente: <input className="form-control" type="file" name="FotoIdF" onChange={this.handleInputChange}></input>
                             </Col>
                             <Col>
@@ -200,7 +209,7 @@ class ReporteIncidentes extends Component{
                         </Row>
                         <br></br>
                         <center>
-                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Submit</button>
+                            <button type='Submit' className='btn btn-primary btn-lg btn-success' href="">Guardar</button>
                         </center>
                     </Container>
                 </Form>
@@ -208,4 +217,5 @@ class ReporteIncidentes extends Component{
         )
     }
 }
+
 export default ReporteIncidentes

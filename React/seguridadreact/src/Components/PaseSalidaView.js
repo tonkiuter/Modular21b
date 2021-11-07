@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Table } from 'react-bootstrap';
 import jsPDF from "jspdf";
 import "jspdf-autotable";
+import Button from 'react-bootstrap/Button';
 
 class PaseSalidaView extends Component {
     constructor(props){
@@ -78,36 +79,42 @@ class PaseSalidaView extends Component {
         const {PaseLista} = this.state
         console.log(PaseLista)
         return(
-            <Table bordered>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Codigo del Alumno</th>
-                        <th>Foto id de frente</th>
-                        <th>Foto id detras</th>
-                        <th>Sello</th>
-                        <th>Descripcion</th>
-                        <th>Fecha</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        PaseLista.map((user) => (
-                            <tr key={user.id}>
-                                <th>{user.id}</th>
-                                <th>{user.CodigoAlumno}</th>
-                                <th><img src={user.FotoIdF} width="100" height="100" alt ="imagen"/> </th>
-                                <th><img src={user.FotoIdB} width="100" height="100" alt ="imagen"/> </th>
-                                <th>{user.Sello}</th>
-                                <th>{user.Descripcion}</th>
-                                <th>{user.Fecha}</th>
-                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
-                                <th><button onClick={() => this.exportPDF(user)}>Generar Reporte</button></th>
-                            </tr>
-                        ))
-                    }
-                </tbody>
-            </Table>
+            <div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Table bordered responsive striped>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Codigo de Alumno</th>
+                            <th>Identificacion Frente</th>
+                            <th>Identificacion Detras</th>
+                            <th>Sello</th>
+                            <th>Descripcion</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            PaseLista.map((user) => (
+                                <tr key={user.id}>
+                                    <th>{user.id}</th>
+                                    <th>{user.CodigoAlumno}</th>
+                                    <th><img src={user.FotoIdF} width="100" height="100" alt ="imagen"/> </th>
+                                    <th><img src={user.FotoIdB} width="100" height="100" alt ="imagen"/> </th>
+                                    <th>{user.Sello}</th>
+                                    <th>{user.Descripcion}</th>
+                                    <th>{user.Fecha}</th>
+                                    <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
+                                    <th><Button variant="info" onClick={() => this.exportPDF(user)}>Generar Reporte</Button></th>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </Table>
+            </div>
         )
     }
 }

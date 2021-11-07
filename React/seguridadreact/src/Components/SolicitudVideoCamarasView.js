@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button'
 
 class SolicitudVideoCamarasView extends Component {
     constructor(props){
@@ -34,37 +35,43 @@ class SolicitudVideoCamarasView extends Component {
         const {SolicitudVideoCamarasLista} = this.state
         console.log(SolicitudVideoCamarasLista)
         return(
-            <Table bordered>
-                <thead>
-                    <tr>
-                        <th>Codigo del Alumno</th>
-                        <th>Atendio</th>
-                        <th>Fecha Solicitud</th>
-                        <th>No.Camara</th>
-                        <th>Horario</th>
-                        <th>Hecho</th>
-                        <th>Foto IdF</th>
-                        <th>Foto IdB</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        SolicitudVideoCamarasLista.map((user) => (
-                            <tr key={user.id} >
-                                <th>{user.codigoAlumno}</th>
-                                <th>{user.atendio}</th>
-                                <th>{user.dateSolicitud}</th>
-                                <th>{user.noCamara}</th>
-                                <th>{user.horario}</th>
-                                <th>{user.hecho}</th>
-                                <th><img src={user.fotoIdF} width="100" height="100" alt ="imagen"/> </th>
-                                <th><img src={user.fotoIdB} width="100" height="100" alt ="imagen"/> </th>
-                                <th><button onClick={() => this.removeCategory(user.id)}>Eliminar</button></th>
-                            </tr>
-                        ))
-                    }
-                </tbody>
-            </Table>
+            <div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Table bordered>
+                    <thead>
+                        <tr>
+                            <th>Codigo de Alumno</th>
+                            <th>Atendio</th>
+                            <th>Fecha de Solicitud</th>
+                            <th>No. Camara</th>
+                            <th>Horario</th>
+                            <th>Hecho</th>
+                            <th>Identificacion Frente</th>
+                            <th>Identificacion Detras</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            SolicitudVideoCamarasLista.map((user) => (
+                                <tr key={user.id} >
+                                    <th>{user.codigoAlumno}</th>
+                                    <th>{user.atendio}</th>
+                                    <th>{user.dateSolicitud}</th>
+                                    <th>{user.noCamara}</th>
+                                    <th>{user.horario}</th>
+                                    <th>{user.hecho}</th>
+                                    <th><img src={user.fotoIdF} width="100" height="100" alt ="imagen"/> </th>
+                                    <th><img src={user.fotoIdB} width="100" height="100" alt ="imagen"/> </th>
+                                    <th><Button onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </Table>
+            </div>
         )
     }
 }

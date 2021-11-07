@@ -54,7 +54,7 @@ function App(){
         <Navbar bg="dark" variant="dark" expand={false} collapseOnSelect>
         <Container fluid>
           <Navbar.Brand>
-            <img alt="" src="353px-Escudo_UdeG.svg.png" width="30" height="30" className="d-inline-block align-top" />{' '}
+            <img alt="" src="/353px-Escudo_UdeG.svg.png" width="30" height="30" className="d-inline-block align-top" />{' '}
             Seguridad CUCEI
           </Navbar.Brand>
           {/* Login */}
@@ -109,8 +109,7 @@ function App(){
                 </NavDropdown>
               </Nav>
               ~{'\n'}
-              {/* <Logout></Logout> */}
-              {/* <Nav.Link to='/logout' className="btn btn-outline-danger">Cerrar Session</Nav.Link> */}
+
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
