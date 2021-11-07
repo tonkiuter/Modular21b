@@ -45,7 +45,7 @@ class RomperCandadoView extends Component {
                 if (data.section === 'body' && data.column.index === 6){
                     data.cell.width=300
                     data.cell.height=100
-                    doc.addImage(img2, 'JPEG', data.cell.x + 2, data.cell.y + 2, data.cell.width, data.cell.height, "Alias","SLOW")
+                    doc.addImage(img2, 'JPEG', data.cell.x + 2, data.cell.y + 2, data.cell.width, data.cell.height, "Alias2","SLOW")
                 }
             }
         }
@@ -106,7 +106,7 @@ class RomperCandadoView extends Component {
                                     <th>{user.Descripcion}</th>
                                     <th>{user.Fecha}</th>
                                     <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
-                                    <th><Button variant="info" onClick={() => this.exportPDF(user)}></Button></th>
+                                    <th><Button variant="info" onClick={() => this.exportPDF(user)}>Generar Reporte</Button></th>
                                 </tr>
                             ))
                         }
