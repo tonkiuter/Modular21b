@@ -3,7 +3,8 @@ import axios from 'axios';
 import { Table } from 'react-bootstrap';
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
+import {} from "@react-pdf/renderer";
 
 class ActaAdministrativaView extends Component {
     constructor(props){
