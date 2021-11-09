@@ -1,12 +1,15 @@
 from django.utils import timezone
 from django.db import models
 from django.db.models.fields import CharField
+from datetime import date, timezone
+import datetime
+from time import time
 
 # Create your models here.
 class SolicitudVideoCamaras(models.Model):
     codigoAlumno = models.BigIntegerField()
     atendio = models.CharField(max_length=30)
-    dateSolicitud = models.DateTimeField(default=timezone.now)
+    dateSolicitud = models.DateTimeField(default= datetime.datetime.today)
     noCamara = models.BigIntegerField()
     horario = models.CharField(max_length=30)
     hecho = models.CharField(max_length=30)
@@ -59,7 +62,7 @@ class FalloCamara(models.Model):
         return self.CodigoReporte
         
 class HojaUrgencias(models.Model):
-    Fecha = models.DateField(default=timezone.now)
+    Fecha = models.DateField(default=date.today)
     Nombre = models.CharField(max_length = 150, default='')
     Edad = models.IntegerField(default=0)
     Adscripcion = models.CharField(max_length = 150, default='')
@@ -180,7 +183,7 @@ class Users(models.Model):
 
 class Incidencias(models.Model):
     CodigoAlumno = models.BigIntegerField()
-    FechaHora = models.DateTimeField(auto_now=True)
+    FechaHora = models.DateTimeField(default= datetime.datetime.today)
     Ubicacion = models.CharField(max_length= 255)
     ObjetosP = models.CharField(max_length= 255)
     FotoIdF = models.ImageField(upload_to='IncidenciasID')
