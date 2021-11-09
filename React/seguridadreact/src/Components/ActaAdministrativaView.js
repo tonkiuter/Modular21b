@@ -4,7 +4,6 @@ import { Table } from 'react-bootstrap';
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import Button from 'react-bootstrap/Button';
-import {} from "@react-pdf/renderer";
 
 class ActaAdministrativaView extends Component {
     constructor(props){
@@ -89,7 +88,7 @@ class ActaAdministrativaView extends Component {
                                     <th>{user.NombreAl}</th>
                                     <th>{user.Causa}</th>
                                     <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
-                                    <th><Button variant="info" onClick={() => this.exportPDF(user)}>Generar Reporte</Button></th>
+                                    <th><Button variant="info" href="ActaPDF.js"/*</th>this.exportPDF(user)}*/>Generar Reporte</Button></th>
                                 </tr>
                             ))
                         }
