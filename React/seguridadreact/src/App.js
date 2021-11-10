@@ -38,7 +38,8 @@ import { Container, Nav, NavDropdown, Offcanvas } from 'react-bootstrap';
 import LoginButton from './Components/Login';
 import LogoutButton from './Components/Logout';
 import Profile from './Components/Profile';
-import logo from "./logo.svg";
+//import logo from "./logo.svg";
+import ActaPDF from './Components/ActaPDF';
 
 //import Button from 'react-bootstrap';
 //import cucei from './images/cucei.png';
@@ -115,7 +116,7 @@ function App(){
         <Route path= '/' exact>
         
         <div className="App">
-            <img src={logo} className="App-logo" alt="logo" />
+            <img /*src={logo} className="App-logo" alt="logo"*/ />
             {isAuthenticated ? (
             <>
                 <Profile />
@@ -194,6 +195,9 @@ function App(){
         </Route>
         <Route path='/logout' exact>
         {/* <LogoutButton></Logout> */}
+        </Route>
+        <Route path='/actaadmin/view/ActaPDF' exact>
+          <ActaPDF></ActaPDF>
         </Route>
       </Switch>
       

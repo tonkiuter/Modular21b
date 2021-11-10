@@ -4,19 +4,15 @@ import { Link } from "react-router-dom";
 import { Col, Container, Form, Row } from 'react-bootstrap';
 import { Table } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
-import { Text, View, Image, Document, Page } from "@react-pdf/renderer";
+import { Text, View, Image, Document, Page, PDFViewer } from "@react-pdf/renderer";
 import ActaAdministrativaView from './ActaAdministrativaView';
 
-const ActaPDF = ({ user }) => {
+const ActaPDF = ({user}) => {
     return(
-        <PDFViewer>
             <Document>
                 <Page size="A4">
                     <View>
-                        <View className= "container mt-5">
-                            <Link to='/actaadmin/view' className="btn btn-info">Listado</Link>
-                        </View>
-                        <Text className="display-3" align="center">
+                        <Text>
                             <Image alt="" src="ActaAdminIcon.jpg" width="30" height="30"/>{' '}
                             Acta Administrativa{' '}
                             <Image alt="" src="ActaAdminIcon.jpg" width="30" height="30"/>
@@ -45,6 +41,7 @@ const ActaPDF = ({ user }) => {
                     </View>
                 </Page>
             </Document>
-        </PDFViewer>
     )
 }
+
+export default ActaPDF;

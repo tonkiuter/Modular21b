@@ -1,9 +1,90 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Table } from 'react-bootstrap';
+import { Table, Container, Row, Col } from 'react-bootstrap';
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import Button from 'react-bootstrap/Button';
+//import { Text, View, Image, Document, Page, PDFViewer } from "@react-pdf/renderer";
+//import ActaPDF from './ActaPDF';
+
+/*class ActaAdministrativaView extends Component{
+    constructor(props){
+        super(props)
+        this.state={
+            ActaLista: []
+        }
+    }
+
+    componentDidMount(){
+        axios.get('http://127.0.0.1:8000/actaadministrativa')
+        .then(response => {
+            console.log(response)
+            this.setState({ActaLista: response.data})
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
+    removeCategory (ids) {
+        fetch('http://127.0.0.1:8000/actaadministrativa/'+ids+'/',{
+            method: 'DELETE',
+            headers: {'Accept':'application/json','Content-Type':'application/json'}
+        })
+        window.location.reload()
+    }
+
+    render(){
+        const {ActaLista} = this.state
+        console.log(ActaLista)
+        return(
+            <div>
+                <br/>
+                <Container>
+                    <Button variant="warning" href="http://localhost:3000/actaadmin">Atras</Button>
+                </Container>
+                <br/>
+                <Table bordered responsive striped>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Codigo de Alumno</th>
+                            <th>No. Oficio</th>
+                            <th>Lugar</th>
+                            <th>Nombre de Alumno</th>
+                            <th>Causa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            ActaLista.map((user) => (
+                                <tr key={user.id}>
+                                    <th>{user.id}</th>
+                                    <th>{user.CodigoAlumno}</th>
+                                    <th>{user.NoOficio}</th>
+                                    <th>{user.Lugar}</th>
+                                    <th>{user.NombreAl}</th>
+                                    <th>{user.Causa}</th>
+                                    <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
+                                    <th>
+                                        <PDFViewer style={{ width: "100%", height: "90vh"}}>
+                                            <Button variant="info">
+                                                <ActaPDF></ActaPDF>
+                                            </Button>
+                                        </PDFViewer>
+                                    </th>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </Table>
+            </div>
+        )
+    }
+
+}
+
+export default ActaAdministrativaView*/
 
 class ActaAdministrativaView extends Component {
     constructor(props){
@@ -54,7 +135,7 @@ class ActaAdministrativaView extends Component {
             method: 'DELETE',
             headers: {'Accept':'application/json','Content-Type':'application/json'}
         })
-        //window.location.reload()
+        window.location.reload()
     }
 
     render(){
@@ -62,10 +143,11 @@ class ActaAdministrativaView extends Component {
         console.log(ActaLista)
         return(
             <div>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
+                <br/>
+                <Container>
+                    <Button variant="dark" href="http://localhost:3000/actaadmin">Atras</Button>
+                </Container>
+                <br/>
                 <Table bordered responsive striped>
                     <thead>
                         <tr>
@@ -88,7 +170,9 @@ class ActaAdministrativaView extends Component {
                                     <th>{user.NombreAl}</th>
                                     <th>{user.Causa}</th>
                                     <th><Button variant="danger" onClick={() => this.removeCategory(user.id)}>Eliminar</Button></th>
-                                    <th><Button variant="info" href="ActaPDF.js"/*</th>this.exportPDF(user)}*/>Generar Reporte</Button></th>
+                                    <th>
+                                        <Button variant="info" onClick={() => this.exportPDF(user)}>Generar Reporte</Button>
+                                    </th>
                                 </tr>
                             ))
                         }
