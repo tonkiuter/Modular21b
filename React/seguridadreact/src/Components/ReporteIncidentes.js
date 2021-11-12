@@ -92,11 +92,11 @@ class ReporteIncidentes extends Component{
         Tatuajes, Piercings, Otra, Huida, Observacion, Descripcion} = this.state
         return (
             <div>
-                <br></br>
+                {/* <br></br>
                 <div className= "container mt-5">
                     <br></br>
                     <Link to='/reporteincidentes/view' className= "btn btn-info">Listado</Link>
-                </div>
+                </div> */}
                 <h1 className="display-3" align="center">
                     <img alt="" src="ReporteIncidentesIcon.png" width="75" height="75"/>{' '}
                     Reporte de Incidentes{' '}

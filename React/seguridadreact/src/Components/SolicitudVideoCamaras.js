@@ -62,11 +62,11 @@ class SolicitudVideoCamara extends Component{
 
         return (
             <div>
-                <br></br>
+                {/* <br></br>
                 <br></br>
                 <div className= "container mt-5">
                     <Link to='/solicitudcam/view' className= "btn btn-info">Listado</Link>
-                </div>
+                </div> */}
                 <h1 className="display-3" align="center">
                     <img alt="" src="VideoCamaraIcon.jpg" width="60" height="60"/>{' '}
                     Solicitud de Video Camara{' '}

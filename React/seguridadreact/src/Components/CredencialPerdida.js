@@ -53,11 +53,11 @@ class CredencialPerdida extends Component{
         const { NombreA, Carrera, Codigo } = this.state
         return(
             <div>
-                <br></br>
+                {/* <br></br>
                 <br></br>
                 <div className= "container mt-5">
                     <Link to='/crendencialperdida/view' className= "btn btn-info">Listado</Link>
-                </div>
+                </div> */}
                 <h1 className="display-3" align="center">
                     <img alt="" src="CredencialIcon.png" width="75" height="75"/>{' '}
                     Credencial Perdida y Recuperada{' '}

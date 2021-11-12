@@ -54,11 +54,11 @@ class FalloCamara extends Component{
 
         return (
             <div>
-                <br></br>
+                {/* <br></br>
                 <br></br>
                 <div className= "container mt-5">
                     <Link to='/fallocamara/view' className= "btn btn-info">Listado</Link>
-                </div>
+                </div> */}
                 <h1 className="display-3" align="center">
                     <img alt="" src="FalloCamaraIcon.jpg" width="75" height="75"/>{' '}
                     Fallo de Camara/Switch{' '}

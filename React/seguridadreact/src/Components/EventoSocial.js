@@ -53,11 +53,11 @@ class EventoSocial extends Component{
 
         return (
             <div>
-                <br></br>
+                {/* <br></br>
                 <br></br>
                 <div className= "container mt-5">
                     <Link to='/social/view' className= "btn btn-info">Listado</Link>
-                </div>
+                </div> */}
                 <h1 className="display-3" align="center">
                     <img alt="" src="EventoSocialIcon.png" width="75" height="75"/>{' '}
                     Evento Social-Organizativo{' '}

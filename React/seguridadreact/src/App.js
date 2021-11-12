@@ -1,8 +1,9 @@
 // import logo from './logo.svg';
+import Button from 'react-bootstrap/Button'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar'
-import React from "react";
+import React, { Component } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -41,16 +42,37 @@ import Profile from './Components/Profile';
 //import logo from "./logo.svg";
 import ActaPDF from './Components/ActaPDF';
 
+//import PdfComponent from './Components/PdfComponent';
+import ReactToPrint from 'react-to-print';
+//import { Component } from 'react';
+
 //import Button from 'react-bootstrap';
 //import cucei from './images/cucei.png';
+/*class PdfComponent extends Component {
+     
+  render() {
+    var currentURL = window.location.href;
+    return (
+      <div>
+        <ReactToPrint
+          content={() => this.componentRef}
+          trigger={() => <Button variant="warning" className="btn btn-primary">Imprimir Formato</Button>}
+        />
+        <Link to={currentURL} ref={(response) => (this.componentRef = response)} />
+      </div>
+    );
+  }
+
+}*/
 
 function App(){
   // document.getElementById("myDiv").style.marginRight = "50px";
   const { isAuthenticated } = useAuth0();
-
+  // var currentURL = window.location.href;
+  // var listaUrl = currentURL+"/view";
   return(
     // <h2>The Components way</h2><Login/><br /><Logout />
-
+    
     <Router>
         <Navbar bg="dark" variant="dark" expand={false} collapseOnSelect>
         <Container fluid>
@@ -58,8 +80,13 @@ function App(){
             <img alt="" src="/353px-Escudo_UdeG.svg.png" width="30" height="30" className="d-inline-block align-top" />{' '}
             Seguridad CUCEI
           </Navbar.Brand>
-
+          
+          {/* <Button variant="info" href={listaUrl}>Listado</Button>
+          <PdfComponent/> */}
+          {/* <Button variant="warning" href="">Imprimir</Button> */}
+         {/* <Button variant="success" type="submit" href="#">Guardar</Button> */}
           <Navbar.Toggle aria-controls="offcanvasNavbar responsive-navbar-nav" />
+          
           <Navbar.Offcanvas id="offcanvasNavbar" arial-labelledby="offcanvasNavbarLabel" placement="end">
             <LoginButton/>
             <Offcanvas.Header closeButton>
@@ -105,7 +132,6 @@ function App(){
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
-              ~{'\n'}
 
             </Offcanvas.Body>
           </Navbar.Offcanvas>
@@ -199,6 +225,9 @@ function App(){
         <Route path='/actaadmin/view/ActaPDF' exact>
           <ActaPDF></ActaPDF>
         </Route>
+        {/* <Route path='/pdf' exact>
+          <PdfComponent></PdfComponent>
+        </Route> */}
       </Switch>
       
 
